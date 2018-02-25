@@ -4,6 +4,7 @@ import OrhPoptip from './components/Common/OrhPoptip'
 import OrhButton from './components/Common/OrhButton'
 import OrhSelect from './components/Common/OrhSelect'
 import OrhRadio from './components/Common/OrhRadio'
+import OrhTable from './components/Common/OrhTable'
 
 const Rui = new Object();
 let $vm;
@@ -15,7 +16,7 @@ Rui.install = (Vue, options)=> {
             OrhButton,
             OrhSelect,
             OrhRadio,
-            OrhTable: re=> require(['./components/Common/OrhTable'],re),
+            OrhTable,
             OrhModel
         }
     })
