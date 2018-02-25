@@ -1,5 +1,5 @@
 
-import OrhModel from '&/Common/OrhModel'
+import OrhModel from './Common/OrhModel'
 
 const Rui = new Object();
 let $vm;
@@ -7,12 +7,12 @@ let $vm;
 Rui.install = (Vue, options)=> {
     Vue.mixin({
         components: {
-            OrhPoptip: re=> require(['&/Common/OrhPoptip'],re),
-            OrhButton: re=> require(['&/Common/OrhButton'],re),
-            OrhSelect: re=> require(['&/Common/OrhSelect'],re),
-            OrhRadio: re=> require(['&/Common/OrhRadio'],re),
-            OrhTable: re=> require(['&/Common/OrhTable'],re),
-            OrhModel: re=> require(['&/Common/OrhModel'],re),
+            OrhPoptip: re=> require(['./Common/OrhPoptip'],re),
+            OrhButton: re=> require(['./Common/OrhButton'],re),
+            OrhSelect: re=> require(['./Common/OrhSelect'],re),
+            OrhRadio: re=> require(['./Common/OrhRadio'],re),
+            OrhTable: re=> require(['./Common/OrhTable'],re),
+            OrhModel: re=> require(['./Common/OrhModel'],re),
         }
     })
     Vue.prototype.$orhModel = (config)=> {
@@ -32,7 +32,10 @@ Rui.install = (Vue, options)=> {
             }
         })
         if(!$vm) {
-            $vm = new Model().$mount('#model')
+            $vm = new Model({
+                el: document.createElement('div')
+            })
+            document.body.appendChild($vm.$el)
             $vm.show = true
         } else {
             $vm.show = true
