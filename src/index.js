@@ -1,5 +1,9 @@
 
-import OrhModel from '&/components/Common/OrhModel'
+import OrhModel from './components/Common/OrhModel'
+import OrhPoptip from './components/Common/OrhPoptip'
+import OrhButton from './components/Common/OrhButton'
+import OrhSelect from './components/Common/OrhSelect'
+import OrhRadio from './components/Common/OrhRadio'
 
 const Rui = new Object();
 let $vm;
@@ -7,12 +11,12 @@ let $vm;
 Rui.install = (Vue, options)=> {
     Vue.mixin({
         components: {
-            OrhPoptip: re=> require(['&/components/Common/OrhPoptip'],re),
-            OrhButton: re=> require(['&/components/Common/OrhButton'],re),
-            OrhSelect: re=> require(['&/components/Common/OrhSelect'],re),
-            OrhRadio: re=> require(['&/components/Common/OrhRadio'],re),
-            OrhTable: re=> require(['&/components/Common/OrhTable'],re),
-            OrhModel: re=> require(['&/components/Common/OrhModel'],re),
+            OrhPoptip,
+            OrhButton,
+            OrhSelect,
+            OrhRadio,
+            OrhTable: re=> require(['./components/Common/OrhTable'],re),
+            OrhModel
         }
     })
     Vue.prototype.$orhModel = (config)=> {
