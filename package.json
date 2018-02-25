@@ -1,7 +1,7 @@
 {
   "name": "rui-men",
   "version": "1.0.0",
-  "description": "",
+  "description": "maybe the first mongolian language UI framework base on vue.js",
   "main": "src/index.js",
   "scripts": {
     "test": "npm run dev"
