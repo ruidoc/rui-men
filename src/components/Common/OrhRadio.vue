@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../styles/rui-base.less';
 #radio {
     display: inline-block;
     font-family: 'OrhonChaganTig';
@@ -60,10 +61,10 @@ export default {
             border-radius: 50%;
         }
         &.active {
-            border-color: #2d8cf0;
+            border-color: @primary-color;
         }
         &.active:after {
-            background: #2d8cf0;
+            background: @primary-color;
         }
     }
     span {

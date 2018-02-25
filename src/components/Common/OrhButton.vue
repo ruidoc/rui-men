@@ -33,6 +33,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../styles/rui-base.less';
 #button {
     display: inline-block;
     font-family: 'OrhonChaganTig';
@@ -72,8 +73,8 @@ export default {
     }
     &.primary {
         color: #fff;
-        border: 1px solid #2d8cf0;
-        background: #2d8cf0;
+        border: 1px solid @primary-color;
+        background: @primary-color;
     }
     .icon {
         position: relative;

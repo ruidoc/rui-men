@@ -37,6 +37,7 @@
 </script>
 
 <style lang="less" scoped>
+@import '../../styles/rui-base.less';
     #myinput {
         font-size: 17px;
         line-height: 20px;
@@ -54,7 +55,7 @@
             content:attr(placeholder);
         }
         &:focus {
-            border-color: #495060;
+            border-color: @primary-color;
         }
         &.number {
             display: inline-block;

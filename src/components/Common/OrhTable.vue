@@ -57,10 +57,7 @@
         },
         computed: {
             
-        },
-        components: {
-            OrhButton: re=> require(['&/Framwork/OrhButton'],re),
-        },
+        }
     }
 </script>
 

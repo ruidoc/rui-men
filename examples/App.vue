@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-    <div id="model"></div>
+    <orh-button type="primary">ᠭᠤᠤᠭᠵᠤᠵ</orh-button>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="select">
+    <div id="select">
         <div class="refer" tabindex="1" @focus="show" @blur="hide" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
             <span v-else-if="typeof(selected)=='string'">{{selected.length==0?placeholder:selected}}</span>
@@ -112,7 +112,8 @@
 </script>
 
 <style lang="less" scoped>
-    .select {
+@import '../../styles/rui-base.less';
+    #select {
         position: relative;
         cursor: pointer;
         font-family: 'OrhonChaganTig';
@@ -136,7 +137,7 @@
                 content:attr(placeholder);
             }
             &:focus {
-                border-color: #2d8cf0;
+                border-color: @primary-color;
             }
             .icon {
                 position: absolute;
@@ -163,7 +164,7 @@
                     background: #f5f5f5;
                 }
                 &.act {
-                    color: #2d8cf0;
+                    color: @primary-color;;
                 }
                 .icon {
                     position: absolute;

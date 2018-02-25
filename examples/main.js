@@ -6,6 +6,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import rui from '&/index'
+import '&/styles/rui-base.less'
+Vue.use(rui)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

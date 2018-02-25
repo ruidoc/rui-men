@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../styles/rui-base.less';
 .model {
     position: fixed;
     font-family: 'OrhonChaganTig';
