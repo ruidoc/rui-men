@@ -62,9 +62,10 @@
 </script>
 
 <style lang="less" scoped>
+@import '../../styles/rui-base.less';
     #tables {
         writing-mode: vertical-lr;
-        font-size: 16px;
+        font-size: @font-size;
         font-family: 'OrhonChaganTig';
         .handel {
             padding: 0 8px;
@@ -105,4 +106,3 @@
         }
     }
 </style>
-

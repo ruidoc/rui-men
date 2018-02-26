@@ -121,7 +121,7 @@
         user-select: none;
         .refer {
             outline: none;
-            font-size: 17px;
+            font-size: @font-size;
             height: 100%;
             padding: 6px 3px 22px 3px;
             border: 1px solid #dddee1;
@@ -153,7 +153,7 @@
             z-index: 20;
             border-radius: 1px;
             text-align: center;
-            font-size: 18px;
+            font-size: @font-size;
             padding: 0 6px;
             .item {
                 height: 100%;
@@ -164,7 +164,7 @@
                     background: #f5f5f5;
                 }
                 &.act {
-                    color: @primary-color;;
+                    color: @primary-color;
                 }
                 .icon {
                     position: absolute;
@@ -175,4 +175,3 @@
         }
     }
 </style>
-

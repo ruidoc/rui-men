@@ -82,7 +82,7 @@ export default {
             border-right: 1px solid #e9eaec;
             padding: 13px 10px;
             font-weight: 400;
-            font-size: 18px;
+            font-size: @font-size-large;
             background: #e9eaec;
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;

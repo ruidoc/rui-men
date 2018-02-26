@@ -39,7 +39,7 @@
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
     #myinput {
-        font-size: 17px;
+        font-size: @font-size;
         line-height: 20px;
         padding: 5px 6px;
         border: 1px solid #dddee1;

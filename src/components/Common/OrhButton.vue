@@ -41,7 +41,7 @@ export default {
     user-select: none;
     cursor: pointer;
     padding: 7px 3px;
-    font-size: 17px;
+    font-size: @font-size;
     border-radius: 2px;
     color: #fff;
     &:hover {
@@ -49,7 +49,7 @@ export default {
     }
     &.small {
         padding: 5px 2px;
-        font-size: 15px;
+        font-size: @font-size-small;
     }
     &.default {
         color: #000;

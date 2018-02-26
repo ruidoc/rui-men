@@ -42,7 +42,7 @@ export default {
     writing-mode: vertical-lr;
     padding-left: 1px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: @font-size;
     user-select: none;
     .radio {
         width: 18px;

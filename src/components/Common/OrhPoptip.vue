@@ -88,6 +88,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../styles/rui-base.less';
 .poptip {
     position: relative;
     cursor: pointer;
@@ -105,7 +106,7 @@ export default {
         border-radius: 1px;
         width: 200px;
         text-align: center;
-        font-size: 18px;
+        font-size: @font-size;
         padding: 0 5px;
         .item {
             height: 100%;
