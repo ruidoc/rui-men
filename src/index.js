@@ -1,10 +1,10 @@
 
-import OrhModel from './components/Common/OrhModel'
-import OrhPoptip from './components/Common/OrhPoptip'
-import OrhButton from './components/Common/OrhButton'
-import OrhSelect from './components/Common/OrhSelect'
-import OrhRadio from './components/Common/OrhRadio'
-import OrhTable from './components/Common/OrhTable'
+import RumModel from './components/Common/OrhModel'
+import RumPoptip from './components/Common/OrhPoptip'
+import RumButton from './components/Common/OrhButton'
+import RumSelect from './components/Common/OrhSelect'
+import RumRadio from './components/Common/OrhRadio'
+import RumTable from './components/Common/OrhTable'
 
 const Rui = new Object();
 let $vm;
@@ -12,12 +12,12 @@ let $vm;
 Rui.install = (Vue, options)=> {
     Vue.mixin({
         components: {
-            OrhPoptip,
-            OrhButton,
-            OrhSelect,
-            OrhRadio,
-            OrhTable,
-            OrhModel
+            RumPoptip,
+            RumButton,
+            RumSelect,
+            RumRadio,
+            RumTable,
+            RumModel
         }
     })
     Vue.prototype.$orhModel = (config)=> {
@@ -27,12 +27,12 @@ Rui.install = (Vue, options)=> {
             },
             render() {
                 return (
-                    <OrhModel value={this.show} title={config.title} 
+                    <RuModel value={this.show} title={config.title} 
                         onInput={(val)=> {
                             this.show = val
                         }}>
                         {config.render()}
-                    </OrhModel>
+                    </RuModel>
                 )
             }
         })

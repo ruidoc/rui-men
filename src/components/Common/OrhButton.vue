@@ -18,7 +18,7 @@ export default {
         },
         type: {
             type: String,
-            default: 'default'
+            default: 'def-type'
         }
     },
     methods: {
@@ -45,16 +45,19 @@ export default {
     border-radius: 2px;
     color: #fff;
     &:hover {
-        opacity: 0.9;
+        opacity: 0.85;
     }
     &.small {
         padding: 5px 2px;
         font-size: @font-size-small;
     }
-    &.default {
+    &.def-type {
         color: #000;
         border: 1px solid #e9eaec;
         background: #f8f8f9;
+        &:hover {
+            background: #fff;
+        }
     }
     &.warning {
         color: #fff;

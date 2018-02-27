@@ -9,6 +9,13 @@ import rui from '^/index'
 import '^/styles/rui-base.less'
 Vue.use(rui)
 
+import VueHighlightJS from 'vue-highlightjs'
+Vue.use(VueHighlightJS)
+
+import plug from './plugins'
+Vue.use(plug)
+
+
 Vue.config.productionTip = false
 
 new Vue({

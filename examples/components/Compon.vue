@@ -4,7 +4,7 @@
 		<div class="main">
 			<lay-menu></lay-menu>
 			<div class="content">
-				<router-view></router-view>
+				<router-view/>
 			</div>
 		</div>
 	</div>
@@ -25,13 +25,20 @@ export default {
 
 <style scoped>
 #compon {
-    overflow: auto;
+	width: 100%; height: 100%;
+	overflow: hidden;
+	position: relative;
 }
 .main {
-    margin-top: 100px;
+	position: absolute;
+	top: 100px; left: 0; right: 0; bottom: 0;
+	display: flex;
+	align-items: stretch;
 }
 .content {
-	width: 70%;
-	display: inline-block;
+	flex: 1;
+	padding: 5px 80px 18px 50px;
+	height: 100%;
+	overflow: auto;
 }
 </style>

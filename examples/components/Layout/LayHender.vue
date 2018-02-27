@@ -5,10 +5,10 @@
         </div>
         <div class="right_dv">
             <div class="tab">
-                <a href="#">首页</a>
+                <span>首页</span>
             </div>
             <div class="tab">
-                <a href="#">组件</a>
+                <span>组件</span>
             </div>
         </div>
     </div>
@@ -52,6 +52,15 @@
                 display: inline-block;
                 padding: 0 20px;
                 line-height: 60px;
+                cursor: pointer;
+                transition: all .3s;
+                border-bottom: 2px solid transparent;
+                box-sizing: border-box;
+                height: 100%;
+                &:hover {
+                    color: #1890ff;
+                    border-color: #1890ff;
+                }
             }
         }
     }
