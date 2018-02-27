@@ -1,14 +1,14 @@
 <template>
     <div id="tables">
         <div class="handel">
-            <orh-button @on-click="add">
+            <rum-button @on-click="add">
                 <Icon class="icon" type="plus"></Icon>
                 <span>ᠵᠹᠠᠰᠪ ᠬᠳᠤ</span>
-            </orh-button> &nbsp;
-            <orh-button @on-click="del">
+            </rum-button> &nbsp;
+            <rum-button @on-click="del">
                 <Icon class="icon" type="trash-b"></Icon>
                 <span>ᠵᠹᠠᠰᠪ ᠬᠳᠤ</span>
-            </orh-button> &nbsp;
+            </rum-button> &nbsp;
             <slot name="option"></slot>
         </div>
         <div class="table">

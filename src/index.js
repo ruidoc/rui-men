@@ -20,7 +20,7 @@ Rui.install = (Vue, options)=> {
             RumModel
         }
     })
-    Vue.prototype.$orhModel = (config)=> {
+    Vue.prototype.$RumModel = (config)=> {
         let Model = Vue.extend({
             data() {
                 return {show:false}

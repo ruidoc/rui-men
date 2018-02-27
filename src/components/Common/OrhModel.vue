@@ -8,9 +8,9 @@
             </div>
             <div class="content"><slot></slot></div>
             <div class="buttom" v-if="!hideBottom">
-                <orh-button type="primary">ᠭᠤᠵᠬᠤ</orh-button>
+                <rum-button type="primary">ᠭᠤᠵᠬᠤ</rum-button>
                 &nbsp;
-                <orh-button @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</orh-button>
+                <rum-button @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</rum-button>
             </div>
         </div>
     </div>
