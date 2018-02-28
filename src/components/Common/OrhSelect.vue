@@ -55,7 +55,7 @@
             hide() {
                 setTimeout(()=> {
                     this.isShow=false
-                },10)
+                },20)
             },
             show() {
                 this.changePosition(this.$refs.refer,this.$refs.popper)

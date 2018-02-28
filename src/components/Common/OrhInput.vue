@@ -45,8 +45,15 @@
                             alert('字段不为空')
                         }
                         break;
-                    case 'required':
+                    case 'mobile':
                         let patt = /^(13|15|18|14)[0-9]{9}$/
+                        if(patt.test(this.value)) {
+                            this.error = true
+                            alert('手机号格式错误')
+                        }
+                        break;
+                    case 'idcard':
+                        // let patt = /(^/d{15}$)|(^/d{17}([0-9]|X)$)/
                         if(patt.test(this.value)) {
                             this.error = true
                             alert('手机号格式错误')
