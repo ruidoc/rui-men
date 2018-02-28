@@ -1,6 +1,6 @@
 <template>
     <div id="select">
-        <div class="refer" tabindex="1" @focus="show" @blur="hide" ref="refer">
+        <div class="refer" tabindex="1" @focus="show" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
             <span v-else-if="value==''">{{placeholder}}</span>
             <span v-else-if="typeof(selected)=='string'">{{selected.length==0?placeholder:selected}}</span>
@@ -77,6 +77,7 @@
                 },10)
             },
             itemClick(item,bool) {
+                this.isShow = false
                 if(!bool) {
                     this.values = item.value
                 } else {
