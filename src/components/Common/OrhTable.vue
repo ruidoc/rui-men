@@ -2,11 +2,11 @@
     <div id="tables">
         <div class="handel">
             <rum-button @on-click="add">
-                <Icon class="icon" type="plus"></Icon>
+                <rum-icon class="icon" type="plus"></rum-icon>
                 <span>ᠵᠹᠠᠰᠪ ᠬᠳᠤ</span>
             </rum-button> &nbsp;
             <rum-button @on-click="del">
-                <Icon class="icon" type="trash-b"></Icon>
+                <rum-icon class="icon" type="trash-b"></rum-icon>
                 <span>ᠵᠹᠠᠰᠪ ᠬᠳᠤ</span>
             </rum-button> &nbsp;
             <slot name="option"></slot>

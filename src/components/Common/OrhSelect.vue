@@ -8,11 +8,11 @@
         <div class="others" :style="position" v-show="isShow" ref="popper">
             <div class="item" v-if="!multiple" :class="{act:item.value==value}" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple)">
                 <span>{{item.label}}</span>
-                <Icon type="android-done" v-if="item.value==value" size="15" class="icon"></Icon>
+                <rum-icon type="android-done" v-if="item.value==value" size="15" class="icon"></rum-icon>
             </div>
             <div class="item" v-if="multiple" :class="{act:value.includes(item.value)}" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple)">
                 <span>{{item.label}}</span>
-                <Icon type="android-done" v-if="value.includes(item.value)" size="15" class="icon"></Icon>
+                <rum-icon type="android-done" v-if="value.includes(item.value)" size="15" class="icon"></rum-icon>
             </div>
         </div>
     </div>

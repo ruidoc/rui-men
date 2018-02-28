@@ -5,6 +5,8 @@ import RumButton from './components/Common/OrhButton'
 import RumSelect from './components/Common/OrhSelect'
 import RumRadio from './components/Common/OrhRadio'
 import RumTable from './components/Common/OrhTable'
+import RumIcon from './components/Common/OrhIcon'
+import RumInput from './components/Common/OrhInput'
 
 const Rui = new Object();
 let $vm;
@@ -17,7 +19,9 @@ Rui.install = (Vue, options)=> {
             RumSelect,
             RumRadio,
             RumTable,
-            RumModel
+            RumModel,
+            RumInput,
+            RumIcon
         }
     })
     Vue.prototype.$RumModel = (config)=> {
@@ -27,12 +31,12 @@ Rui.install = (Vue, options)=> {
             },
             render() {
                 return (
-                    <RuModel value={this.show} title={config.title} 
+                    <RumModel value={this.show} title={config.title} 
                         onInput={(val)=> {
                             this.show = val
                         }}>
                         {config.render()}
-                    </RuModel>
+                    </RumModel>
                 )
             }
         })

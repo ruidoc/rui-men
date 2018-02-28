@@ -1,6 +1,7 @@
 <template>
-    <div id="myinput" :class="[type]" :style="{'text-align':align}" contenteditable :placeholder="placeholder" v-html="content" @focus="isLocked=true" @blur="isLocked=false" @input="changeText">
-        <Icon type="search"></Icon>
+    <div id="myinput" :class="[type]" :style="{'text-align':align}" contenteditable :placeholder="placeholder" @focus="isLocked=true" @blur="isLocked=false" @input="changeText">
+        {{vals}}
+        <!-- <rum-icon type="search" size="15" color="#888" class="ic"></rum-icon> -->
     </div>
 </template>
 
@@ -15,15 +16,6 @@
         methods: {
             changeText() {
                 this.$emit('input',this.$el.innerHTML);
-            }
-        },
-        computed: {
-            content() {
-                if(this.type=='number') {
-                    return this.vals
-                } else {
-                    return this.vals.replace(/ /g,'&nbsp;').replace(/(\n)/g,'<br>')
-                }
             }
         },
         watch: {
@@ -47,6 +39,9 @@
         text-indent: 2px;
         display: inline-block;
         font-family: 'OrhonChaganTig';
+        writing-mode: vertical-lr;
+        min-height: 130px;
+        border-radius: 2px;
         &.textarea {
             min-height: 70px;
         }

@@ -3,7 +3,7 @@
     <div class="model" v-if="isShow" @click.self="isShow=false">
         <div :class="['handel',{confirm}]">
             <div class="title" v-if="title.length>0 && !confirm">
-                <Icon type="close-round" size="14" class="icon" @click.native="isShow=false"></Icon>
+                <rum-icon type="close-round" size="14" class="icon" @click.native="isShow=false"></rum-icon>
                 <span>{{title}}</span>
             </div>
             <div class="content"><slot></slot></div>

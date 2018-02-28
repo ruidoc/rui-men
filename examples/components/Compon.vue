@@ -37,7 +37,7 @@ export default {
 }
 .content {
 	flex: 1;
-	padding: 5px 80px 18px 50px;
+	padding: 5px 80px 50px 50px;
 	height: 100%;
 	overflow: auto;
 }

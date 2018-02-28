@@ -15,7 +15,6 @@ Vue.use(VueHighlightJS)
 import plug from './plugins'
 Vue.use(plug)
 
-
 Vue.config.productionTip = false
 
 new Vue({
