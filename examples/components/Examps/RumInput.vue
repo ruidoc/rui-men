@@ -11,10 +11,10 @@
         <Par type="h2">代码演示</Par>
         <Card title="说明">
             <div>
-                <rum-input v-model="value" placeholder="ᠬᠰᠹᠰᠳᠹᠹ"/>
+                <rum-input v-model="value" style="height:150px" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" validate="required"/>
             </div>
             <div slot="desc">
-                <div><f>type</f> 表示按钮类型。 <f>size</f> 表示按钮大小</div>
+                <div><f>type</f> 表示输入框类型。 <f>size</f> 表示按钮大小</div>
             </div>
             <pre slot="code" v-highlightjs="codeh1"><code></code></pre>
         </Card>

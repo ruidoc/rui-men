@@ -45,6 +45,12 @@ export default {
                 },
                 {
                     type: 3,
+                    link: 'rum-table',
+                    name: 'rum-table',
+                    title: '表格'
+                },
+                {
+                    type: 3,
                     link: 'about',
                     name: 'rum-radio',
                     title: '单选'
@@ -65,6 +71,11 @@ export default {
                 this.$router.push(`/component/${path}`);
             }
         }
+    },
+    created() {
+        this.active = this.menus.findIndex(item=> {
+            return item.link == this.$route.path.split('/')[2]
+        })
     }
 }
 </script>

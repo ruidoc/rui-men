@@ -2,8 +2,9 @@
     <div id="select">
         <div class="refer" tabindex="1" @focus="show" @blur="hide" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
+            <span v-else-if="value==''">{{placeholder}}</span>
             <span v-else-if="typeof(selected)=='string'">{{selected.length==0?placeholder:selected}}</span>
-            <Icon type="arrow-right-b" color="#bbb" size="15" class="icon"></Icon>
+            <rum-icon type="arrow-right-b" color="#bbb" size="15" class="icon"></rum-icon>
         </div>
         <div class="others" :style="position" v-show="isShow" ref="popper">
             <div class="item" v-if="!multiple" :class="{act:item.value==value}" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple)">
@@ -43,7 +44,7 @@
                 default: []
             },
             value: {
-                type: [Number, Array]
+                type: [Number, String, Array]
             },
             multiple: {
                 type: Boolean,
@@ -117,6 +118,7 @@
         position: relative;
         cursor: pointer;
         font-family: 'OrhonChaganTig';
+        writing-mode: vertical-lr;
         display: inline-block;
         user-select: none;
         .refer {

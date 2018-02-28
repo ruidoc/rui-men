@@ -1,7 +1,6 @@
 <template>
-    <div id="myinput" :class="[type]" :style="{'text-align':align}" contenteditable :placeholder="placeholder" @focus="isLocked=true" @blur="isLocked=false" @input="changeText">
+    <div id="myinput" :class="[type,{error}]" contenteditable :placeholder="placeholder" @focus="isLocked=true" @blur="blur(validate)" @input="changeText" @keyup.delete="del">
         {{vals}}
-        <!-- <rum-icon type="search" size="15" color="#888" class="ic"></rum-icon> -->
     </div>
 </template>
 
@@ -9,13 +8,51 @@
     export default {
         data() {
             return {
-                vals: this.value
+                vals: this.value,
+                isLocked: false,
+                error: false
             }
         },
-        props: ['value','placeholder','type','align'],
+        props: {
+            value: String,
+            placeholder: String,
+            type: String,
+            validate: String
+        },
         methods: {
             changeText() {
-                this.$emit('input',this.$el.innerHTML);
+                let html = this.$el.innerHTML.toString()
+                this.$emit('input',html);
+            },
+            del() {
+                let dom = this.$el.getElementsByTagName('br')
+                if(dom.length==1) {
+                    this.$el.removeChild(dom[0])
+                }
+            },
+            blur(valid) {
+                if(valid) {
+                    this.validated()
+                }
+                this.isLocked = false
+            },
+            validated() {
+                console.log(this.validate)
+                switch(this.validate) {
+                    case 'required':
+                        if(this.value.length==0) {
+                            this.error = true
+                            alert('字段不为空')
+                        }
+                        break;
+                    case 'required':
+                        let patt = /^(13|15|18|14)[0-9]{9}$/
+                        if(patt.test(this.value)) {
+                            this.error = true
+                            alert('手机号格式错误')
+                        }
+                        break;
+                }
             }
         },
         watch: {
@@ -40,10 +77,13 @@
         display: inline-block;
         font-family: 'OrhonChaganTig';
         writing-mode: vertical-lr;
-        min-height: 130px;
+        height: 100%;
         border-radius: 2px;
         &.textarea {
             min-height: 70px;
+        }
+        &.error {
+            border-color: #ed3f14;
         }
         &:empty::before {  
             color: #aaa;  

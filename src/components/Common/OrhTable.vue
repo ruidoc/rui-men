@@ -13,13 +13,11 @@
         </div>
         <div class="table">
             <div class="head">
-                <Checkbox v-model="single"></Checkbox>
                 <div v-for="(item,ind) in columns" :key="ind" 
                 :style="{'height':item.height?item.height+'px':'auto','flex':item.height?false:1}" 
                 class="col">{{item.title}}</div>
             </div>
             <div class="body" v-for="(item,index) in data" :key="index">
-                <Checkbox v-model="single"></Checkbox>
                 <div v-for="(sitem,ind) in columns" :key="ind" :style="{'height':sitem.height?sitem.height+'px':'auto','flex':sitem.height?false:1}" class="col">
                     <span v-if="!sitem.slot" v-html="item[sitem.key]"/>
                     <slot :name="sitem.slot+index"></slot>

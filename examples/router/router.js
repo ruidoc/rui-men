@@ -20,6 +20,10 @@ const homeRouter = [
 		path: 'rum-select',
 		component: re=> require(['&/Examps/RumSelect.vue'],re)
 	},
+	{
+		path: 'rum-table',
+		component: re=> require(['&/Examps/RumTable.vue'],re)
+	},
 ]
 
 export default {
