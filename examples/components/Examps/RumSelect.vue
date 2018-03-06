@@ -82,7 +82,7 @@ export default {
         <rum-select v-model="value" :options="options" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px">
             <span style="font-size:14px">单选示例 :</span>
         </rum-select>
-        <rum-select v-model="values" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple>
+        <rum-select v-model="values" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple @on-change="change">
             <span style="font-size:14px">多选示例 :</span>
         </rum-select>
     </div>
@@ -107,6 +107,11 @@ export default {
                 value: 3
             }
         ]
+    },
+    methods: {
+        change(val) {
+            this.$RumMessage(val)
+        }
     }
 }
 <script>`,
@@ -130,7 +135,7 @@ export default {
     },
     methods: {
         change(val) {
-            alert(val)
+            this.$RumMessage(val)
         }
     }
 }

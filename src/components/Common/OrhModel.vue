@@ -6,11 +6,18 @@
                 <rum-icon type="close-round" size="14" class="icon" @click.native="isShow=false"></rum-icon>
                 <span>{{title}}</span>
             </div>
+            <div v-if="confirm" class="conf-title">
+                <rum-icon type="information-circled" size="25" class="icon" color="#2d8cf0" @click.native="isShow=false"></rum-icon>
+                <span>{{title}}</span>
+            </div>
             <div class="content"><slot></slot></div>
-            <div class="buttom" v-if="!hideBottom">
+            <div class="buttom" v-if="!hideBottom && !confirm">
                 <rum-button type="primary">ᠭᠤᠵᠬᠤ</rum-button>
                 &nbsp;
                 <rum-button @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</rum-button>
+            </div>
+            <div class="cofbutton" v-if="confirm">
+                <rum-button type="primary" @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</rum-button>
             </div>
         </div>
     </div>
@@ -97,6 +104,14 @@ export default {
                 }
             }
         }
+        .conf-title {
+            padding: 13px 0 13px 20px;
+            font-size: 20px;
+        }
+        .cofbutton {
+            text-align: end;
+            padding: 0 16px 15px 0;
+        }
         .content {
             padding: 13px 12px;
         }
@@ -106,9 +121,8 @@ export default {
             text-align: end;
         }
         &.confirm {
-            .buttom {
-                border: none;
-                padding-left: 0;
+            .content {
+                padding: 30px 12px 15px 12px;
             }
         }
     }
