@@ -35,7 +35,7 @@ export default {
                     type: 3,
                     link: 'rum-select',
                     name: 'rum-select',
-                    title: '下拉框'
+                    title: '选择框'
                 },
                 {
                     type: 3,
@@ -60,6 +60,18 @@ export default {
                     link: 'about',
                     name: 'rum-poptip',
                     title: '气泡提示'
+                },
+                {
+                    type: 3,
+                    link: 'rum-model',
+                    name: 'rum-model',
+                    title: '对话框'
+                },
+                {
+                    type: 3,
+                    link: 'rum-message',
+                    name: 'rum-message',
+                    title: '全局提示'
                 },
             ]
         }

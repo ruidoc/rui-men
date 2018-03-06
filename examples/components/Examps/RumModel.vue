@@ -1,22 +1,21 @@
 <template>
     <div class="button">
-        <Par type="h1">输入框 rum-input</Par>
-        <Par>通过鼠标或键盘输入内容，是最基础的表单域的包装。</Par>
+        <Par type="h1">对话框 rum-model</Par>
+        <Par>全局对话框，提供 <f>template</f> 和 <f>function</f> 两种形式调用</Par>
 
         <br>
         <Par type="h2">基本使用</Par>
-        <pre v-highlightjs="baseuse"><code></code></pre>
+        <pre v-highlightjs="value"><code></code></pre>
 
         <br>
         <Par type="h2">代码演示</Par>
         <Card title="说明">
             <div>
-                <rum-input v-model="value" style="height:150px">
-                    <span style="font-size:14px">输入姓名 :</span>
-                </rum-input>
+                <rum-button type="primary" @on-click="bool=true">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
+                <rum-model v-model="bool" title="ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ">这里是对话框的内容</rum-model>
             </div>
             <div slot="desc">
-                <div><f>v-model</f> 必填，与数据双向绑定</div>
+                <div><f>type</f> 表示按钮类型。 <f>size</f> 表示按钮大小</div>
             </div>
             <pre slot="code" v-highlightjs="codeh1"><code></code></pre>
         </Card>
@@ -25,22 +24,16 @@
         <Par type="h2">Props</Par>
         <Table :titles="['名称|2','说明','类型|2','默认值|2']">
             <div class="tr">
-                <div class="td">value</div>
-                <div class="td">输入框内容，使用 <f>v-model</f> 绑定</div>
+                <div class="td">type</div>
+                <div class="td">按钮类型，有 <f>default</f>，<f>primary</f>，<f>warning</f>，<f>error</f> 四种</div>
                 <div class="td">String</div>
-                <div class="td"><f>必填</f></div>
+                <div class="td">default</div>
             </div>
             <div class="tr">
-                <div class="td">placeholder</div>
-                <div class="td">为空时显示内容</div>
+                <div class="td">size</div>
+                <div class="td">按钮大小，有 <f>default</f>，<f>small</f> 两种</div>
                 <div class="td">String</div>
-                <div class="td">'ᠲᠡᠰᠲ'</div>
-            </div>
-            <div class="tr">
-                <div class="td">validate</div>
-                <div class="td">数据验证，目前有 <f>required</f>，<f>mobile</f>，<f>idcard</f>，<f>email</f>，分别表示不为空验证，手机号验证，身份证号验证和邮箱验证</div>
-                <div class="td">String</div>
-                <div class="td">无</div>
+                <div class="td">default</div>
             </div>
         </Table>
 
@@ -52,11 +45,6 @@
                 <div class="td">点击按钮触发</div>
                 <div class="td">无</div>
             </div>
-            <div class="tr">
-                <div class="td">on-validated</div>
-                <div class="td">验证时触发，返回Boolean参数</div>
-                <div class="td">bool，是否验证成功</div>
-            </div>
         </Table>
     </div>
 </template>
@@ -65,8 +53,8 @@
 export default {
     data() {
         return {
-            value: "ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ",
-            baseuse: `<rum-input v-model="val"/>`,
+            value: "<rum-model>这里是内容</rum-model>",
+            bool: false,
             codeh1: `<div>
     <rum-button>ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
     <rum-button type="primary">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;

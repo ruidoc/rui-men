@@ -29,14 +29,16 @@ export default {
         }
     },
     mounted() {
-        this.$refs.body.childNodes.forEach((item,index)=> {
-            this.mtitles.forEach((sub_item,sub_index) => {
-                if(sub_item.width) {
-                    this.$refs.body.children[index].children[sub_index].style.width = sub_item.width
-                } else {
-                    this.$refs.body.children[index].children[sub_index].style.flex = 1
+        let dom = this.$refs.body.getElementsByClassName('td')
+        this.mtitles.forEach((item,ind) => {
+            let styobj = item.width ? ['width',item.width] : ['flex',1]
+            dom[ind].style[styobj[0]] = styobj[1]
+            let b = dom.length/this.mtitles.length
+            if(b>1) {
+                for(let i=1; i<b; i++) {
+                    dom[(this.mtitles.length)*i+ind].style[styobj[0]] = styobj[1]
                 }
-            });
+            }
         })
     }
 }

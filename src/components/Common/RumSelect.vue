@@ -14,7 +14,7 @@
                 <rum-select v-model="opp" :options="options" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px">
                     <span style="font-size:14px">单选示例 :</span>
                 </rum-select>
-                <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple placement="left" @on-change="change">
+                <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple placement="left">
                     <span style="font-size:14px">多选示例 :</span>
                 </rum-select>
             </div>
@@ -126,11 +126,6 @@ export default {
                     value: 3
                 }
             ]
-        }
-    },
-    methods: {
-        change(val) {
-            alert(val)
         }
     }
 }

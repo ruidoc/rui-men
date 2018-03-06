@@ -3,11 +3,11 @@
         <div class="handel">
             <rum-button @on-click="add">
                 <rum-icon class="icon" type="plus"></rum-icon>
-                <span>ᠵᠹᠠᠰᠪ ᠬᠳᠤ</span>
+                <span>ᠰᠢᠨ᠎ᠡ ᠪᠡᠷ ᠨᠡᠮᠡᠬᠦ</span>
             </rum-button> &nbsp;
             <rum-button @on-click="del">
                 <rum-icon class="icon" type="trash-b"></rum-icon>
-                <span>ᠵᠹᠠᠰᠪ ᠬᠳᠤ</span>
+                <span>ᠤᠰᠠᠳᠬᠠᠬᠤ</span>
             </rum-button> &nbsp;
             <slot name="option"></slot>
         </div>

@@ -40,6 +40,7 @@ export default {
             border-top: 1px solid #ebedf0;
             position: relative;
             font-size: 14px;
+            line-height: 25px;
             .tt {
                 position: absolute;
                 background: #fff;

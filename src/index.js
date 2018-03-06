@@ -7,9 +7,11 @@ import RumRadio from './components/Common/OrhRadio'
 import RumTable from './components/Common/OrhTable'
 import RumIcon from './components/Common/OrhIcon'
 import RumInput from './components/Common/OrhInput'
+import RumMessage from './components/Common/OrhMessage'
 
 const Rui = new Object();
-let $vm;
+let $vModel;
+let $vMessage;
 
 Rui.install = (Vue, options)=> {
     Vue.mixin({
@@ -21,7 +23,8 @@ Rui.install = (Vue, options)=> {
             RumTable,
             RumModel,
             RumInput,
-            RumIcon
+            RumIcon,
+            RumMessage
         }
     })
     Vue.prototype.$RumModel = (config)=> {
@@ -40,15 +43,39 @@ Rui.install = (Vue, options)=> {
                 )
             }
         })
-        if(!$vm) {
-            $vm = new Model({
+        if(!$vModel) {
+            $vModel = new Model({
                 el: document.createElement('div')
             })
-            document.body.appendChild($vm.$el)
-            $vm.show = true
+            document.body.appendChild($vModel.$el)
+            $vModel.show = true
         } else {
-            $vm.show = true
+            $vModel.show = true
         }
+    }
+    Vue.prototype.$RumMessage = (msg,type)=> {
+        
+        if(!$vMessage) {
+            $vMessage = document.createElement('div') 
+            $vMessage.style.position = 'fixed'
+            $vMessage.style.top = '80px'
+            $vMessage.style.right = '30px'
+            $vMessage.style.writingMode = 'vertical-rl'
+            document.body.appendChild($vMessage)
+        }
+
+        if(!type) {
+            type = 'info'
+        }
+        
+        let Model = Vue.extend(RumMessage)
+        
+        let instance = new Model()
+        instance.message = msg
+        instance.type = type
+        instance.$mount();
+
+        $vMessage.appendChild(instance.$el)
     }
 }
 

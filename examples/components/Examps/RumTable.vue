@@ -59,7 +59,7 @@
 
         <br>
         <Par type="h2">columns 参数说明</Par>
-        <Table :titles="['名称|2','说明','类型|2','默认值|2']">
+        <Table :titles="['名称|2','说明|4','类型|2','默认值|2']">
             <div class="tr">
                 <div class="td">title</div>
                 <div class="td">表头标题</div>

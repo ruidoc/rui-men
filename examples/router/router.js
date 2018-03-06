@@ -24,6 +24,14 @@ const homeRouter = [
 		path: 'rum-table',
 		component: re=> require(['&/Examps/RumTable.vue'],re)
 	},
+	{
+		path: 'rum-model',
+		component: re=> require(['&/Examps/RumModel.vue'],re)
+	},
+	{
+		path: 'rum-message',
+		component: re=> require(['&/Examps/RumMessage.vue'],re)
+	},
 ]
 
 export default {

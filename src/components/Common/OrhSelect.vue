@@ -1,9 +1,12 @@
 <template>
     <div id="select">
-        <div class="refer" tabindex="1" @focus="show" ref="refer">
+        <span class="title">
+            <slot></slot>
+        </span>
+        <div class="refer" tabindex="1" @click="focus" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
-            <span v-else-if="value==''">{{placeholder}}</span>
-            <span v-else-if="typeof(selected)=='string'">{{selected.length==0?placeholder:selected}}</span>
+            <span v-else-if="value==''" style="color:#aaa">{{placeholder}}</span>
+            <span v-else-if="typeof(selected)=='string'">{{selected}}</span>
             <rum-icon type="arrow-right-b" color="#bbb" size="15" class="icon"></rum-icon>
         </div>
         <div class="others" :style="position" v-show="isShow" ref="popper">
@@ -33,7 +36,7 @@
         props: {
             placeholder: {
                 type: String,
-                default: '请选择'
+                default: ''
             },
             placement: {
                 type: String,
@@ -52,40 +55,48 @@
             }
         },
         methods: {
-            hide() {
-                setTimeout(()=> {
-                    this.isShow=false
-                },20)
+            focus() {
+                this.changePosition(this.$refs.refer)
+                this.isShow ? this.hide() : this.show()
             },
-            show() {
-                this.changePosition(this.$refs.refer,this.$refs.popper)
-            },
-            changePosition(refer,popper) {
-                let pm_left = refer.offsetLeft-popper.offsetWidth-3
+            changePosition(refer) {
+                let pm_left = refer.offsetLeft-(this.options.length)*32-15
                 let pm_right = refer.offsetLeft+refer.offsetWidth+3
-                this.isShow = !this.isShow;
-
-                setTimeout(()=> {
-                    switch(this.placement) {
-                        case 'left':
-                            this.position.left = pm_left+'px'
-                            break;
-                        case 'right':
-                            this.position.left = pm_right+'px'
-                            break;
-                    }
-                },10)
+                switch(this.placement) {
+                    case 'left':
+                        this.position.left = pm_left+'px'
+                        break;
+                    case 'right':
+                        this.position.left = pm_right+'px'
+                        break;
+                }
             },
             itemClick(item,bool) {
-                this.isShow = false
                 if(!bool) {
                     this.values = item.value
+                    this.isShow = false
                 } else {
                     if(this.values.includes(item.value)) {
                         this.values.splice(this.values.indexOf(item.value),1)
                     } else {
                         this.values.push(item.value)
                     }
+                }
+                this.$emit('on-change',this.values)
+            },
+            show() {
+                this.isShow = true
+                document.addEventListener('click', this.hidePanel, false)
+            },
+            hide() {
+                this.isShow = false
+                document.removeEventListener('click', this.hidePanel, false)
+            },
+            hidePanel(e) {
+                let iswrap = this.$refs.popper.contains(e.target)
+                let isoring = this.$refs.refer.contains(e.target)
+                if (!iswrap && !isoring) {
+                    this.hide()
                 }
             }
         },
@@ -122,11 +133,18 @@
         writing-mode: vertical-lr;
         display: inline-block;
         user-select: none;
+        margin-right: 11px;
+        .title {
+            padding: 1px 3px 0 0;
+        }
         .refer {
             outline: none;
             font-size: @font-size;
             height: 100%;
-            padding: 6px 3px 22px 3px;
+            padding: 6px 0 22px 0;
+            width: 34px;
+            line-height: 34px;
+            box-sizing: border-box;
             border: 1px solid #dddee1;
             text-indent: 2px;
             display: inline-block;
@@ -145,7 +163,7 @@
             .icon {
                 position: absolute;
                 bottom: 4px;
-                left: 27%;
+                left: 0;
             }
         }
         .others {
@@ -160,7 +178,7 @@
             padding: 0 6px;
             .item {
                 height: 100%;
-                padding: 10px 2px;
+                padding: 10px 6px;
                 text-align: start;
                 position: relative;
                 &:hover {
