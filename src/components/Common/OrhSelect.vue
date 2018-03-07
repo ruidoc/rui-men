@@ -3,7 +3,7 @@
         <span class="title">
             <slot></slot>
         </span>
-        <div class="refer" tabindex="1" @click="focus" ref="refer">
+        <div class="refer" @click="focus" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
             <span v-else-if="value==''" style="color:#aaa">{{placeholder}}</span>
             <span v-else-if="typeof(selected)=='string'">{{selected}}</span>
@@ -73,16 +73,17 @@
             },
             itemClick(item,bool) {
                 if(!bool) {
-                    this.values = item.value
                     this.isShow = false
+                    this.values = item.value
+                    this.$emit('on-change',item.value)
                 } else {
                     if(this.values.includes(item.value)) {
                         this.values.splice(this.values.indexOf(item.value),1)
                     } else {
                         this.values.push(item.value)
                     }
+                    this.$emit('on-change',this.values)
                 }
-                this.$emit('on-change',this.values)
             },
             show() {
                 this.isShow = true
@@ -117,10 +118,7 @@
                     this.$emit('input',val)
                 }
             }
-        },
-        watch: {
-            
-        },
+        }
     }
 </script>
 

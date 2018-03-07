@@ -12,7 +12,19 @@
         <Card title="说明">
             <div>
                 <rum-input v-model="value" style="height:150px">
-                    <span style="font-size:14px">输入姓名 :</span>
+                    <span style="font-size:14px">无验证 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value1" style="height:150px" validate="required">
+                    <span style="font-size:14px">不为空验证 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value2" style="height:150px" validate="mobile">
+                    <span style="font-size:14px">手机号验证 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value3" style="height:150px" validate="idcard">
+                    <span style="font-size:14px">身份证号验证 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value4" style="height:150px" validate="email">
+                    <span style="font-size:14px">邮箱验证 :</span>
                 </rum-input>
             </div>
             <div slot="desc">
@@ -66,15 +78,42 @@ export default {
     data() {
         return {
             value: "ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ",
+            value1: "",
+            value2: "",
+            value3: "",
+            value4: "",
             baseuse: `<rum-input v-model="val"/>`,
-            codeh1: `<div>
-    <rum-button>ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
-    <rum-button type="primary">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
-    <rum-button type="warning">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
-    <rum-button type="error">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp; &nbsp;
-    <rum-button size="small">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
-    <rum-button type="primary" size="small">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
-</div>`
+            codeh1: `<template>
+    <rum-input v-model="value" style="height:150px">
+        <span style="font-size:14px">无验证 :</span>
+    </rum-input> &nbsp;&nbsp;&nbsp;
+    <rum-input v-model="value1" style="height:150px" validate="required">
+        <span style="font-size:14px">不为空验证 :</span>
+    </rum-input> &nbsp;&nbsp;&nbsp;
+    <rum-input v-model="value2" style="height:150px" validate="mobile">
+        <span style="font-size:14px">手机号验证 :</span>
+    </rum-input> &nbsp;&nbsp;&nbsp;
+    <rum-input v-model="value3" style="height:150px" validate="idcard">
+        <span style="font-size:14px">身份证号验证 :</span>
+    </rum-input> &nbsp;&nbsp;&nbsp;
+    <rum-input v-model="value4" style="height:150px" validate="email">
+        <span style="font-size:14px">邮箱验证 :</span>
+    </rum-input>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                value: "ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ",
+                value1: "",
+                value2: "",
+                value3: "",
+                value4: "",
+            }
+        }
+    }
+<script>`
         }
     }
 }

@@ -49,7 +49,7 @@
                     case 'required':
                         if(this.value.length==0) {
                             this.error = true
-                            alert('字段不为空')
+                            this.$RumMessage('字段不为空','error')
                             this.$emit('on-validated',false)
                         } else {
                             this.$emit('on-validated',true)
@@ -59,7 +59,7 @@
                         patt = /^(13|15|18|14)[0-9]{9}$/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            alert('手机号格式错误')
+                            this.$RumMessage('手机号格式错误','error')
                             this.$emit('on-validated',false)
                         } else {
                             this.$emit('on-validated',true)
@@ -69,7 +69,7 @@
                         patt = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            console.log('身份证号错误')
+                            this.$RumMessage('身份证号错误','error')
                             this.$emit('on-validated',false)
                         } else {
                             this.$emit('on-validated',true)
@@ -79,7 +79,7 @@
                         patt = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            alert('邮箱格式错误')
+                            this.$RumMessage('邮箱格式错误','error')
                             this.$emit('on-validated',false)
                         } else {
                             this.$emit('on-validated',true)
@@ -103,6 +103,7 @@
 #inputwp {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
+    display: inline-block;
     .title {
         padding: 1px 3px 0 0;
     }
@@ -112,10 +113,10 @@
         padding: 5px 6px;
         border: 1px solid #dddee1;
         outline: none;
+        height: 100%;
         text-indent: 2px;
         display: inline-block;
         min-width: 34px;
-        height: 100%;
         border-radius: 2px;
         &.textarea {
             min-height: 70px;
