@@ -73,6 +73,12 @@ export default {
                     name: 'rum-message',
                     title: '全局提示'
                 },
+                {
+                    type: 3,
+                    link: 'rum-tabs',
+                    name: 'rum-tabs',
+                    title: '标签页'
+                },
             ]
         }
     },

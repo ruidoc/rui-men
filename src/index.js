@@ -8,6 +8,8 @@ import RumTable from './components/Common/OrhTable'
 import RumIcon from './components/Common/OrhIcon'
 import RumInput from './components/Common/OrhInput'
 import RumMessage from './components/Common/OrhMessage'
+import RumTabs from './components/Tabs/OrhTabs'
+import RumTabItem from './components/Tabs/OrhTabItem'
 
 const Rui = new Object();
 let $vModel;
@@ -24,7 +26,9 @@ Rui.install = (Vue, options)=> {
             RumModel,
             RumInput,
             RumIcon,
-            RumMessage
+            RumMessage,
+            RumTabs,
+            RumTabItem
         }
     })
     Vue.prototype.$RumModel = (config)=> {
