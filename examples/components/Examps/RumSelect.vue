@@ -14,8 +14,11 @@
                 <rum-select v-model="opp" :options="options" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px" @on-change="change">
                     <span style="font-size:14px">单选示例 :</span>
                 </rum-select>
-                <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple placement="left" @on-change="change">
+                <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple placement="left" @on-change="change" style="margin-right:40px">
                     <span style="font-size:14px">多选示例 :</span>
+                </rum-select>
+                <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple validate="required">
+                    <span style="font-size:14px">必选验证 :</span>
                 </rum-select>
             </div>
             <div slot="desc">
@@ -57,6 +60,12 @@
                 <div class="td">是否多选</div>
                 <div class="td">Boolean</div>
                 <div class="td">false</div>
+            </div>
+            <div class="tr">
+                <div class="td">validate</div>
+                <div class="td">数据验证，目前只有 <f>required</f> 表示不为空验证</div>
+                <div class="td">String</div>
+                <div class="td">无</div>
             </div>
         </Table>
 

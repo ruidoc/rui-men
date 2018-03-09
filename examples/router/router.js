@@ -36,6 +36,10 @@ const homeRouter = [
 		path: 'rum-tabs',
 		component: re=> require(['&/Examps/RumTabs.vue'],re)
 	},
+	{
+		path: 'rum-trees',
+		component: re=> require(['&/Examps/RumTrees.vue'],re)
+	},
 ]
 
 export default {

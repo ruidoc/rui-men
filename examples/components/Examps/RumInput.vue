@@ -64,11 +64,6 @@
                 <div class="td">点击按钮触发</div>
                 <div class="td">无</div>
             </div>
-            <div class="tr">
-                <div class="td">on-validated</div>
-                <div class="td">验证时触发，返回Boolean参数</div>
-                <div class="td">bool，是否验证成功</div>
-            </div>
         </Table>
     </div>
 </template>

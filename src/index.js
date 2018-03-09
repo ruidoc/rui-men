@@ -1,15 +1,16 @@
 
-import RumModel from './components/Common/OrhModel'
-import RumPoptip from './components/Common/OrhPoptip'
-import RumButton from './components/Common/OrhButton'
-import RumSelect from './components/Common/OrhSelect'
-import RumRadio from './components/Common/OrhRadio'
-import RumTable from './components/Common/OrhTable'
-import RumIcon from './components/Common/OrhIcon'
-import RumInput from './components/Common/OrhInput'
-import RumMessage from './components/Common/OrhMessage'
-import RumTabs from './components/Tabs/OrhTabs'
-import RumTabItem from './components/Tabs/OrhTabItem'
+import RumModel from './components/Common/Model'
+import RumPoptip from './components/Common/Poptip'
+import RumButton from './components/Common/Button'
+import RumSelect from './components/Common/Select'
+import RumRadio from './components/Common/Radio'
+import RumTable from './components/Common/Table'
+import RumIcon from './components/Common/Icon'
+import RumInput from './components/Common/Input'
+import RumMessage from './components/Common/Message'
+import RumTabs from './components/Tabs/Tabs'
+import RumTabItem from './components/Tabs/TabItem'
+import RumTrees from './components/Trees/Trees'
 
 const Rui = new Object();
 let $vModel;
@@ -28,7 +29,8 @@ Rui.install = (Vue, options)=> {
             RumIcon,
             RumMessage,
             RumTabs,
-            RumTabItem
+            RumTabItem,
+            RumTrees
         }
     })
     Vue.prototype.$RumModel = (config)=> {

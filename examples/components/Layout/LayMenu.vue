@@ -79,6 +79,12 @@ export default {
                     name: 'rum-tabs',
                     title: '标签页'
                 },
+                {
+                    type: 3,
+                    link: 'rum-trees',
+                    name: 'rum-trees',
+                    title: '树形控件'
+                },
             ]
         }
     },
