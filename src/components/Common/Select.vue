@@ -10,11 +10,11 @@
             <rum-icon type="arrow-right-b" color="#bbb" size="15" class="icon"></rum-icon>
         </div>
         <div class="others" :style="position" v-show="isShow" ref="popper">
-            <div class="item" v-if="!multiple" :class="{act:item.value==value}" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple)">
+            <div v-if="!multiple" :class="['item',{act:item.value==value},{disabled:item.disabled}]" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple,item.disabled)">
                 <span>{{item.label}}</span>
                 <rum-icon type="android-done" v-if="item.value==value" size="15" class="icon"></rum-icon>
             </div>
-            <div class="item" v-if="multiple" :class="{act:value.includes(item.value)}" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple)">
+            <div v-if="multiple" :class="['item',{act:value.includes(item.value)},{disabled:item.disabled}]" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple,item.disabled)">
                 <span>{{item.label}}</span>
                 <rum-icon type="android-done" v-if="value.includes(item.value)" size="15" class="icon"></rum-icon>
             </div>
@@ -73,7 +73,10 @@
                         break;
                 }
             },
-            itemClick(item,bool) {
+            itemClick(item,bool,disabled) {
+                if(disabled) {
+                    return false
+                }
                 if(!bool) {
                     this.isShow = false
                     this.values = item.value
@@ -208,6 +211,10 @@
                     position: absolute;
                     bottom: 10px;
                     left: 31%;
+                }
+                &.disabled {
+                    cursor: not-allowed;
+                    color: #ccc;
                 }
             }
         }

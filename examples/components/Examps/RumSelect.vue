@@ -109,7 +109,8 @@ export default {
             },
             {
                 label: 'ᠳᠰᠹᠬᠵᠳ',
-                value: 2
+                value: 2,
+                disabled: true
             },
             {
                 label: 'ᠳᠰᠹᠬᠵᠳ',
@@ -133,7 +134,8 @@ export default {
                 },
                 {
                     label: 'ᠳᠰᠹᠬᠵᠳ',
-                    value: 2
+                    value: 2,
+                    disabled: true
                 },
                 {
                     label: 'ᠳᠰᠹᠬᠵᠳ',

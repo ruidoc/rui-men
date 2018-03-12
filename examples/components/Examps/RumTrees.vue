@@ -112,7 +112,7 @@ export default {
                 },
             ],
             codeh1: `<template>
-    <rum-trees :data="data" @on-item-click="click"></rum-trees>
+    <rum-trees :data="data" @on-item-click="click" @async-load="async"></rum-trees>
 </template>
 
 <script>
@@ -158,6 +158,15 @@ export default {
     methods: {
         click(val) {
             this.$RumMessage('value：'+val)
+        },
+        async(item,calback) {
+            setTimeout(()=> {
+                calback([{
+                    value: 7,
+                    title: 'ᠪᠼᠰᠠᠼᠪᠼᠬ',
+                    children: []
+                }])
+            },1000)
         }
     }
 }
