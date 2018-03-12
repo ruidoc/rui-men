@@ -10,7 +10,7 @@ import RumInput from './components/Common/Input'
 import RumMessage from './components/Common/Message'
 import RumTabs from './components/Tabs/Tabs'
 import RumTabItem from './components/Tabs/TabItem'
-import RumTrees from './components/Trees/Trees'
+import RumTrees from './components/Trees/Tree'
 
 const Rui = new Object();
 let $vModel;

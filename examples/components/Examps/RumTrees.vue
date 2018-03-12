@@ -11,7 +11,7 @@
         <Par type="h2">代码演示</Par>
         <Card title="提示">
             <div>
-                <rum-trees :data="data" @on-item-click="click"></rum-trees>
+                <rum-trees :data="data" @on-item-click="click" @async-load="async"></rum-trees>
             </div>
             <div slot="desc">
                 <div><f>children</f> 不存在时不显示小三角图标</div>
@@ -80,6 +80,22 @@ export default {
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            value: 2,
+                            title: 'ᠳᠬᠬᠵᠰᠳ',
+                            children: [
+                                {
+                                    value: 3,
+                                    title: 'ᠪᠬᠹᠵᠳᠰᠳᠵᠬᠤ',
+                                    children: [
+                                        {
+                                            value: 4,
+                                            title: 'ᠳᠬᠬᠵᠰᠳ'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -90,6 +106,7 @@ export default {
                         {
                             value: 6,
                             title: 'ᠳᠬᠬᠵᠰ',
+                            children: []
                         }
                     ]
                 },
@@ -150,6 +167,15 @@ export default {
     methods: {
         click(val) {
             this.$RumMessage('value：'+val)
+        },
+        async(item,calback) {
+            setTimeout(()=> {
+                calback([{
+                    value: 7,
+                    title: 'ᠪᠼᠰᠠᠼᠪᠼᠬ',
+                    children: []
+                }])
+            },1000)
         }
     }
 }
