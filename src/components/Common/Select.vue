@@ -3,7 +3,7 @@
         <span class="title">
             <slot></slot>
         </span>
-        <div :class="['refer',{error}]" @click="focus" ref="refer">
+        <div :class="['refer',{error},{disabled}]" @click="focus(disabled)" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
             <span v-else-if="value==''" style="color:#aaa">{{placeholder}}</span>
             <span v-else-if="typeof(selected)=='string'">{{selected}}</span>
@@ -54,10 +54,17 @@
                 type: Boolean,
                 default: false
             },
-            validate: String
+            validate: String,
+            disabled: {
+                type: Boolean,
+                default: false
+            }
         },
         methods: {
-            focus() {
+            focus(bool) {
+                if(bool) {
+                    return false
+                }
                 this.changePosition(this.$refs.refer)
                 this.isShow ? this.hide() : this.show()
             },
@@ -170,6 +177,10 @@
             position: relative;
             border-radius: 2px;
             min-height: 120px;
+            &.disabled {
+                background: #f0f0f0;
+                cursor: not-allowed;
+            }
             &:empty::before {  
                 color: #aaa;  
                 content:attr(placeholder);

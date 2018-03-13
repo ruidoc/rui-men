@@ -1,11 +1,11 @@
 <template>
     <div id="tables">
         <div class="handel">
-            <rum-button @on-click="add">
+            <rum-button @on-click="onadd" v-if="add">
                 <rum-icon class="icon" type="plus"></rum-icon>
                 <span>ᠰᠢᠨ᠎ᠡ ᠪᠡᠷ ᠨᠡᠮᠡᠬᠦ</span>
             </rum-button> &nbsp;
-            <rum-button @on-click="del">
+            <rum-button @on-click="ondel" v-if="del">
                 <rum-icon class="icon" type="trash-b"></rum-icon>
                 <span>ᠤᠰᠠᠳᠬᠠᠬᠤ</span>
             </rum-button> &nbsp;
@@ -36,6 +36,14 @@
             }
         },
         props: {
+            add: {
+                type: Boolean,
+                default: false
+            },
+            del: {
+                type: Boolean,
+                default: false
+            },
             columns: {
                 type: Array,
                 required: true
@@ -46,10 +54,10 @@
             }
         },
         methods: {
-            add() {
+            onadd() {
                 this.$emit('on-add')
             },
-            del() {
+            ondel() {
                 this.$emit('on-del')
             }
         },

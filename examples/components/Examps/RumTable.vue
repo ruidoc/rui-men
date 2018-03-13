@@ -11,7 +11,7 @@
         <Par type="h2">代码演示</Par>
         <Card title="参数说明">
             <div ref="div">
-                <rum-table :columns="columns" :data="data" @on-add="add" @on-del="del">
+                <rum-table :columns="columns" :data="data" add del @on-add="add" @on-del="del">
                     <div v-for="(item,ind) in data" :key="ind" :slot="`hd${ind}`">
                         <rum-button size="small" type="primary">ᠳᠪᠬᠹ</rum-button>
                         <rum-button size="small" type="success">ᠳᠪᠬᠹ</rum-button>
@@ -28,6 +28,18 @@
         <br>
         <Par type="h2">Props</Par>
         <Table :titles="['名称|2','说明','类型|2','默认值|2']">
+            <div class="tr">
+                <div class="td">add</div>
+                <div class="td">是否显示添加按钮</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
+            <div class="tr">
+                <div class="td">del</div>
+                <div class="td">是否显示删除按钮</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
             <div class="tr">
                 <div class="td">columns</div>
                 <div class="td">表头数据，参数下面具体说明</div>

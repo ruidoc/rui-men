@@ -20,6 +20,9 @@
                 <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple validate="required">
                     <span style="font-size:14px">必选验证 :</span>
                 </rum-select>
+                <rum-select v-model="opp" :options="options" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px" @on-change="change" disabled>
+                    <span style="font-size:14px">禁用示例 :</span>
+                </rum-select>
             </div>
             <div slot="desc">
                 <p><f>multiple</f> 指定输入框类型为多选。</p>
