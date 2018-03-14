@@ -11,8 +11,8 @@
         <Par type="h2">代码演示</Par>
         <Card title="注意">
             <div>
-                <rum-tabs v-model="curtab" style="height:300px">
-                    <rum-tab-item name="name" label="ᠳᠰᠵᠬᠹᠠ">
+                <rum-tabs v-model="curtab" style="height:300px" cover>
+                    <rum-tab-item name="name" label="ᠳᠰᠵᠬᠹᠠ" cover>
                         <p>ᠰᠳᠬᠼᠪᠰᠠᠳᠪᠼᠠᠵᠺᠼᠪᠰ</p>
                         <p>ᠪᠺᠼᠪᠺᠠᠰᠪᠼᠠᠰᠪᠼᠺ</p>
                     </rum-tab-item>
@@ -39,6 +39,12 @@
                 <div class="td">String</div>
                 <div class="td"><f>必填</f></div>
             </div>
+            <div class="tr">
+                <div class="td">cover</div>
+                <div class="td"> 设置组件宽度为 <f>100%</f> ，默认自适应内容宽度 </div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
         </Table>
 
         <br>
@@ -56,6 +62,12 @@
                 <div class="td">String</div>
                 <div class="td"><f>必填</f></div>
             </div>
+            <div class="tr">
+                <div class="td">cover</div>
+                <div class="td"> 设置组件宽度为 <f>100%</f> ，默认自适应内容宽度 </div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
         </Table>
     </div>
 </template>
@@ -68,8 +80,8 @@ export default {
     <rum-tab-item name="name" label="ᠰᠬᠳᠼᠬᠰᠪ">ᠠᠪᠰᠳᠬᠪᠠ</rum-tab-item>
 </rum-tabs>`,
             curtab: 'name1',
-            codeh1: `<rum-tabs v-model="curtab" style="height:300px">
-    <rum-tab-item name="name" label="ᠳᠰᠵᠬᠹᠠ">
+            codeh1: `<rum-tabs v-model="curtab" style="height:300px" cover>
+    <rum-tab-item name="name" label="ᠳᠰᠵᠬᠹᠠ" cover>
         <p>ᠰᠳᠬᠼᠪᠰᠠᠳᠪᠼᠠᠵᠺᠼᠪᠰ</p>
         <p>ᠪᠺᠼᠪᠺᠠᠰᠪᠼᠠᠰᠪᠼᠺ</p>
     </rum-tab-item>

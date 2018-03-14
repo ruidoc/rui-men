@@ -1,7 +1,7 @@
 <template>
     <div :class="['tabitem',{active}]">
         <span class="title" @click="change">{{label}}</span>
-        <div class="bodys" v-show="active" ref="bodys">
+        <div :class="['bodys',{cover}]" v-show="active" ref="bodys">
             <slot></slot>
         </div>
     </div>
@@ -11,7 +11,11 @@
 export default {
     props: {
         label: String,
-        name: String
+        name: String,
+        cover: {
+            type: Boolean,
+            default: false
+        }
     },
     methods: {
         change() {
@@ -62,7 +66,10 @@ export default {
         position: absolute;
         top: 0; left: 41px; bottom: 0;
         box-sizing: border-box;
-        padding: 2px 12px;
+        padding: 2px 0 2px 12px;
+        &.cover {
+            right: 0;
+        }
     }
 }
 </style>

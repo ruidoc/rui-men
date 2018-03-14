@@ -52,6 +52,21 @@
                 <div class="td">无</div>
             </div>
         </Table>
+
+        <br>
+        <Par type="h2">Events</Par>
+        <Table :titles="['事件名|3','说明','参数|3']">
+            <div class="tr">
+                <div class="td">on-item-click</div>
+                <div class="td">点击节点触发</div>
+                <div class="td">item，当前行数据</div>
+            </div>
+            <div class="tr">
+                <div class="td">async-load</div>
+                <div class="td">异步加载子节点，当对象中有 <f>children</f> 并且值为空数组时触发</div>
+                <div class="td">item，calback；当前行数据和回调函数，回调函数的参数是要异步加载的数据</div>
+            </div>
+        </Table>
     </div>
 </template>
 
@@ -156,8 +171,8 @@ export default {
         }
     },
     methods: {
-        click(val) {
-            this.$RumMessage('value：'+val)
+        click(item) {
+            this.$RumMessage('value：'+item.value)
         },
         async(item,calback) {
             setTimeout(()=> {
@@ -174,8 +189,8 @@ export default {
         }
     },
     methods: {
-        click(val) {
-            this.$RumMessage('value：'+val)
+        click(item) {
+            this.$RumMessage('value：'+item.value)
         },
         async(item,calback) {
             setTimeout(()=> {
