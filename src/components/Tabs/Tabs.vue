@@ -28,7 +28,7 @@ export default {
             }
         },
         width() {
-            return cover?this.bodyWidth+50+'px':'100%'
+            return !this.cover?this.bodyWidth+50+'px':'100%'
         }
     },
     mounted() {

@@ -11,7 +11,7 @@
             </rum-button> &nbsp;
             <slot name="option"></slot>
             <span class="reload" v-if="reload" @click="toReload">
-                <rum-icon class="icon" type="loop"></rum-icon>
+                <rum-icon class="icon" type="loop" size="22"></rum-icon>
             </span>
         </div>
         <div class="table">
@@ -88,7 +88,9 @@
             position: relative;
             .reload {
                 position: absolute;
+                left: 25%;
                 bottom: 6px;
+                cursor: pointer;
             }
         }
         .table {

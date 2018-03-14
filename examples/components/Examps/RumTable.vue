@@ -11,7 +11,7 @@
         <Par type="h2">代码演示</Par>
         <Card title="参数说明">
             <div ref="div">
-                <rum-table :columns="columns" :data="data" add del @on-add="add" @on-del="del">
+                <rum-table :columns="columns" :data="data" add del @on-add="add" @on-del="del" reload @on-reload="reload">
                     <div v-for="(item,ind) in data" :key="ind" :slot="`hd${ind}`">
                         <rum-button size="small" type="primary">ᠳᠪᠬᠹ</rum-button>
                         <rum-button size="small" type="success">ᠳᠪᠬᠹ</rum-button>
@@ -222,6 +222,9 @@ export default {
         },
         del() {
             alert('del')
+        },
+        reload() {
+            alert('reload')
         }
     }
 }
