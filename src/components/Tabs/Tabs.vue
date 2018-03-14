@@ -12,7 +12,11 @@ export default {
         }
     },
     props: {
-        value: String
+        value: String,
+        cover: {
+            type: Boolean,
+            default: false
+        }
     },
     computed: {
         active: {
@@ -24,7 +28,7 @@ export default {
             }
         },
         width() {
-            return this.bodyWidth+50+'px'
+            return cover?this.bodyWidth+50+'px':'100%'
         }
     },
     mounted() {

@@ -10,11 +10,15 @@
             <rum-icon type="arrow-right-b" color="#bbb" size="15" class="icon"></rum-icon>
         </div>
         <div class="others" :style="position" v-show="isShow" ref="popper">
-            <div v-if="!multiple" :class="['item',{act:item.value==value},{disabled:item.disabled}]" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple,item.disabled)">
-                <span>{{item.label}}</span>
-                <rum-icon type="android-done" v-if="item.value==value" size="15" class="icon"></rum-icon>
+            <div v-if="!multiple" 
+                :class="['item',{act:item.value==value},{disabled:item.disabled}]" 
+                v-for="(item,index) in options" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
+                    <span>{{item.label}}</span>
+                    <rum-icon type="android-done" v-if="item.value==value" size="15" class="icon"></rum-icon>
             </div>
-            <div v-if="multiple" :class="['item',{act:value.includes(item.value)},{disabled:item.disabled}]" v-for="(item,index) in options" :key="index" @click="itemClick(item,multiple,item.disabled)">
+            <div v-if="multiple" 
+            :class="['item',{act:value.includes(item.value)},{disabled:item.disabled}]" 
+            v-for="(item,index) in options" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
                 <span>{{item.label}}</span>
                 <rum-icon type="android-done" v-if="value.includes(item.value)" size="15" class="icon"></rum-icon>
             </div>
@@ -31,7 +35,8 @@
                     left: 0
                 },
                 isShow: false,
-                error: false
+                error: false,
+                cpval: ''
             }
         },
         props: {
@@ -87,14 +92,12 @@
                 if(!bool) {
                     this.isShow = false
                     this.values = item.value
-                    this.$emit('on-change',item.value)
                 } else {
                     if(this.values.includes(item.value)) {
                         this.values.splice(this.values.indexOf(item.value),1)
                     } else {
                         this.values.push(item.value)
                     }
-                    this.$emit('on-change',this.values)
                 }
             },
             show() {
@@ -143,6 +146,9 @@
                         this.$emit('on-validated',true)
                     }
                 }
+            },
+            value() {
+                this.$emit('on-change',val)
             }
         }
     }

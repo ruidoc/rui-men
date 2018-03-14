@@ -88,7 +88,10 @@ export default {
                     <rum-input value={self.text} onInput={(val)=>{
                         self.text = val
                     }}>输入框内容是：{self.text}</rum-input>
-                )
+                ),
+                onOk() {
+                    self.$RumMessage('ok事件触发')
+                }
             })
         }
     }
@@ -104,7 +107,10 @@ export default {
                     <rum-input value={self.text} onInput={(val)=>{
                         self.text = val
                     }}>输入框内容是：{self.text}</rum-input>
-                )
+                ),
+                onOk() {
+                    self.$RumMessage('ok事件触发')
+                }
             })
         }
     }

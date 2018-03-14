@@ -12,7 +12,7 @@
             </div>
             <div class="content"><slot></slot></div>
             <div class="buttom" v-if="!hideBottom && !confirm">
-                <rum-button type="primary">ᠭᠤᠵᠬᠤ</rum-button>
+                <rum-button type="primary" @on-click="ok">ᠭᠤᠵᠬᠤ</rum-button>
                 &nbsp;
                 <rum-button @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</rum-button>
             </div>
@@ -50,7 +50,9 @@ export default {
         }
     },
     methods: {
-        
+        ok() {
+            this.$emit('ok')
+        }
     },
     computed: {
         isShow: {

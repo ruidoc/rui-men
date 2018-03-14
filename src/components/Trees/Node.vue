@@ -5,7 +5,7 @@
                 <rum-icon v-if="item.children && !loding" type="arrow-down-b" color="#80848f" size="17" class="icon"  @click.native="toRotate"></rum-icon>
                 <rum-icon v-if="loding" type="load-d" color="#80848f" size="17" class="icon"></rum-icon>
             </span>
-            <span class="can_click_title" @click="itemClick(item.value,$event)">{{item.title}}</span>
+            <span class="can_click_title" @click="itemClick(item,$event)">{{item.title}}</span>
         </div>
         <rum-trees v-if="item.children && item.children.length>0" :data="item.children" :sub="true" @on-item-click="click" @async-load="async"></rum-trees>
     </div>
@@ -97,5 +97,4 @@ export default {
         background: #e6f7ff;
     }
 }
-
 </style>

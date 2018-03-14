@@ -36,13 +36,16 @@ Rui.install = (Vue, options)=> {
     Vue.prototype.$RumModel = (config)=> {
         let Model = Vue.extend({
             data() {
-                return {show:false}
+                return {show: false}
             },
             render() {
                 return (
                     <RumModel value={this.show} title={config.title} 
                         onInput={(val)=> {
                             this.show = val
+                        }} onOk={()=>{
+                            config.onOk()
+                            this.show = false
                         }}>
                         {config.render()}
                     </RumModel>
@@ -50,9 +53,8 @@ Rui.install = (Vue, options)=> {
             }
         })
         if(!$vModel) {
-            $vModel = new Model({
-                el: document.createElement('div')
-            })
+            $vModel = new Model()
+            $vModel.$mount()
             document.body.appendChild($vModel.$el)
             $vModel.show = true
         } else {

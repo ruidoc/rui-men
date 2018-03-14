@@ -10,6 +10,9 @@
                 <span>ᠤᠰᠠᠳᠬᠠᠬᠤ</span>
             </rum-button> &nbsp;
             <slot name="option"></slot>
+            <span class="reload" v-if="reload" @click="toReload">
+                <rum-icon class="icon" type="loop"></rum-icon>
+            </span>
         </div>
         <div class="table">
             <div class="head">
@@ -44,6 +47,10 @@
                 type: Boolean,
                 default: false
             },
+            reload: {
+                type: Boolean,
+                default: false
+            },
             columns: {
                 type: Array,
                 required: true
@@ -59,6 +66,9 @@
             },
             ondel() {
                 this.$emit('on-del')
+            },
+            toReload() {
+                this.$emit('on-reload')
             }
         },
         computed: {
@@ -75,6 +85,11 @@
         font-family: 'OrhonChaganTig';
         .handel {
             padding: 0 8px;
+            position: relative;
+            .reload {
+                position: absolute;
+                bottom: 6px;
+            }
         }
         .table {
             border: 1px solid #dddee1;
