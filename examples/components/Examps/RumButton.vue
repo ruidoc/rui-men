@@ -13,6 +13,7 @@
             <div>
                 <rum-button>ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
                 <rum-button type="primary">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
+                <rum-button type="success">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
                 <rum-button type="warning">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
                 <rum-button type="error">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp; &nbsp;
                 <rum-button size="small">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
@@ -29,7 +30,7 @@
         <Table :titles="['名称|2','说明','类型|2','默认值|2']">
             <div class="tr">
                 <div class="td">type</div>
-                <div class="td">按钮类型，有 <f>default</f>，<f>primary</f>，<f>warning</f>，<f>error</f> 四种</div>
+                <div class="td">按钮类型，有 <f>default</f>，<f>primary</f>，<f>success</f>，<f>warning</f>，<f>error</f> 五种</div>
                 <div class="td">String</div>
                 <div class="td">default</div>
             </div>

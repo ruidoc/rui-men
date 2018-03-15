@@ -147,7 +147,7 @@
                     }
                 }
             },
-            value() {
+            values(val) {
                 this.$emit('on-change',val)
             }
         }
