@@ -17,7 +17,7 @@
                 <rum-button @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</rum-button>
             </div>
             <div class="cofbutton" v-if="confirm">
-                <rum-button type="primary" @on-click="isShow=false">ᠤᠬᠵᠤᠪᠪ</rum-button>
+                <rum-button type="primary" @on-click="took">ᠤᠬᠵᠤᠪᠪ</rum-button>
             </div>
         </div>
     </div>
@@ -51,6 +51,10 @@ export default {
     },
     methods: {
         ok() {
+            this.$emit('ok')
+        },
+        took() {
+            this.isShow = false
             this.$emit('ok')
         }
     },
