@@ -20,7 +20,7 @@
                 :style="{'height':item.height?item.height+'px':'auto','flex':item.height?false:1}" 
                 class="col">{{item.title}}</div>
             </div>
-            <div class="body" v-for="(item,index) in data" :key="index">
+            <div class="body" v-for="(item,index) in data" :key="index" @click="rowclick(item)">
                 <div v-for="(sitem,ind) in columns" :key="ind" :style="{'height':sitem.height?sitem.height+'px':'auto','flex':sitem.height?false:1}" class="col">
                     <span v-if="!sitem.slot" v-html="item[sitem.key]"/>
                     <slot :name="sitem.slot+index"></slot>
@@ -69,6 +69,9 @@
             },
             toReload() {
                 this.$emit('on-reload')
+            },
+            rowclick(data) {
+                this.$emit('on-row-click',data)
             }
         },
         computed: {

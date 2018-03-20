@@ -11,7 +11,7 @@
         <Par type="h2">代码演示</Par>
         <Card title="参数说明">
             <div ref="div">
-                <rum-table :columns="columns" :data="data" add del @on-add="add" @on-del="del" reload @on-reload="reload">
+                <rum-table :columns="columns" :data="data" add del @on-add="add" @on-del="del" reload @on-reload="reload" @on-row-click="rowclick">
                     <div v-for="(item,ind) in data" :key="ind" :slot="`hd${ind}`">
                         <rum-button size="small" type="primary">ᠳᠪᠬᠹ</rum-button>
                         <rum-button size="small" type="success">ᠳᠪᠬᠹ</rum-button>
@@ -66,6 +66,11 @@
                 <div class="td">on-del</div>
                 <div class="td">点击删除按钮触发</div>
                 <div class="td">无</div>
+            </div>
+            <div class="tr">
+                <div class="td">on-row-click</div>
+                <div class="td">点击单行触发</div>
+                <div class="td">data，当前行数据</div>
             </div>
         </Table>
 
@@ -225,6 +230,9 @@ export default {
         },
         reload() {
             alert('reload')
+        },
+        rowclick(data) {
+            console.log(data)
         }
     }
 }
