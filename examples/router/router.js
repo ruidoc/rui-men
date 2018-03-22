@@ -40,6 +40,14 @@ const homeRouter = [
 		path: 'rum-trees',
 		component: re=> require(['&/Examps/RumTrees.vue'],re)
 	},
+	{
+		path: 'rum-time',
+		component: re=> require(['&/Examps/RumTime.vue'],re)
+	},
+	{
+		path: 'rum-radio',
+		component: re=> require(['&/Examps/RumRadio.vue'],re)
+	},
 ]
 
 export default {

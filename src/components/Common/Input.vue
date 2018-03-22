@@ -1,9 +1,9 @@
 <template>
     <div id="inputwp">
-         <span class="title">
+        <span class="title">
             <slot></slot>
         </span>
-        <div class="myinput" ref="input" :class="[type,{error}]" contenteditable :placeholder="placeholder" @focus="isLocked=true" @blur="blur(validate)" @input="changeText" @keyup.delete="del">{{vals}}</div>
+        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error}]" :placeholder="placeholder" @blur="blur(validate)"/>
     </div>
 </template>
 
@@ -11,8 +11,6 @@
     export default {
         data() {
             return {
-                vals: this.value,
-                isLocked: false,
                 error: false
             }
         },
@@ -26,22 +24,11 @@
             validate: String
         },
         methods: {
-            changeText() {
-                let html = this.$refs.input.innerHTML.toString()
-                this.$emit('input',html);
-            },
-            del() {
-                let dom = this.$refs.input.getElementsByTagName('br')
-                if(dom.length==1) {
-                    this.$refs.input.removeChild(dom[0])
-                }
-            },
             blur(valid) {
                 if(valid) {
                     this.error = false
                     this.validated()
                 }
-                this.isLocked = false
             },
             validated() {
                 let patt = ''
@@ -88,13 +75,16 @@
                 }
             }
         },
-        watch: {
-            value(){
-                if (!this.isLocked || !this.vals) {
-                    this.vals = this.value;
+        computed: {
+            vals: {
+                get() {
+                    return this.value
+                },
+                set(val) {
+                    this.$emit('input',val)
                 }
             }
-        },
+        }
     }
 </script>
 
@@ -108,14 +98,14 @@
         padding: 1px 3px 0 0;
     }
     .myinput {
+        font-family: 'OrhonChaganTig';
+        display: table-cell;
         font-size: @font-size;
-        line-height: 20px;
         padding: 5px 6px;
         border: 1px solid #dddee1;
         outline: none;
         height: 100%;
         text-indent: 2px;
-        display: inline-block;
         min-width: 34px;
         border-radius: 2px;
         &.textarea {
@@ -123,10 +113,6 @@
         }
         &.error {
             border-color: #ed3f14;
-        }
-        &:empty::before {  
-            color: #aaa;  
-            content:attr(placeholder);
         }
         &:focus {
             border-color: @primary-color;

@@ -51,7 +51,7 @@ export default {
                 },
                 {
                     type: 3,
-                    link: 'about',
+                    link: 'rum-radio',
                     name: 'rum-radio',
                     title: '单选'
                 },
@@ -84,6 +84,12 @@ export default {
                     link: 'rum-trees',
                     name: 'rum-trees',
                     title: '树形控件'
+                },
+                {
+                    type: 3,
+                    link: 'rum-time',
+                    name: 'rum-time',
+                    title: '时间日期'
                 },
             ]
         }
