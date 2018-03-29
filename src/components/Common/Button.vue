@@ -1,5 +1,6 @@
 <template>
     <div id="button" :class="[size,type]" @click="onClick">
+        <rum-icon v-if="icon" :type="icon"></rum-icon>
         <slot></slot>
     </div>
 </template>
@@ -19,6 +20,10 @@ export default {
         type: {
             type: String,
             default: 'def-type'
+        },
+        icon: {
+            type: [Boolean, String],
+            default: false
         }
     },
     methods: {
@@ -44,6 +49,7 @@ export default {
     font-size: @font-size;
     border-radius: 2px;
     color: #fff;
+    position: relative;
     &:hover {
         opacity: 0.85;
     }

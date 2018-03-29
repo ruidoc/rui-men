@@ -91,6 +91,12 @@ export default {
                     name: 'rum-time',
                     title: '时间日期'
                 },
+                {
+                    type: 3,
+                    link: 'rum-upload',
+                    name: 'rum-upload',
+                    title: '文件上传'
+                },
             ]
         }
     },

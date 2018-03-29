@@ -12,6 +12,7 @@ import RumTabs from './components/Tabs/Tabs'
 import RumTabItem from './components/Tabs/TabItem'
 import RumTrees from './components/Trees/Tree'
 import RumTime from './components/Common/Time'
+import RumUpload from './components/Common/Upload'
 
 // import { Datetime } from 'vue-datetime';
 // import 'vue-datetime/dist/vue-datetime.css'
@@ -35,7 +36,8 @@ Rui.install = (Vue, options)=> {
             RumTabs,
             RumTabItem,
             RumTrees,
-            RumTime
+            RumTime,
+            RumUpload
         }
     })
     Vue.prototype.$RumModel = (config)=> {

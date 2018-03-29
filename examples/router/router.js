@@ -48,6 +48,10 @@ const homeRouter = [
 		path: 'rum-radio',
 		component: re=> require(['&/Examps/RumRadio.vue'],re)
 	},
+	{
+		path: 'rum-upload',
+		component: re=> require(['&/Examps/RumUpload.vue'],re)
+	},
 ]
 
 export default {

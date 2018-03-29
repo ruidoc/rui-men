@@ -61,5 +61,6 @@
 <style>
     #rumtime {
         display: inline-block;
+        overflow: hidden;
     }
 </style>
