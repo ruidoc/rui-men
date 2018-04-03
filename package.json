@@ -3,11 +3,12 @@
   "version": "1.0.31",
   "description": "maybe the first mongolian language UI framework base on vue.js",
   "author": "ruidoc",
-  "main": "src/index.js",
+  "main": "lib/rui-men.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "dist": "npx webpack --config build/webpack.dist.conf.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -57,7 +58,7 @@
     "webpack-merge": "^4.1.0"
   },
   "files": [
-    "dist",
+    "lib",
     "src"
   ],
   "engines": {

@@ -52,6 +52,10 @@ const homeRouter = [
 		path: 'rum-upload',
 		component: re=> require(['&/Examps/RumUpload.vue'],re)
 	},
+	{
+		path: 'rum-checkbox',
+		component: re=> require(['&/Examps/RumCheckBox.vue'],re)
+	},
 ]
 
 export default {

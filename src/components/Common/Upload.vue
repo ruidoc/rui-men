@@ -1,7 +1,7 @@
 <template>
     <div class="upload">
         <rum-button icon="ios-cloud-upload">
-            ᠳᠹᠶᠠᠰ ᠳᠤᠤᠪᠰᠳ
+            ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠢᠶᠠᠨ ᠰᠣᠩᠭᠣᠬᠣ
             <input @change="fileChange" type="file" multiple class="input"/>
         </rum-button>
     </div>

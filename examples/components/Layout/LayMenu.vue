@@ -97,6 +97,12 @@ export default {
                     name: 'rum-upload',
                     title: '文件上传'
                 },
+                {
+                    type: 3,
+                    link: 'rum-checkbox',
+                    name: 'rum-checkbox',
+                    title: '多选框'
+                },
             ]
         }
     },
@@ -123,6 +129,7 @@ export default {
         display: inline-block;
         height: 100%;
         overflow: auto;
+        padding-bottom: 20px;
         .li {
             height: 40px;
             line-height: 40px;
