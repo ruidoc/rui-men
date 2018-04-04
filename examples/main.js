@@ -15,6 +15,9 @@ Vue.use(VueHighlightJS)
 import plug from './plugins'
 Vue.use(plug)
 
+import ruis from '../lib/rui-men'
+Vue.use(ruis)
+
 Vue.config.productionTip = false
 
 new Vue({

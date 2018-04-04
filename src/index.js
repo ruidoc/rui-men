@@ -96,4 +96,5 @@ Rui.install = (Vue, options)=> {
     }
 }
 
-export default Rui;
+// module.exports.default = module.exports = Rui
+module.exports.default = module.exports = Rui
