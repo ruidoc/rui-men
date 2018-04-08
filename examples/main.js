@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import rui from '^/index'
-import '^/styles/rui-base.less'
+import rui from '../lib/main'
+import '../lib/main.css'
 Vue.use(rui)
 
 import VueHighlightJS from 'vue-highlightjs'
@@ -14,9 +14,6 @@ Vue.use(VueHighlightJS)
 
 import plug from './plugins'
 Vue.use(plug)
-
-import ruis from '../lib/rui-men'
-Vue.use(ruis)
 
 Vue.config.productionTip = false
 

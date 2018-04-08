@@ -21,6 +21,11 @@ export default {
                     title: '快速上手'
                 },
                 {
+                    type: 1,
+                    link: 'testing',
+                    title: '测试组件'
+                },
+                {
                     type: 2,
                     link: '',
                     title: '组件'

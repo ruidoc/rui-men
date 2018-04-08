@@ -9,6 +9,10 @@ const homeRouter = [
 		component: re=> require(['&/Introduce/Starting.vue'],re)
 	},
 	{
+		path: 'testing',
+		component: re=> require(['&/Introduce/Testing.vue'],re)
+	},
+	{
 		path: 'rum-input',
 		component: re=> require(['&/Examps/RumInput.vue'],re)
 	},

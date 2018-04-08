@@ -15,9 +15,6 @@ import RumTime from './components/Common/Time'
 import RumUpload from './components/Common/Upload'
 import RumCheckBox from './components/Common/CheckBox'
 
-// import { Datetime } from 'vue-datetime';
-// import 'vue-datetime/dist/vue-datetime.css'
-
 const Rui = new Object();
 let $vModel;
 let $vMessage;
@@ -96,5 +93,4 @@ Rui.install = (Vue, options)=> {
     }
 }
 
-// module.exports.default = module.exports = Rui
 module.exports.default = module.exports = Rui
