@@ -3,7 +3,7 @@
   "version": "1.0.33",
   "description": "maybe the first mongolian language UI framework base on vue.js",
   "author": "ruidoc",
-  "main": "lib/rui-men.js",
+  "main": "lib/main.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
