@@ -19,6 +19,8 @@ const Rui = new Object();
 let $vModel;
 let $vMessage;
 
+// import './styles/rui-base.css'
+
 Rui.install = (Vue, options)=> {
     Vue.mixin({
         components: {
@@ -93,4 +95,4 @@ Rui.install = (Vue, options)=> {
     }
 }
 
-module.exports.default = module.exports = Rui
+module.exports = Rui

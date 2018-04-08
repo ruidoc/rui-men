@@ -82,53 +82,53 @@
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-    #tables {
-        writing-mode: vertical-lr;
-        font-size: @font-size;
-        font-family: 'OrhonChaganTig';
-        .handel {
-            padding: 0 8px;
-            position: relative;
-            .reload {
-                position: absolute;
-                left: 25%;
-                bottom: 6px;
-                cursor: pointer;
+#tables {
+    writing-mode: vertical-lr;
+    font-size: @font-size;
+    font-family: 'OrhonChaganTig';
+    .handel {
+        padding: 0 8px;
+        position: relative;
+        .reload {
+            position: absolute;
+            left: 25%;
+            bottom: 6px;
+            cursor: pointer;
+        }
+    }
+    .table {
+        border: 1px solid #dddee1;
+        .head {
+            padding: 11px 7px;
+            font-weight: bold;
+            background: #ecf3fd;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .col {
+                padding: 6px 0;
+                display: inline-block;
+                text-align: center;
+            }
+            .ivu-checkbox-wrapper {
+                margin: 0;
             }
         }
-        .table {
-            border: 1px solid #dddee1;
-            .head {
-                padding: 11px 7px;
-                font-weight: bold;
-                background: #ecf3fd;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                .col {
-                    padding: 6px 0;
-                    display: inline-block;
-                    text-align: center;
-                }
-                .ivu-checkbox-wrapper {
-                    margin: 0;
-                }
+        .body {
+            padding: 11px 7px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-left: 1px solid #e9eaec;
+            .col {
+                padding: 6px 0;
+                display: inline-block;
+                text-align: center;
             }
-            .body {
-                padding: 11px 7px;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                border-left: 1px solid #e9eaec;
-                .col {
-                    padding: 6px 0;
-                    display: inline-block;
-                    text-align: center;
-                }
-                .ivu-checkbox-wrapper {
-                    margin: 0;
-                }
+            .ivu-checkbox-wrapper {
+                margin: 0;
             }
         }
     }
+}
 </style>

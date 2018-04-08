@@ -6,6 +6,8 @@
 
 <script>
 
+import RumNode from './Node.vue'
+
 export default {
     name: 'trees',
     props: {
@@ -24,7 +26,7 @@ export default {
         }
     },
     components: {
-        RumNode: re=> require(['./Node.vue'],re)
+        RumNode
     }
 }
 </script>

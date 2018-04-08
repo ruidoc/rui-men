@@ -1,6 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+const lessParse = require('./less-parse.js')
 function resolve(dir) {
 	return path.join(__dirname, '..', dir)
 }
@@ -33,8 +33,13 @@ module.exports = {
 			},
 			{
 				test: /\.less$/,
-        		use: ['css-loader','less-loader'],
-        		include: [resolve('src')]
+        		use: ['style-loader','css-loader','less-loader'],
+				include: [resolve('src')]
+			},
+			{
+				test: /\.css$/,
+        		loader: 'css-loader',
+				include: [resolve('src')]
 			},
 			{
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
