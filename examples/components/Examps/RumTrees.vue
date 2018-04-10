@@ -40,10 +40,16 @@
                 <div class="td"><f>必填</f></div>
             </div>
             <div class="tr">
-                <div class="td">label</div>
+                <div class="td">title</div>
                 <div class="td"> 当前树节点的标题 </div>
                 <div class="td">String</div>
                 <div class="td"><f>必填</f></div>
+            </div>
+            <div class="tr">
+                <div class="td">selected</div>
+                <div class="td"> 选中当前节点 </div>
+                <div class="td">Boolean</div>
+                <div class="td">无</div>
             </div>
             <div class="tr">
                 <div class="td">children</div>
@@ -79,6 +85,7 @@ export default {
                 {
                     value: 1,
                     title: 'ᠳᠬᠬᠵᠰᠳᠹᠰᠤᠵᠰᠳᠤ',
+                    selected: true,
                     children: [
                         {
                             value: 2,
@@ -138,6 +145,7 @@ export default {
                 {
                     value: 1,
                     title: 'ᠳᠬᠬᠵᠰᠳᠹᠰᠤᠵᠰᠳᠤ',
+                    selected: true,
                     children: [
                         {
                             value: 2,
