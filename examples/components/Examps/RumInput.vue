@@ -25,6 +25,9 @@
                 </rum-input> &nbsp;&nbsp;&nbsp;
                 <rum-input v-model="value4" style="height:150px" validate="email">
                     <span style="font-size:14px">邮箱验证 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value" style="height:150px" disabled>
+                    <span style="font-size:14px">禁用 :</span>
                 </rum-input>
             </div>
             <div slot="desc">
@@ -93,6 +96,9 @@ export default {
     </rum-input> &nbsp;&nbsp;&nbsp;
     <rum-input v-model="value4" style="height:150px" validate="email">
         <span style="font-size:14px">邮箱验证 :</span>
+    </rum-input> &nbsp;&nbsp;&nbsp;
+    <rum-input v-model="value" style="height:150px" disabled>
+        <span style="font-size:14px">禁用 :</span>
     </rum-input>
 </template>
 

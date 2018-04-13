@@ -3,7 +3,7 @@
         <span class="title">
             <slot></slot>
         </span>
-        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error},{disabled}]" :placeholder="placeholder" disabled @blur="blur(validate)"/>
+        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error},{disabled}]" :placeholder="placeholder" :disabled="disabled" @blur="blur(validate)"/>
     </div>
 </template>
 

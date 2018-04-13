@@ -453,6 +453,10 @@
   display: inline-block;
   padding: 3px 6px;
 }
+#inputwp .myinput.disabled[data-v-496bdbb6] {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
 
 .message[data-v-89ea4f1a] {
   font-family: 'OrhonChaganTig';
