@@ -49,7 +49,13 @@
                 <div class="td">placeholder</div>
                 <div class="td">为空时显示内容</div>
                 <div class="td">String</div>
-                <div class="td">'ᠲᠡᠰᠲ'</div>
+                <div class="td">ᠲᠡᠰᠲ</div>
+            </div>
+            <div class="tr">
+                <div class="td">disabled</div>
+                <div class="td">是否禁用</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
             </div>
             <div class="tr">
                 <div class="td">validate</div>
