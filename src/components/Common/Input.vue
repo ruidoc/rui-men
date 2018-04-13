@@ -3,7 +3,7 @@
         <span class="title">
             <slot></slot>
         </span>
-        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error}]" :placeholder="placeholder" @blur="blur(validate)"/>
+        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error},{disabled}]" :placeholder="placeholder" disabled @blur="blur(validate)"/>
     </div>
 </template>
 
@@ -21,6 +21,10 @@
                 default: 'ᠲᠡᠰᠲ'
             },
             type: String,
+            disabled: {
+                type: Boolean,
+                default: false
+            },
             validate: String
         },
         methods: {
@@ -120,6 +124,10 @@
         &.number {
             display: inline-block;
             padding: 3px 6px;
+        }
+        &.disabled {
+            background: #f0f0f0;
+            cursor: not-allowed;
         }
     }
 }
