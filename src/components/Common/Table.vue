@@ -1,6 +1,6 @@
 <template>
     <div id="tables">
-        <div class="handel">
+        <div class="handel" v-if="!hideHandel">
             <rum-button @on-click="onadd" v-if="add">
                 <rum-icon class="icon" type="plus"></rum-icon>
                 <span>ᠰᠢᠨ᠎ᠡ ᠪᠡᠷ ᠨᠡᠮᠡᠬᠦ</span>
@@ -48,6 +48,10 @@
                 default: false
             },
             reload: {
+                type: Boolean,
+                default: false
+            },
+            hideHandel: {
                 type: Boolean,
                 default: false
             },

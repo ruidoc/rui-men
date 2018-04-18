@@ -51,6 +51,16 @@
                 <div class="td">false</div>
             </div>
         </Table>
+
+        <br>
+        <Par type="h2">Events</Par>
+        <Table :titles="['事件名|3','说明','参数|3']">
+            <div class="tr">
+                <div class="td">ok</div>
+                <div class="td">点击确认回调</div>
+                <div class="td">无</div>
+            </div>
+        </Table>
     </div>
 </template>
 
