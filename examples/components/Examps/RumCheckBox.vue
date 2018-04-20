@@ -1,6 +1,6 @@
 <template>
     <div class="button">
-        <Par type="h1">上传控件 rum-upload</Par>
+        <Par type="h1">多选框 checkbox</Par>
         <Par>文件上传组件，需要 <f>token</f> </Par>
 
         <br>
@@ -10,8 +10,9 @@
         <br>
         <Par type="h2">代码演示</Par>
         <Card title="注意">
-            <div>
-                <rum-check-box></rum-check-box>
+            <div style="text-align: start">
+                <rum-check-box v-model="checked">ᠪᠤᠼᠬᠵᠰᠳᠼᠰᠵᠬᠳᠠ</rum-check-box>
+                <rum-check-box v-model="checked2">ᠶᠣᠷᠦᠢ</rum-check-box>
             </div>
             <div slot="desc">
                 <div>在项目中使用，<f>upload_token</f> 的值为 <f> localStorage.token</f> 即可</div>
@@ -58,9 +59,8 @@ export default {
     data() {
         return {
             value: `<rum-upload :uploadToken="upload_token" :uploadUrl="upload_url"></rum-upload>`,
-            curtab: 'name1',
-            upload_url: 'http://zh.pc.api.smart.ordosmz.cn/api/user/v1/upload',
-            upload_token: localStorage.token,
+            checked: false,
+            checked2: false,
             codeh1: `<tempplate>
     <rum-upload 
         :uploadToken="upload_token" 

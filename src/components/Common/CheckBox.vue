@@ -1,12 +1,11 @@
 <template>
-    <div>
-        <input type='checkbox' class='input-checkbox' ：checked="fruitIds.length === fruits.length" @click='checkedAll()'>全选
-        <div v-for='(fruit, index) in fruits' :key="index">
-            <!--判断fruitIds是否包含当前fruit，fruitIds.indexOf(fruit.fruitId)返回包含fruit的下标, 若不包含则返回-1-->
-            <input type='checkbox' :checked="fruitIds.indexOf(fruit.fruitId)>=0" name='checkboxinput' class='input-checkbox' @click='checkedOne(fruit.id)'>
-        </div>
-        <!--默认删除按钮不能点击, 当选中某一checkbox时可以删除-->
-        <button :disabled="!fruitIds.length>0" value="Delete" @click="deleteFruits()">Delete</button>
+    <div id="rum-checkbox" @click="checked">
+        <span :class="['box',{check}]">
+            <rum-icon type="checkmark" size="10"></rum-icon>
+        </span>
+        <span style="position:relative;right:1px">
+            <slot></slot>
+        </span>
     </div>
 </template>
 
@@ -14,66 +13,55 @@
 export default {
     data() {
         return {
-            fruits: [
-                {
-                    id: "1",
-                    value: "苹果"
-                },
-                {
-                    id: "2",
-                    value: "荔枝"
-                },
-                {
-                    id: "3",
-                    value: "香蕉"
-                },
-                {
-                    id: "4",
-                    value: "火龙果"
-                }
-            ],
-            fruitIds: ["1", "3", "4"],
-            // 初始化全选按钮, 默认不选
-            isCheckedAll: false
+            
         };
     },
+    props: {
+        value: {
+            type: Boolean,
+            default: false
+        }
+    },
+    computed: {
+        check: {
+            get() {
+                return this.value
+            },
+            set(val) {
+                this.$emit('input',val)
+            }
+        }
+    },
     methods: {
-        checkedOne(fruitId) {
-            let idIndex = this.fruitIds.indexOf(fruitId);
-            if (idIndex >= 0) {
-                // 如果已经包含了该id, 则去除(单选按钮由选中变为非选中状态)
-                this.fruitIds.splice(idIndex, 1);
-            } else {
-                // 选中该checkbox
-                this.fruitIds.push(fruitId);
-            }
-        },
-        checkedAll() {
-            this.isCheckedAll = !this.isCheckedAll;
-            if (this.isCheckedAll) {
-                // 全选时
-                this.fruitIds = [];
-                this.fruits.forEach(function(fruit) {
-                    this.fruitIds.push(fruit.fruitId);
-                }, this);
-            } else {
-                this.fruitIds = [];
-            }
-        },
-        deleteFruits() {}
+        checked() {
+            this.check = !this.check
+        }
     }
 };
 </script>
 
 <style lang="less" scoped>
-.input {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+#rum-checkbox {
+    font-family: 'OrhonChaganTig';
+    writing-mode: vertical-lr;
+    display: inline-block;
     cursor: pointer;
+    user-select: none;
+    padding: 0 3px;
+    .box {
+        display: inline-block;
+        width: 16px; height: 16px;
+        text-align: center;
+        line-height: 14px;
+        border: 1px solid #f3f3f3;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 10px;
+        &.check {
+            background: #2d8cf0;
+            border-color: #2d8cf0;
+        }
+    }
 }
 </style>
 

@@ -3,7 +3,7 @@
         <span class="title">
             <slot></slot>
         </span>
-        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error},{disabled}]" :placeholder="placeholder" :disabled="disabled" @blur="blur(validate)"/>
+        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" @blur="blur(validate)"/>
     </div>
 </template>
 
@@ -22,6 +22,10 @@
             },
             type: String,
             disabled: {
+                type: Boolean,
+                default: false
+            },
+            readonly: {
                 type: Boolean,
                 default: false
             },
@@ -127,6 +131,9 @@
         }
         &.disabled {
             background: #f0f0f0;
+            cursor: not-allowed;
+        }
+        &.readonly {
             cursor: not-allowed;
         }
     }

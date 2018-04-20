@@ -457,6 +457,9 @@
   background: #f0f0f0;
   cursor: not-allowed;
 }
+#inputwp .myinput.readonly[data-v-496bdbb6] {
+  cursor: not-allowed;
+}
 
 .message[data-v-89ea4f1a] {
   font-family: 'OrhonChaganTig';
@@ -934,12 +937,31 @@ table[data-v-06bb193e] {
   cursor: pointer;
 }
 
-.input[data-v-136b1432] {
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+#rum-checkbox[data-v-136b1432] {
+  font-family: 'OrhonChaganTig';
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  display: inline-block;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 3px;
+}
+#rum-checkbox .box[data-v-136b1432] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 14px;
+  border: 1px solid #f3f3f3;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 10px;
+}
+#rum-checkbox .box.check[data-v-136b1432] {
+  background: #2d8cf0;
+  border-color: #2d8cf0;
 }
