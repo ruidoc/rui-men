@@ -1,7 +1,7 @@
 <template>
     <div class="button">
         <Par type="h1">多选框 checkbox</Par>
-        <Par>文件上传组件，需要 <f>token</f> </Par>
+        <Par>多选框，选择多个值</Par>
 
         <br>
         <Par type="h2">基本使用</Par>
@@ -10,30 +10,38 @@
         <br>
         <Par type="h2">代码演示</Par>
         <Card title="注意">
-            <div style="text-align: start">
-                <rum-check-box v-model="checked">ᠪᠤᠼᠬᠵᠰᠳᠼᠰᠵᠬᠳᠠ</rum-check-box>
-                <rum-check-box v-model="checked2">ᠶᠣᠷᠦᠢ</rum-check-box>
+            <div class="example">
+                <rum-check-box v-model="checked" value="a">ᠪᠤᠼᠬᠵᠰᠳᠼᠰᠵᠬᠳᠠ</rum-check-box>
+                <rum-check-box v-model="checked" value="b">ᠶᠣᠷᠦᠢ</rum-check-box>
+                <rum-check-box v-model="checked" value="c" disabled>ᠶᠣᠷᠦᠢ</rum-check-box>
+                {{JSON.stringify(checked)}}
             </div>
             <div slot="desc">
-                <div>在项目中使用，<f>upload_token</f> 的值为 <f> localStorage.token</f> 即可</div>
+                <div>该组件中<f>v-model</f> 绑定的prop值是 model，而不是 value</div>
             </div>
             <pre slot="code" v-highlightjs="codeh1"><code></code></pre>
         </Card>
 
         <br>
-        <Par type="h2">rum-upload props</Par>
+        <Par type="h2">props</Par>
         <Table :titles="['名称|2','说明','类型|2','默认值|2']">
             <div class="tr">
-                <div class="td">uploadToken</div>
-                <div class="td"> 上传接口token，项目中使用 <f> localStorage.token</f> 即可 </div>
-                <div class="td">String</div>
+                <div class="td">value</div>
+                <div class="td"> 绑定的值，必须唯一 </div>
+                <div class="td">String，Number</div>
                 <div class="td"><f>必填</f></div>
             </div>
             <div class="tr">
-                <div class="td">uploadUrl</div>
-                <div class="td"> 上传URL地址 </div>
-                <div class="td">String</div>
-                <div class="td"><f>必填</f></div>
+                <div class="td">model</div>
+                <div class="td"> value组成的数组，<f>v-model</f> 绑定 </div>
+                <div class="td">Array</div>
+                <div class="td">[]</div>
+            </div>
+            <div class="tr">
+                <div class="td">disabled</div>
+                <div class="td"> 禁用 </div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
             </div>
         </Table>
 
@@ -41,14 +49,9 @@
         <Par type="h2">Events</Par>
         <Table :titles="['事件名|3','说明','参数|3']">
             <div class="tr">
-                <div class="td">on-ok</div>
-                <div class="td">上传成功时触发</div>
-                <div class="td">res，接口返回数据</div>
-            </div>
-            <div class="tr">
-                <div class="td">on-err</div>
-                <div class="td">上传失败时触发</div>
-                <div class="td">err，错误信息</div>
+                <div class="td">on-check</div>
+                <div class="td">选择时触发</div>
+                <div class="td">model，返回model</div>
             </div>
         </Table>
     </div>
@@ -58,48 +61,32 @@
 export default {
     data() {
         return {
-            value: `<rum-upload :uploadToken="upload_token" :uploadUrl="upload_url"></rum-upload>`,
-            checked: false,
-            checked2: false,
-            codeh1: `<tempplate>
-    <rum-upload 
-        :uploadToken="upload_token" 
-        :uploadUrl="upload_url" 
-        @on-ok="success" 
-        @on-error="error">
-    </rum-upload>
+            value: `<rum-check-box v-model="checked" value="a">ᠪᠤᠼᠬᠵᠰᠳᠼᠰᠵᠬᠳᠠ</rum-check-box>`,
+            checked: ['a','b'],
+            codeh1: `<template>
+    <div class="example">
+        <rum-check-box v-model="checked" value="a">ᠪᠤᠼᠬᠵᠰᠳᠼᠰᠵᠬᠳᠠ</rum-check-box>
+        <rum-check-box v-model="checked" value="b">ᠶᠣᠷᠦᠢ</rum-check-box>
+        <rum-check-box v-model="checked" value="c" disabled>ᠶᠣᠷᠦᠢ</rum-check-box>
+        {{JSON.stringify(checked)}}
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            upload_url: 'http://zh.pc.api.smart.ordosmz.cn/api/user/v1/upload',
-            upload_token: localStorage.token
-        }
-    },
-    methods: {
-        success(res) {
-            console.log(res)
-        },
-        error(err) {
-            console.log(err)
+            checked: ['a','b']
         }
     }
 }`
-        }
-    },
-    methods: {
-        success(res) {
-            console.log(res)
-        },
-        error(err) {
-            console.log(err)
         }
     }
 }
 </script>
 
 <style>
-    
+    .example {
+        writing-mode: vertical-lr;
+    }
 </style>

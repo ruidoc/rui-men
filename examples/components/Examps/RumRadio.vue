@@ -11,9 +11,9 @@
         <Par type="h2">代码演示</Par>
         <Card title="注意">
             <div class="example">
-                <p><rum-radio v-model="val" value="1">ᠪᠹᠵᠤᠺᠰᠬᠠ</rum-radio></p>
-                <p><rum-radio v-model="val" value="2">ᠰᠪᠼᠬᠠᠰᠼ</rum-radio></p>
-                <p><rum-radio v-model="val" value="3">ᠱᠤᠵᠠᠭᠤᠼ</rum-radio></p>
+                <p><rum-radio v-model="val" value="1">ᠪᠹᠵᠤᠺᠰᠬᠰᠬᠠ</rum-radio></p>
+                <p><rum-radio v-model="val" value="2">ᠰᠪᠼᠰᠼ</rum-radio></p>
+                <p><rum-radio v-model="val" value="3">ᠱᠤᠵᠭᠤᠼ</rum-radio></p>
                 <p>{{val}}</p>
             </div>
             <div slot="desc">

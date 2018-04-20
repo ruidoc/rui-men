@@ -938,11 +938,16 @@ table[data-v-06bb193e] {
 }
 
 #rum-checkbox[data-v-136b1432] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: 'OrhonChaganTig';
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
-  display: inline-block;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -950,13 +955,19 @@ table[data-v-06bb193e] {
           user-select: none;
   padding: 0 3px;
 }
+#rum-checkbox.disabled[data-v-136b1432] {
+  cursor: not-allowed;
+}
+#rum-checkbox.disabled .box[data-v-136b1432] {
+  background: #ddd;
+}
 #rum-checkbox .box[data-v-136b1432] {
   display: inline-block;
   width: 16px;
   height: 16px;
   text-align: center;
   line-height: 14px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid #ddd;
   border-radius: 2px;
   color: #fff;
   font-size: 10px;

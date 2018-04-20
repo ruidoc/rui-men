@@ -62,6 +62,12 @@ export default {
                 },
                 {
                     type: 3,
+                    link: 'rum-checkbox',
+                    name: 'rum-checkbox',
+                    title: '多选框'
+                },
+                {
+                    type: 3,
                     link: 'about',
                     name: 'rum-poptip',
                     title: '气泡提示'
@@ -101,12 +107,6 @@ export default {
                     link: 'rum-upload',
                     name: 'rum-upload',
                     title: '文件上传'
-                },
-                {
-                    type: 3,
-                    link: 'rum-checkbox',
-                    name: 'rum-checkbox',
-                    title: '多选框'
                 },
             ]
         }

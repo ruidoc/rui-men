@@ -29,6 +29,9 @@
                 <rum-input v-model="value" style="height:150px" disabled>
                     <span style="font-size:14px">禁用 :</span>
                 </rum-input>
+                <rum-input v-model="value" style="height:150px" readonly>
+                    <span style="font-size:14px">只读 :</span>
+                </rum-input>
             </div>
             <div slot="desc">
                 <div><f>v-model</f> 必填，与数据双向绑定</div>
@@ -54,6 +57,12 @@
             <div class="tr">
                 <div class="td">disabled</div>
                 <div class="td">是否禁用</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
+            <div class="tr">
+                <div class="td">readonly</div>
+                <div class="td">是否只读</div>
                 <div class="td">Boolean</div>
                 <div class="td">false</div>
             </div>
@@ -105,6 +114,9 @@ export default {
     </rum-input> &nbsp;&nbsp;&nbsp;
     <rum-input v-model="value" style="height:150px" disabled>
         <span style="font-size:14px">禁用 :</span>
+    </rum-input>
+    <rum-input v-model="value" style="height:150px" readonly>
+        <span style="font-size:14px">只读 :</span>
     </rum-input>
 </template>
 

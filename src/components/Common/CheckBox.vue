@@ -1,9 +1,9 @@
 <template>
-    <div id="rum-checkbox" @click="checked">
-        <span :class="['box',{check}]">
+    <div id="rum-checkbox" @click="checked" :class="{disabled}">
+        <span :class="['box',{check: checks.includes(value)}]">
             <rum-icon type="checkmark" size="10"></rum-icon>
         </span>
-        <span style="position:relative;right:1px">
+        <span style="padding-top:4px">
             <slot></slot>
         </span>
     </div>
@@ -11,30 +11,46 @@
 
 <script>
 export default {
+    model: {
+        prop: 'model',
+        event: 'change'
+    },
     data() {
         return {
             
         };
     },
     props: {
-        value: {
+        value: [ String, Number ],
+        model: {
+            type: Array,
+            default: []
+        },
+        disabled: {
             type: Boolean,
             default: false
         }
     },
     computed: {
-        check: {
+        checks: {
             get() {
-                return this.value
+                return this.model
             },
             set(val) {
-                this.$emit('input',val)
+                this.$emit('change',val)
             }
         }
     },
     methods: {
         checked() {
-            this.check = !this.check
+            if(this.disabled) return
+            let b = this.checks.findIndex(it=>it==this.value)
+            if(b>=0) {
+                this.checks.splice(b,1)
+            } else {
+                this.checks.push(this.value)
+            }
+            this.$emit('on-check',this.checks)
         }
     }
 };
@@ -42,18 +58,25 @@ export default {
 
 <style lang="less" scoped>
 #rum-checkbox {
+    display: flex;
+    align-items: center;
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
-    display: inline-block;
     cursor: pointer;
     user-select: none;
     padding: 0 3px;
+    &.disabled {
+        cursor: not-allowed;
+        .box {
+            background: #ddd;
+        }
+    }
     .box {
         display: inline-block;
         width: 16px; height: 16px;
         text-align: center;
         line-height: 14px;
-        border: 1px solid #f3f3f3;
+        border: 1px solid #ddd;
         border-radius: 2px;
         color: #fff;
         font-size: 10px;
