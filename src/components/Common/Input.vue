@@ -3,7 +3,8 @@
         <span class="title">
             <slot></slot>
         </span>
-        <input type="text" v-model="vals" class="myinput" ref="input" :class="[type,{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <input type="text" v-if="type=='text'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <textarea v-if="type=='textarea'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
     </div>
 </template>
 
@@ -20,7 +21,10 @@
                 type: String,
                 default: 'ᠲᠡᠰᠲ'
             },
-            type: String,
+            type: {
+                type: String,
+                default: 'text'
+            },
             disabled: {
                 type: Boolean,
                 default: false

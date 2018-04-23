@@ -28,9 +28,12 @@
                 </rum-input> &nbsp;&nbsp;&nbsp;
                 <rum-input v-model="value" style="height:150px" disabled>
                     <span style="font-size:14px">禁用 :</span>
-                </rum-input>
+                </rum-input> &nbsp;&nbsp;&nbsp;
                 <rum-input v-model="value" style="height:150px" readonly>
                     <span style="font-size:14px">只读 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value" style="height:150px" type="textarea">
+                    <span style="font-size:14px">文本域 :</span>
                 </rum-input>
             </div>
             <div slot="desc">
@@ -47,6 +50,12 @@
                 <div class="td">输入框内容，使用 <f>v-model</f> 绑定</div>
                 <div class="td">String</div>
                 <div class="td"><f>必填</f></div>
+            </div>
+            <div class="tr">
+                <div class="td">type</div>
+                <div class="td">类型，有 <f>text</f> 和 <f>textarea</f> 两项</div>
+                <div class="td">String</div>
+                <div class="td">text</div>
             </div>
             <div class="tr">
                 <div class="td">placeholder</div>
@@ -114,9 +123,12 @@ export default {
     </rum-input> &nbsp;&nbsp;&nbsp;
     <rum-input v-model="value" style="height:150px" disabled>
         <span style="font-size:14px">禁用 :</span>
-    </rum-input>
+    </rum-input> &nbsp;&nbsp;&nbsp;
     <rum-input v-model="value" style="height:150px" readonly>
         <span style="font-size:14px">只读 :</span>
+    </rum-input> &nbsp;&nbsp;&nbsp;
+    <rum-input v-model="value" style="height:150px" type="textarea">
+        <span style="font-size:14px">文本域 :</span>
     </rum-input>
 </template>
 
