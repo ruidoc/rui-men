@@ -60,6 +60,10 @@ const homeRouter = [
 		path: 'rum-checkbox',
 		component: re=> require(['&/Examps/RumCheckBox.vue'],re)
 	},
+	{
+		path: 'rum-steps',
+		component: re=> require(['&/Examps/RumSteps.vue'],re)
+	},
 ]
 
 export default {

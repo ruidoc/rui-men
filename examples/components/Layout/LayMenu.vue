@@ -108,6 +108,12 @@ export default {
                     name: 'rum-upload',
                     title: '文件上传'
                 },
+                {
+                    type: 3,
+                    link: 'rum-steps',
+                    name: 'rum-steps',
+                    title: '步骤条'
+                },
             ]
         }
     },

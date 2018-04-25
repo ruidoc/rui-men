@@ -976,3 +976,83 @@ table[data-v-06bb193e] {
   background: #2d8cf0;
   border-color: #2d8cf0;
 }
+
+@font-face {
+  font-family: 'OrhonChaganTig';
+  src: url(fonts/OrhonChaganTig.eot);
+  src: url(fonts/OrhonChaganTig.eot?#iefix) format('embedded-opentype'), url(fonts/OrhonChaganTig.ttf) format('truetype');
+}
+#steps_dv[data-v-34e46093] {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 50px;
+}
+#steps_dv .step_item[data-v-34e46093] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#steps_dv .step_item .step_ctrl[data-v-34e46093] {
+  width: 26px;
+  height: 26px;
+  border-radius: 26px;
+  border: 1px solid #2d8cf0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #2d8cf0;
+  font-size: 16px;
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb;
+  position: relative;
+}
+#steps_dv .step_item .step_ctrl .desc[data-v-34e46093] {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-family: 'OrhonChaganTig';
+  position: absolute;
+  top: 0;
+  left: 26px;
+  height: 80px;
+  padding: 2px 10px;
+}
+#steps_dv .step_item .step_line[data-v-34e46093] {
+  width: 26px;
+  height: 80px;
+  position: relative;
+}
+#steps_dv .step_item .step_line[data-v-34e46093]::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 12px;
+  width: 1px;
+  background: #2d8cf0;
+}
+#steps_dv .step_item.active .step_ctrl[data-v-34e46093] {
+  background: #2d8cf0;
+  color: #fff;
+}
+#steps_dv .step_item.active .step_ctrl .desc[data-v-34e46093] {
+  color: #2d8cf0;
+}
+#steps_dv .step_item.will .step_ctrl[data-v-34e46093] {
+  color: #ddd;
+  border-color: #ddd;
+}
+#steps_dv .step_item.will .step_line[data-v-34e46093]::after {
+  background: #ddd;
+}

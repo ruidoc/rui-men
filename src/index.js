@@ -14,6 +14,7 @@ import RumTrees from './components/Trees/Tree'
 import RumTime from './components/Common/Time'
 import RumUpload from './components/Common/Upload'
 import RumCheckBox from './components/Common/CheckBox'
+import RumSteps from './components/Common/Steps'
 
 const Rui = new Object();
 let $vModel;
@@ -38,7 +39,8 @@ Rui.install = (Vue, options)=> {
             RumTrees,
             RumTime,
             RumUpload,
-            RumCheckBox
+            RumCheckBox,
+            RumSteps
         }
     })
     Vue.prototype.$RumModel = (config)=> {
