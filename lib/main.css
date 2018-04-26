@@ -433,7 +433,6 @@
   font-family: 'OrhonChaganTig';
   display: table-cell;
   font-size: 17px;
-  width: 34px;
   padding: 5px 3px;
   border: 1px solid #dddee1;
   outline: none;
@@ -441,6 +440,9 @@
   text-indent: 2px;
   min-width: 34px;
   border-radius: 2px;
+}
+#inputwp .myinput[type='text'][data-v-496bdbb6] {
+  width: 34px;
 }
 #inputwp .myinput.textarea[data-v-496bdbb6] {
   min-height: 70px;

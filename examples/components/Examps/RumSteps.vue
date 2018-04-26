@@ -79,7 +79,7 @@ export default {
     },
     methods: {
         next() {
-            if(this.current<this.data.length) {
+            if(this.current<this.data.length+1) {
                 this.current++
             } else {
                 this.current = 1
@@ -93,7 +93,7 @@ export default {
     },
     methods: {
         next() {
-            if(this.current<this.data.length) {
+            if(this.current<this.data.length+1) {
                 this.current++
             } else {
                 this.current = 1

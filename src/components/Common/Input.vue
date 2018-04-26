@@ -5,8 +5,8 @@
         </span>
         <input type="text" :autofocus="autofocus" v-if="type=='text'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
         <textarea v-if="type=='textarea'" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
-        <div class="rum-inp-search" @click="onsearch">
-            <rum-icon type="search" v-if="search"></rum-icon>
+        <div class="rum-inp-search" v-if="search" @click="onsearch">
+            <rum-icon type="search"></rum-icon>
         </div>
     </div>
 </template>
@@ -128,7 +128,6 @@
         font-family: 'OrhonChaganTig';
         display: table-cell;
         font-size: @font-size;
-        width: 34px;
         padding: 5px 3px;
         border: 1px solid #dddee1;
         outline: none;
@@ -136,6 +135,9 @@
         text-indent: 2px;
         min-width: 34px;
         border-radius: 2px;
+        &[type='text'] {
+            width: 34px;
+        }
         &.textarea {
             min-height: 70px;
         }
