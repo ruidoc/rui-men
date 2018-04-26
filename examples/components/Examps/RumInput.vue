@@ -11,11 +11,14 @@
         <Par type="h2">代码演示</Par>
         <Card title="说明">
             <div>
-                <rum-input v-model="value" style="height:150px">
-                    <span style="font-size:14px">无验证 :</span>
+                <rum-input v-model="value" style="height:150px" autofocus>
+                    <span style="font-size:14px">无验证，自动聚焦 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
                 <rum-input v-model="value1" style="height:150px" validate="required">
                     <span style="font-size:14px">不为空验证 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="value1" style="height:150px" search>
+                    <span style="font-size:14px">搜索 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
                 <rum-input v-model="value2" style="height:150px" validate="mobile">
                     <span style="font-size:14px">手机号验证 :</span>
@@ -58,6 +61,18 @@
                 <div class="td">text</div>
             </div>
             <div class="tr">
+                <div class="td">autofocus</div>
+                <div class="td">自动聚焦</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
+            <div class="tr">
+                <div class="td">search</div>
+                <div class="td">搜索</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
+            <div class="tr">
                 <div class="td">placeholder</div>
                 <div class="td">为空时显示内容</div>
                 <div class="td">String</div>
@@ -87,9 +102,9 @@
         <Par type="h2">Events</Par>
         <Table :titles="['事件名|3','说明','参数|3']">
             <div class="tr">
-                <div class="td">on-click</div>
-                <div class="td">点击按钮触发</div>
-                <div class="td">无</div>
+                <div class="td">on-search</div>
+                <div class="td">点击搜索按钮触发</div>
+                <div class="td">str，搜索字符串</div>
             </div>
         </Table>
     </div>
@@ -107,7 +122,7 @@ export default {
             baseuse: `<rum-input v-model="val"/>`,
             codeh1: `<template>
     <rum-input v-model="value" style="height:150px">
-        <span style="font-size:14px">无验证 :</span>
+        <span style="font-size:14px" autofocus>无验证，自动聚焦 :</span>
     </rum-input> &nbsp;&nbsp;&nbsp;
     <rum-input v-model="value1" style="height:150px" validate="required">
         <span style="font-size:14px">不为空验证 :</span>

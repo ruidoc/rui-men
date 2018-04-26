@@ -78,6 +78,7 @@ Rui.install = (Vue, options)=> {
             $vMessage.style.position = 'fixed'
             $vMessage.style.top = '80px'
             $vMessage.style.right = '30px'
+            $vMessage.style.zIndex = '9999'
             $vMessage.style.writingMode = 'vertical-rl'
             document.body.appendChild($vMessage)
         }

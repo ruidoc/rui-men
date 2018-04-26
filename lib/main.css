@@ -424,6 +424,7 @@
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
   display: inline-block;
+  position: relative;
 }
 #inputwp .title[data-v-496bdbb6] {
   padding: 1px 3px 0 0;
@@ -432,7 +433,8 @@
   font-family: 'OrhonChaganTig';
   display: table-cell;
   font-size: 17px;
-  padding: 5px 6px;
+  width: 34px;
+  padding: 5px 3px;
   border: 1px solid #dddee1;
   outline: none;
   height: 100%;
@@ -449,9 +451,8 @@
 #inputwp .myinput[data-v-496bdbb6]:focus {
   border-color: #2d8cf0;
 }
-#inputwp .myinput.number[data-v-496bdbb6] {
-  display: inline-block;
-  padding: 3px 6px;
+#inputwp .myinput.search[data-v-496bdbb6] {
+  padding: 5px 3px 25px 3px;
 }
 #inputwp .myinput.disabled[data-v-496bdbb6] {
   background: #f0f0f0;
@@ -459,6 +460,17 @@
 }
 #inputwp .myinput.readonly[data-v-496bdbb6] {
   cursor: not-allowed;
+}
+#inputwp .rum-inp-search[data-v-496bdbb6] {
+  position: absolute;
+  width: 34px;
+  height: 25px;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  color: #ccc;
 }
 
 .message[data-v-89ea4f1a] {

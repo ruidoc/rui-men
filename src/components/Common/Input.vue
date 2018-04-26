@@ -3,8 +3,11 @@
         <span class="title">
             <slot></slot>
         </span>
-        <input type="text" v-if="type=='text'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
-        <textarea v-if="type=='textarea'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <input type="text" :autofocus="autofocus" v-if="type=='text'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <textarea v-if="type=='textarea'" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <div class="rum-inp-search" @click="onsearch">
+            <rum-icon type="search" v-if="search"></rum-icon>
+        </div>
     </div>
 </template>
 
@@ -17,6 +20,10 @@
         },
         props: {
             value: String,
+            autofocus: {
+                type: Boolean,
+                default: false
+            },
             placeholder: {
                 type: String,
                 default: ''
@@ -26,6 +33,10 @@
                 default: 'text'
             },
             disabled: {
+                type: Boolean,
+                default: false
+            },
+            search: {
                 type: Boolean,
                 default: false
             },
@@ -85,6 +96,9 @@
                         }
                         break;
                 }
+            },
+            onsearch() {
+                this.$emit('on-search',this.vals)
             }
         },
         computed: {
@@ -106,6 +120,7 @@
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
     display: inline-block;
+    position: relative;
     .title {
         padding: 1px 3px 0 0;
     }
@@ -113,7 +128,8 @@
         font-family: 'OrhonChaganTig';
         display: table-cell;
         font-size: @font-size;
-        padding: 5px 6px;
+        width: 34px;
+        padding: 5px 3px;
         border: 1px solid #dddee1;
         outline: none;
         height: 100%;
@@ -129,9 +145,8 @@
         &:focus {
             border-color: @primary-color;
         }
-        &.number {
-            display: inline-block;
-            padding: 3px 6px;
+        &.search {
+            padding: 5px 3px 25px 3px;
         }
         &.disabled {
             background: #f0f0f0;
@@ -140,6 +155,15 @@
         &.readonly {
             cursor: not-allowed;
         }
+    }
+    .rum-inp-search {
+        position: absolute;
+        width: 34px; height: 25px;
+        right: 0; bottom: 0;
+        text-align: center;
+        line-height: 35px;
+        cursor: pointer;
+        color: #ccc;
     }
 }
     
