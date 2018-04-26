@@ -19,7 +19,7 @@
             value: String,
             placeholder: {
                 type: String,
-                default: 'ᠲᠡᠰᠲ'
+                default: ''
             },
             type: {
                 type: String,
