@@ -106,7 +106,7 @@
   border-radius: 1px;
   width: 200px;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   padding: 0 5px;
 }
 .poptip .others .item[data-v-3ba81b24] {
@@ -134,7 +134,7 @@
           user-select: none;
   cursor: pointer;
   padding: 7px 3px;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 2px;
   color: #fff;
   position: relative;
@@ -144,7 +144,7 @@
 }
 #button.small[data-v-ad301614] {
   padding: 5px 2px;
-  font-size: 15px;
+  font-size: 16px;
 }
 #button.def-type[data-v-ad301614] {
   color: #000;
@@ -203,7 +203,7 @@
 }
 #select .refer[data-v-31550dc0] {
   outline: none;
-  font-size: 17px;
+  font-size: 18px;
   height: 100%;
   padding: 6px 0 22px 0;
   width: 34px;
@@ -247,7 +247,7 @@
   z-index: 20;
   border-radius: 1px;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   padding: 0 6px;
 }
 #select .others .item[data-v-31550dc0] {
@@ -353,7 +353,7 @@
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
-  font-size: 17px;
+  font-size: 18px;
   font-family: 'OrhonChaganTig';
 }
 #tables .handel[data-v-6d271dba] {
@@ -386,7 +386,7 @@
 #tables .table .head .col[data-v-6d271dba] {
   padding: 6px 0;
   display: inline-block;
-  text-align: center;
+  text-align: flex-start;
 }
 #tables .table .head .ivu-checkbox-wrapper[data-v-6d271dba] {
   margin: 0;
@@ -432,7 +432,7 @@
 #inputwp .myinput[data-v-496bdbb6] {
   font-family: 'OrhonChaganTig';
   display: table-cell;
-  font-size: 17px;
+  font-size: 18px;
   padding: 5px 3px;
   border: 1px solid #dddee1;
   outline: none;
@@ -490,7 +490,7 @@
   position: relative;
 }
 .message .text[data-v-89ea4f1a] {
-  font-size: 17px;
+  font-size: 18px;
   padding-top: 3px;
 }
 .enters-enter-active[data-v-89ea4f1a],
