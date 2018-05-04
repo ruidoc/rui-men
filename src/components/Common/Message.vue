@@ -50,7 +50,7 @@ export default {
     border-radius: 2px;
     position: relative;
     .text {
-        font-size: 17px;
+        font-size: 18px;
         padding-top: 3px;
     }
 }

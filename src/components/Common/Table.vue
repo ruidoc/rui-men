@@ -112,7 +112,7 @@
             .col {
                 padding: 6px 0;
                 display: inline-block;
-                text-align: center;
+                text-align: flex-start;
             }
             .ivu-checkbox-wrapper {
                 margin: 0;

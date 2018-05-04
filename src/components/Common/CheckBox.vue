@@ -3,7 +3,7 @@
         <span :class="['box',{check: checks.includes(value)}]">
             <rum-icon type="checkmark" size="10"></rum-icon>
         </span>
-        <span style="padding-top:4px">
+        <span style="padding-top:4px;font-size:18px">
             <slot></slot>
         </span>
     </div>

@@ -1,7 +1,7 @@
 <template>
     <div id="steps_dv" :style="{width:width+'px'}">
         <div :class="['step_item',{active:current==index+1},{will:current<index+1}]" v-for="(item,index) in data" :key="index" ref="stpiem">
-            <div class="step_line" v-if="index!=0"></div>
+            <div class="step_line" v-if="index!=0" :style="{height:height+'px'}"></div>
             <div class="step_ctrl">
                 <rum-icon type="checkmark" v-if="current>index+1"></rum-icon>
                 <span v-else>{{index+1}}</span>
@@ -20,6 +20,10 @@ export default {
         width: {
             type: Number,
             default: 100
+        },
+        height: {
+            type: Number,
+            default: 80
         },
         current: {
             type: Number,
