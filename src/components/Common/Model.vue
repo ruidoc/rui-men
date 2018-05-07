@@ -12,12 +12,12 @@
             </div>
             <div class="content"><slot></slot></div>
             <div class="buttom" v-if="!hideBottom && !confirm">
-                <rum-button type="primary" @on-click="ok">ᠪᠠᠲᠠᠯᠠᠬᠤ</rum-button>
+                <rum-button type="primary" @on-click="ok">ᠪᠠᠲᠤᠯᠠᠬᠤ</rum-button>
                 &nbsp;
                 <rum-button @on-click="isShow=false">ᠦᠭᠡᠢ</rum-button>
             </div>
             <div class="cofbutton" v-if="confirm">
-                <rum-button type="primary" @on-click="took">ᠪᠠᠲᠠᠯᠠᠬᠤ</rum-button>
+                <rum-button type="primary" @on-click="took">ᠪᠠᠲᠤᠯᠠᠬᠤ</rum-button>
             </div>
         </div>
     </div>
