@@ -65,6 +65,7 @@ export default {
     cursor: pointer;
     user-select: none;
     padding: 0 3px;
+    margin-right: 4px;
     &.disabled {
         cursor: not-allowed;
         .box {

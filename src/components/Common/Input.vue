@@ -121,6 +121,7 @@
     writing-mode: vertical-lr;
     display: inline-block;
     position: relative;
+    margin-right: 4px;
     .title {
         padding: 1px 3px 0 0;
     }

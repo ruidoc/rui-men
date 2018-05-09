@@ -27,15 +27,14 @@ export default {
     },
     methods: {
         fileChange(e) {
-            let formData = new FormData();
-            let files = e.target.files
-            for (let i = 0; i < files.length; i++) {
-                formData.append('file[]', files[i], files[i].name);
+            let length = e.target.files.length
+            for (let i = 0; i < length; i++) {
+                this.upload(e.target.files[i])
             }
-            console.log(formData)
-            this.upload(formData)
         },
-        upload(formData) {
+        upload(file) {
+            let formData = new FormData();
+            formData.append('file', file, file.name);
             axios.post(this.uploadUrl,formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -55,8 +54,8 @@ export default {
                     this.$emit('on-error',res.data)
                 }
             }).catch(err=> {
-                console.log('err',err)
-                this.$emit('on-error',err)
+                // console.log('err',err)
+                this.$emit('on-error',res)
             })
         }
     }

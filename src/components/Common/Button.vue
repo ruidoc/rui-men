@@ -50,6 +50,7 @@ export default {
     border-radius: 2px;
     color: #fff;
     position: relative;
+    margin-right: 4px;
     &:hover {
         opacity: 0.85;
     }

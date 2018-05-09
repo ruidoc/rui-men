@@ -51,6 +51,7 @@ export default {
     align-items: center;
     writing-mode: vertical-lr;
     cursor: pointer;
+    margin-right: 4px;
 }
 .size {
     font-size: 16px;
