@@ -138,6 +138,7 @@
   border-radius: 2px;
   color: #fff;
   position: relative;
+  margin-right: 4px;
 }
 #button[data-v-ad301614]:hover {
   opacity: 0.85;
@@ -288,6 +289,7 @@
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
   cursor: pointer;
+  margin-right: 4px;
 }
 .size[data-v-ac4dd132] {
   font-size: 16px;
@@ -425,6 +427,7 @@
           writing-mode: vertical-lr;
   display: inline-block;
   position: relative;
+  margin-right: 4px;
 }
 #inputwp .title[data-v-496bdbb6] {
   padding: 1px 3px 0 0;
@@ -968,6 +971,7 @@ table[data-v-06bb193e] {
       -ms-user-select: none;
           user-select: none;
   padding: 0 3px;
+  margin-right: 4px;
 }
 #rum-checkbox.disabled[data-v-136b1432] {
   cursor: not-allowed;
