@@ -4,7 +4,7 @@
   src: url(fonts/OrhonChaganTig.eot);
   src: url(fonts/OrhonChaganTig.eot?#iefix) format('embedded-opentype'), url(fonts/OrhonChaganTig.ttf) format('truetype');
 }
-.model[data-v-6bd5b795] {
+#rum_model[data-v-6bd5b795] {
   position: fixed;
   font-family: 'OrhonChaganTig';
   -webkit-writing-mode: vertical-lr;
@@ -15,7 +15,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 100;
+  z-index: 10000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,7 +26,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.model .handel[data-v-6bd5b795] {
+#rum_model .handel[data-v-6bd5b795] {
   background: #fff;
   border-radius: 4px;
   display: inline-block;
@@ -34,7 +34,7 @@
   top: -10%;
   min-height: 400px;
 }
-.model .handel .title[data-v-6bd5b795] {
+#rum_model .handel .title[data-v-6bd5b795] {
   border-right: 1px solid #e9eaec;
   padding: 13px 10px;
   font-weight: 400;
@@ -43,33 +43,33 @@
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.model .handel .title .icon[data-v-6bd5b795] {
+#rum_model .handel .title .icon[data-v-6bd5b795] {
   margin-bottom: 6px;
   position: relative;
   left: 1px;
   cursor: pointer;
   color: #777;
 }
-.model .handel .title .icon[data-v-6bd5b795]:hover {
+#rum_model .handel .title .icon[data-v-6bd5b795]:hover {
   color: #222;
 }
-.model .handel .conf-title[data-v-6bd5b795] {
+#rum_model .handel .conf-title[data-v-6bd5b795] {
   padding: 13px 0 13px 20px;
   font-size: 20px;
 }
-.model .handel .cofbutton[data-v-6bd5b795] {
+#rum_model .handel .cofbutton[data-v-6bd5b795] {
   text-align: end;
   padding: 0 16px 15px 0;
 }
-.model .handel .content[data-v-6bd5b795] {
+#rum_model .handel .content[data-v-6bd5b795] {
   padding: 13px 12px;
 }
-.model .handel .buttom[data-v-6bd5b795] {
+#rum_model .handel .buttom[data-v-6bd5b795] {
   padding: 13px 10px;
   border-left: 1px solid #e9eaec;
   text-align: end;
 }
-.model .handel.confirm .content[data-v-6bd5b795] {
+#rum_model .handel.confirm .content[data-v-6bd5b795] {
   padding: 30px 12px 15px 12px;
 }
 .fades-enter-active[data-v-6bd5b795],

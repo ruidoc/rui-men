@@ -17,8 +17,8 @@ import RumCheckBox from './components/Common/CheckBox'
 import RumSteps from './components/Common/Steps'
 
 const Rui = new Object();
-let $vModel;
-let $vMessage;
+
+let $message;
 
 // import './styles/rui-base.css'
 
@@ -44,43 +44,44 @@ Rui.install = (Vue, options)=> {
         }
     })
     Vue.prototype.$RumModel = (config)=> {
-        let Model = Vue.extend({
+        let model = Vue.extend({
             data() {
-                return {show: false}
+                return { show: false }
             },
-            render() {
-                return (
-                    <RumModel value={this.show} title={config.title} 
-                        onInput={(val)=> {
-                            this.show = val
-                        }} onOk={()=>{
-                            config.onOk()
-                            this.show = false
-                        }}>
-                        {config.render()}
-                    </RumModel>
-                )
+            render() { return(
+                <RumModel value={this.show} title={config.title} 
+                onInput={(val)=> {
+                    this.show = val
+                }} onOk={()=>{
+                    config.onOk()
+                    this.show = false
+                }} confirm={config.confirm}>
+                    {config.confirm?config.msg:config.render()}
+                </RumModel>
+            )},
+            watch: {
+                show(val) {
+                    if(!val) {
+                        document.body.removeChild(this.$el)
+                    }
+                }
             }
         })
-        if(!$vModel) {
-            $vModel = new Model()
-            $vModel.$mount()
-            document.body.appendChild($vModel.$el)
-            $vModel.show = true
-        } else {
-            $vModel.show = true
-        }
+        let vmodel = new model()
+        vmodel.$mount()
+        document.body.appendChild(vmodel.$el)
+        vmodel.show = true
     }
     Vue.prototype.$RumMessage = (msg,type)=> {
         
-        if(!$vMessage) {
-            $vMessage = document.createElement('div') 
-            $vMessage.style.position = 'fixed'
-            $vMessage.style.top = '80px'
-            $vMessage.style.right = '30px'
-            $vMessage.style.zIndex = '9999'
-            $vMessage.style.writingMode = 'vertical-rl'
-            document.body.appendChild($vMessage)
+        if(!$message) {
+            $message = document.createElement('div') 
+            $message.style.position = 'fixed'
+            $message.style.top = '80px'
+            $message.style.right = '30px'
+            $message.style.zIndex = '9999'
+            $message.style.writingMode = 'vertical-rl'
+            document.body.appendChild($message)
         }
 
         if(!type) {
@@ -94,7 +95,7 @@ Rui.install = (Vue, options)=> {
         instance.type = type
         instance.$mount();
 
-        $vMessage.appendChild(instance.$el)
+        $message.appendChild(instance.$el)
     }
 }
 

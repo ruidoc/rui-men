@@ -10,9 +10,10 @@
         <br>
         <Par type="h2">代码演示</Par>
         <Card title="说明">
-            <div>
-                <rum-button type="primary" @on-click="bool=true">template</rum-button> &nbsp;
-                <rum-button type="primary" @on-click="model">function</rum-button>
+            <div style="font-size:15px">
+                <rum-button type="primary" @on-click="model2">render提示</rum-button> &nbsp;
+                <rum-button type="primary" @on-click="model">render内容</rum-button> &nbsp;
+                <rum-button type="primary" @on-click="bool=true">普通提示</rum-button>
                 <rum-model v-model="bool" title="ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ" confirm>
                     确定执行这项操作？
                 </rum-model>
@@ -72,9 +73,10 @@ export default {
             bool: false,
             text: '',
             codeh1: `<template>
-    <div>
-        <rum-button type="primary" @on-click="bool=true">template</rum-button> &nbsp;
-        <rum-button type="primary" @on-click="model">function</rum-button>
+    <div style="font-size:15px">
+        <rum-button type="primary" @on-click="model2">render提示</rum-button> &nbsp;
+        <rum-button type="primary" @on-click="model">render内容</rum-button> &nbsp;
+        <rum-button type="primary" @on-click="bool=true">普通提示</rum-button>
         <rum-model v-model="bool" title="ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ" confirm>
             确定执行这项操作？
         </rum-model>
@@ -103,9 +105,21 @@ export default {
                     self.$RumMessage('ok事件触发')
                 }
             })
+        },
+        model2() {
+            let self = this
+            this.$RumModel({
+                title: 'ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ',
+                confirm: true,
+                msg: '确定执行这项操作？',
+                onOk() {
+                    self.$RumMessage('ok事件触发')
+                }
+            })
         }
     }
-}`
+}
+<\/script>`
         }
     },
     methods: {
@@ -118,6 +132,17 @@ export default {
                         self.text = val
                     }}>输入框内容是：{self.text}</rum-input>
                 ),
+                onOk() {
+                    self.$RumMessage('ok事件触发')
+                }
+            })
+        },
+        model2() {
+            let self = this
+            this.$RumModel({
+                title: 'ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ',
+                confirm: true,
+                msg: '确定执行这项操作？',
                 onOk() {
                     self.$RumMessage('ok事件触发')
                 }
