@@ -226,6 +226,9 @@
         text-align: center;
         font-size: @font-size;
         padding: 0 6px;
+        max-width: 400px;
+        overflow-x: auto;
+        overflow-y: hidden;
         .item {
             height: 100%;
             padding: 10px 6px;
