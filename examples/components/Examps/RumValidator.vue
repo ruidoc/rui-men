@@ -59,7 +59,7 @@ export default {
             value1: 'value1',
             value2: 'value1',
             codeh1: `<tempplate>
-    <rum-validator>
+    <rum-validator @on-success="$RumMessage('ok','success')">
         <rum-input validate="required" v-model="value1"></rum-input>
         <rum-input validate="mobile" v-model="value2"></rum-input>
         <rum-select v-model="opps" :options="[
