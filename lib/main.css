@@ -200,7 +200,7 @@
   margin: 0 10px 10px 1px;
 }
 #select .title[data-v-31550dc0] {
-  padding: 1px 3px 0 0;
+  padding: 0 3px 0 0;
 }
 #select .refer[data-v-31550dc0] {
   outline: none;
@@ -437,7 +437,7 @@
   margin: 0 4px 10px 1px;
 }
 #inputwp .title[data-v-496bdbb6] {
-  padding: 1px 3px 0 0;
+  padding: 0 3px 0 0;
 }
 #inputwp .myinput[data-v-496bdbb6] {
   font-family: 'OrhonChaganTig';

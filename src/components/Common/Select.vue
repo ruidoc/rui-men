@@ -178,7 +178,7 @@
     user-select: none;
     margin:0 10px 10px 1px;
     .title {
-        padding: 1px 3px 0 0;
+        padding: 0 3px 0 0;
     }
     .refer {
         outline: none;
