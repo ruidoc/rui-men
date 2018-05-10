@@ -51,7 +51,7 @@
                 default: false
             },
             validate: String,
-            error_msg: String
+            errmsg: String
         },
         methods: {
             blur(valid) {
@@ -66,28 +66,28 @@
                     case 'required':
                         if(this.value.length==0) {
                             this.error = true
-                            this.$RumMessage(this.error_msg?this.error_msg:'字段不为空','error')
+                            this.$RumMessage(this.errmsg?this.errmsg:'字段不为空','error')
                         }
                         break;
                     case 'mobile':
                         patt = /^(13|15|18|14)[0-9]{9}$/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            this.$RumMessage(this.error_msg?this.error_msg:'手机号格式错误','error')
+                            this.$RumMessage(this.errmsg?this.errmsg:'手机号格式错误','error')
                         }
                         break;
                     case 'idcard':
                         patt = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            this.$RumMessage(this.error_msg?this.error_msg:'身份证号错误','error')
+                            this.$RumMessage(this.errmsg?this.errmsg:'身份证号错误','error')
                         }
                         break;
                     case 'email':
                         patt = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            this.$RumMessage(this.error_msg?this.error_msg:'邮箱格式错误','error')
+                            this.$RumMessage(this.errmsg?this.errmsg:'邮箱格式错误','error')
                         }
                         break;
                 }
@@ -116,8 +116,7 @@
     writing-mode: vertical-lr;
     display: inline-block;
     position: relative;
-    margin-right: 4px;
-    height: 150px;
+    margin: 0 4px 10px 1px;
     .title {
         padding: 1px 3px 0 0;
     }
@@ -129,6 +128,7 @@
         border: 1px solid #dddee1;
         outline: none;
         height: 100%;
+        min-height: 150px;
         text-indent: 2px;
         min-width: 34px;
         border-radius: 2px;

@@ -59,7 +59,7 @@
             </div>
             <div class="tr">
                 <div class="td">type</div>
-                <div class="td">类型，有 <f>text</f>，<f>number</f> 和 <f>textarea</f> 两项</div>
+                <div class="td">类型，有 <f>text</f>，<f>number</f>，<f>hidden</f> 和 <f>textarea</f> 四项</div>
                 <div class="td">String</div>
                 <div class="td">text</div>
             </div>
@@ -88,7 +88,7 @@
                 <div class="td">false</div>
             </div>
             <div class="tr">
-                <div class="td">error_msg</div>
+                <div class="td">errmsg</div>
                 <div class="td">验证失败提示信息</div>
                 <div class="td">String</div>
                 <div class="td">默认提示</div>

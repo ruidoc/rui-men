@@ -3,6 +3,7 @@ import RumModel from './components/Common/Model'
 import RumPoptip from './components/Common/Poptip'
 import RumButton from './components/Common/Button'
 import RumSelect from './components/Common/Select'
+import RumOption from './components/Common/Option'
 import RumRadio from './components/Common/Radio'
 import RumTable from './components/Common/Table'
 import RumIcon from './components/Common/Icon'
@@ -29,6 +30,7 @@ Rui.install = (Vue, options)=> {
             RumPoptip,
             RumButton,
             RumSelect,
+            RumOption,
             RumRadio,
             RumTable,
             RumModel,

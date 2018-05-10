@@ -14,14 +14,22 @@
                 <rum-select v-model="opp" :options="options" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px" @on-change="change">
                     <span style="font-size:14px">单选示例 :</span>
                 </rum-select>
+
                 <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple placement="left" @on-change="change" style="margin-right:40px">
                     <span style="font-size:14px">多选示例 :</span>
                 </rum-select>
+
                 <rum-select v-model="opps" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple validate="required">
                     <span style="font-size:14px">必选验证 :</span>
                 </rum-select>
+
                 <rum-select v-model="opp" :options="options" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px" @on-change="change" disabled>
                     <span style="font-size:14px">禁用示例 :</span>
+                </rum-select>
+
+                <rum-select v-model="opp" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px" @on-change="change">
+                    <span style="font-size:14px">option示例 :</span>
+                    <rum-option v-for="(item,ind) in options" :key="ind" :value="item.value">{{item.label}}</rum-option>
                 </rum-select>
             </div>
             <div slot="desc">
@@ -42,9 +50,9 @@
             </div>
             <div class="tr">
                 <div class="td">options</div>
-                <div class="td">下拉框选项，对象包含 <f>value</f> 和 <f>label</f> 两个 key</div>
+                <div class="td">下拉框选项，对象包含 <f>value</f> 和 <f>label</f> 两个 key。不填时使用 <f>rum-option</f> 组件</div>
                 <div class="td">Array</div>
-                <div class="td">[]</div>
+                <div class="td">无</div>
             </div>
             <div class="tr">
                 <div class="td">placement</div>
@@ -59,7 +67,7 @@
                 <div class="td">''</div>
             </div>
             <div class="tr">
-                <div class="td">error_msg</div>
+                <div class="td">errmsg</div>
                 <div class="td">验证失败提示信息</div>
                 <div class="td">String</div>
                 <div class="td">默认提示</div>
@@ -102,6 +110,10 @@ export default {
         </rum-select>
         <rum-select v-model="values" :options="options" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" multiple @on-change="change">
             <span style="font-size:14px">多选示例 :</span>
+        </rum-select>
+        <rum-select v-model="opp" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" style="margin-right:40px" @on-change="change">
+            <span style="font-size:14px">option示例 :</span>
+            <rum-option v-for="(item,ind) in options" :key="ind" :value="item.value">{{item.label}}</rum-option>
         </rum-select>
     </div>
 </template>

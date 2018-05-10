@@ -10,15 +10,17 @@
             <rum-icon type="arrow-right-b" color="#bbb" size="15" class="icon"></rum-icon>
         </div>
         <div class="others" :style="position" v-show="isShow" ref="popper">
+
             <div v-if="!multiple" 
                 :class="['item',{act:item.value==value},{disabled:item.disabled}]" 
-                v-for="(item,index) in options" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
+                v-for="(item,index) in options?options:optiones" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
                     <span>{{item.label}}</span>
                     <rum-icon type="android-done" v-if="item.value==value" size="15" class="icon"></rum-icon>
             </div>
+
             <div v-if="multiple" 
             :class="['item',{act:value.includes(item.value)},{disabled:item.disabled}]" 
-            v-for="(item,index) in options" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
+            v-for="(item,index) in options?options:optiones" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
                 <span>{{item.label}}</span>
                 <rum-icon type="android-done" v-if="value.includes(item.value)" size="15" class="icon"></rum-icon>
             </div>
@@ -36,7 +38,8 @@
                 },
                 isShow: false,
                 error: false,
-                cpval: ''
+                cpval: '',
+                optiones: []
             }
         },
         props: {
@@ -48,10 +51,7 @@
                 type: String,
                 default: 'right'
             },
-            options: {
-                type: Array,
-                default: []
-            },
+            options: Array,
             value: {
                 type: [Number, String, Array]
             },
@@ -60,7 +60,7 @@
                 default: false
             },
             validate: String,
-            error_msg: String,
+            errmsg: String,
             disabled: {
                 type: Boolean,
                 default: false
@@ -75,7 +75,8 @@
                 this.isShow ? this.hide() : this.show()
             },
             changePosition(refer) {
-                let pm_left = refer.offsetLeft-(this.options.length)*32-15
+                let options = this.options?this.options:this.optiones
+                let pm_left = refer.offsetLeft-(options.length)*32-15
                 let pm_right = refer.offsetLeft+refer.offsetWidth+3
                 switch(this.placement) {
                     case 'left':
@@ -104,7 +105,7 @@
             validated() {
                 if(this.values.length?this.values.length==0:this.values==0) {
                     this.error = true
-                    this.$RumMessage(this.error_msg?this.error_msg:'该选项必选','error')
+                    this.$RumMessage(this.errmsg?this.errmsg:'该选项必选','error')
                 } else {
                     this.error = false
                 }
@@ -127,11 +128,12 @@
         },
         computed: {
             selected() {
+                let options = this.options?this.options:this.optiones
                 if(this.multiple) {
-                    let arr = this.options.filter(item=> this.values.includes(item.value))
+                    let arr = options.filter(item=> this.values.includes(item.value))
                     return arr.map(item=> item.label).join(' , ')
                 } else {
-                    return this.options.find(item=> item.value==this.values)
+                    return options.find(item=> item.value==this.values)
                 }
             },
             values: {
@@ -152,6 +154,15 @@
             values(val) {
                 this.$emit('on-change',val)
             }
+        },
+        mounted() {
+            let options = this.$children.filter(item=>item.$options.name=='rum-option')
+            if(options.length>0) {
+                this.optiones = options.map(item=>({
+                    value: item.value?item.value:item.text,
+                    label: item.text
+                }))
+            }
         }
     }
 </script>
@@ -165,8 +176,7 @@
     writing-mode: vertical-lr;
     display: inline-block;
     user-select: none;
-    margin-right: 11px;
-    height: 150px;
+    margin:0 10px 10px 1px;
     .title {
         padding: 1px 3px 0 0;
     }
@@ -174,6 +184,7 @@
         outline: none;
         font-size: @font-size;
         height: 100%;
+        min-height: 150px;
         padding: 6px 0 22px 0;
         width: 34px;
         line-height: 34px;

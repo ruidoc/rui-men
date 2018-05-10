@@ -197,8 +197,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin-right: 11px;
-  height: 150px;
+  margin: 0 10px 10px 1px;
 }
 #select .title[data-v-31550dc0] {
   padding: 1px 3px 0 0;
@@ -207,6 +206,7 @@
   outline: none;
   font-size: 18px;
   height: 100%;
+  min-height: 150px;
   padding: 6px 0 22px 0;
   width: 34px;
   line-height: 34px;
@@ -271,6 +271,10 @@
 #select .others .item.disabled[data-v-31550dc0] {
   cursor: not-allowed;
   color: #ccc;
+}
+
+#rum-option {
+    display: none;
 }
 
 @font-face {
@@ -427,8 +431,7 @@
           writing-mode: vertical-lr;
   display: inline-block;
   position: relative;
-  margin-right: 4px;
-  height: 150px;
+  margin: 0 4px 10px 1px;
 }
 #inputwp .title[data-v-496bdbb6] {
   padding: 1px 3px 0 0;
@@ -441,6 +444,7 @@
   border: 1px solid #dddee1;
   outline: none;
   height: 100%;
+  min-height: 150px;
   text-indent: 2px;
   min-width: 34px;
   border-radius: 2px;
