@@ -59,6 +59,12 @@
                 <div class="td">''</div>
             </div>
             <div class="tr">
+                <div class="td">error_msg</div>
+                <div class="td">验证失败提示信息</div>
+                <div class="td">String</div>
+                <div class="td">默认提示</div>
+            </div>
+            <div class="tr">
                 <div class="td">multiple</div>
                 <div class="td">是否多选</div>
                 <div class="td">Boolean</div>

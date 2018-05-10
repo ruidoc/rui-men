@@ -15,6 +15,7 @@ import RumTime from './components/Common/Time'
 import RumUpload from './components/Common/Upload'
 import RumCheckBox from './components/Common/CheckBox'
 import RumSteps from './components/Common/Steps'
+import RumValidator from './components/Common/Validator'
 
 const Rui = new Object();
 
@@ -40,7 +41,8 @@ Rui.install = (Vue, options)=> {
             RumTime,
             RumUpload,
             RumCheckBox,
-            RumSteps
+            RumSteps,
+            RumValidator
         }
     })
     Vue.prototype.$RumModel = (config)=> {

@@ -60,6 +60,7 @@
                 default: false
             },
             validate: String,
+            error_msg: String,
             disabled: {
                 type: Boolean,
                 default: false
@@ -100,6 +101,14 @@
                     }
                 }
             },
+            validated() {
+                if(this.values.length?this.values.length==0:this.values==0) {
+                    this.error = true
+                    this.$RumMessage(this.error_msg?this.error_msg:'该选项必选','error')
+                } else {
+                    this.error = false
+                }
+            },
             show() {
                 this.isShow = true
                 document.addEventListener('click', this.hidePanel, false)
@@ -137,14 +146,7 @@
         watch: {
             isShow(val) {
                 if(!val && this.validate == 'required') {
-                    if(this.values.length?this.values.length==0:this.values==0) {
-                        this.error = true
-                        this.$RumMessage('该选项必选','error')
-                        this.$emit('on-validated',false)
-                    } else {
-                        this.error = false
-                        this.$emit('on-validated',true)
-                    }
+                    this.validated()
                 }
             },
             values(val) {
@@ -156,84 +158,84 @@
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-    #select {
-        position: relative;
-        cursor: pointer;
-        font-family: 'OrhonChaganTig';
-        writing-mode: vertical-lr;
+#select {
+    position: relative;
+    cursor: pointer;
+    font-family: 'OrhonChaganTig';
+    writing-mode: vertical-lr;
+    display: inline-block;
+    user-select: none;
+    margin-right: 11px;
+    height: 150px;
+    .title {
+        padding: 1px 3px 0 0;
+    }
+    .refer {
+        outline: none;
+        font-size: @font-size;
+        height: 100%;
+        padding: 6px 0 22px 0;
+        width: 34px;
+        line-height: 34px;
+        box-sizing: border-box;
+        border: 1px solid #dddee1;
+        text-indent: 2px;
         display: inline-block;
-        user-select: none;
-        margin-right: 11px;
-        .title {
-            padding: 1px 3px 0 0;
+        font-family: 'OrhonChaganTig';
+        cursor: pointer;
+        position: relative;
+        border-radius: 2px;
+        &.disabled {
+            background: #f0f0f0;
+            cursor: not-allowed;
         }
-        .refer {
-            outline: none;
-            font-size: @font-size;
+        &:empty::before {  
+            color: #aaa;  
+            content:attr(placeholder);
+        }
+        &:focus {
+            border-color: @primary-color;
+        }
+        &.error {
+            border-color: #ed3f14;
+        }
+        .icon {
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+        }
+    }
+    .others {
+        position: absolute;
+        height: 100%;
+        background: #fff;
+        box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.08);
+        z-index: 20;
+        border-radius: 1px;
+        text-align: center;
+        font-size: @font-size;
+        padding: 0 6px;
+        .item {
             height: 100%;
-            padding: 6px 0 22px 0;
-            width: 34px;
-            line-height: 34px;
-            box-sizing: border-box;
-            border: 1px solid #dddee1;
-            text-indent: 2px;
-            display: inline-block;
-            font-family: 'OrhonChaganTig';
-            cursor: pointer;
+            padding: 10px 6px;
+            text-align: start;
             position: relative;
-            border-radius: 2px;
-            min-height: 120px;
-            &.disabled {
-                background: #f0f0f0;
-                cursor: not-allowed;
+            &:hover {
+                background: #f5f5f5;
             }
-            &:empty::before {  
-                color: #aaa;  
-                content:attr(placeholder);
-            }
-            &:focus {
-                border-color: @primary-color;
-            }
-            &.error {
-                border-color: #ed3f14;
+            &.act {
+                color: @primary-color;
             }
             .icon {
                 position: absolute;
-                bottom: 4px;
-                left: 0;
+                bottom: 10px;
+                left: 31%;
             }
-        }
-        .others {
-            position: absolute;
-            height: 100%;
-            background: #fff;
-            box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.08);
-            z-index: 20;
-            border-radius: 1px;
-            text-align: center;
-            font-size: @font-size;
-            padding: 0 6px;
-            .item {
-                height: 100%;
-                padding: 10px 6px;
-                text-align: start;
-                position: relative;
-                &:hover {
-                    background: #f5f5f5;
-                }
-                &.act {
-                    color: @primary-color;
-                }
-                .icon {
-                    position: absolute;
-                    bottom: 10px;
-                    left: 31%;
-                }
-                &.disabled {
-                    cursor: not-allowed;
-                    color: #ccc;
-                }
+            &.disabled {
+                cursor: not-allowed;
+                color: #ccc;
             }
         }
     }
+}
 </style>

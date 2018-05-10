@@ -1,0 +1,34 @@
+<template>
+    <div id="rum_validator">
+        <slot></slot>
+        <rum-button name="button" type="primary" @on-click="valide">{{bt_text}}</rum-button>
+    </div>
+</template>
+
+<script>
+export default {
+    props: {
+        bt_text: {
+            type: String,
+            default: '提交'
+        }
+    },
+    methods: {
+        valide() {
+            this.$children.forEach(item=> {
+                if(item.validate) {
+                    item.validated()
+                }
+            })
+            let leng = this.$children.filter(item=>item.error).length
+            if(!leng) {
+                this.$emit('on-success')
+            }
+        }
+    },
+}
+</script>
+
+<style>
+
+</style>

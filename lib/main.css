@@ -198,6 +198,7 @@
       -ms-user-select: none;
           user-select: none;
   margin-right: 11px;
+  height: 150px;
 }
 #select .title[data-v-31550dc0] {
   padding: 1px 3px 0 0;
@@ -218,7 +219,6 @@
   cursor: pointer;
   position: relative;
   border-radius: 2px;
-  min-height: 120px;
 }
 #select .refer.disabled[data-v-31550dc0] {
   background: #f0f0f0;
@@ -428,6 +428,7 @@
   display: inline-block;
   position: relative;
   margin-right: 4px;
+  height: 150px;
 }
 #inputwp .title[data-v-496bdbb6] {
   padding: 1px 3px 0 0;
@@ -1074,3 +1075,36 @@ table[data-v-06bb193e] {
 #steps_dv .step_item.will .step_line[data-v-34e46093]::after {
   background: #ddd;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

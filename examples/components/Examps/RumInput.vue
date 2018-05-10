@@ -14,6 +14,9 @@
                 <rum-input v-model="value" style="height:150px" autofocus>
                     <span style="font-size:14px">无验证，自动聚焦 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
+                <rum-input v-model="num" style="height:150px" type="number">
+                    <span style="font-size:14px">数字类型 :</span>
+                </rum-input> &nbsp;&nbsp;&nbsp;
                 <rum-input v-model="value1" style="height:150px" validate="required">
                     <span style="font-size:14px">不为空验证 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
@@ -29,13 +32,13 @@
                 <rum-input v-model="value4" style="height:150px" validate="email">
                     <span style="font-size:14px">邮箱验证 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
-                <rum-input v-model="value" style="height:150px" disabled>
+                <rum-input v-model="value2" style="height:150px" disabled>
                     <span style="font-size:14px">禁用 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
-                <rum-input v-model="value" style="height:150px" readonly>
+                <rum-input v-model="value3" style="height:150px" readonly>
                     <span style="font-size:14px">只读 :</span>
                 </rum-input> &nbsp;&nbsp;&nbsp;
-                <rum-input v-model="value" style="height:150px" type="textarea">
+                <rum-input v-model="value4" style="height:150px" type="textarea">
                     <span style="font-size:14px">文本域 :</span>
                 </rum-input>
             </div>
@@ -56,7 +59,7 @@
             </div>
             <div class="tr">
                 <div class="td">type</div>
-                <div class="td">类型，有 <f>text</f> 和 <f>textarea</f> 两项</div>
+                <div class="td">类型，有 <f>text</f>，<f>number</f> 和 <f>textarea</f> 两项</div>
                 <div class="td">String</div>
                 <div class="td">text</div>
             </div>
@@ -83,6 +86,12 @@
                 <div class="td">是否禁用</div>
                 <div class="td">Boolean</div>
                 <div class="td">false</div>
+            </div>
+            <div class="tr">
+                <div class="td">error_msg</div>
+                <div class="td">验证失败提示信息</div>
+                <div class="td">String</div>
+                <div class="td">默认提示</div>
             </div>
             <div class="tr">
                 <div class="td">readonly</div>
@@ -115,10 +124,11 @@ export default {
     data() {
         return {
             value: "ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ",
-            value1: "",
-            value2: "",
-            value3: "",
-            value4: "",
+            num: 1,
+            value1: "ᠪᠰᠬᠼ ᠠᠰᠪᠼ",
+            value2: "ᠠᠰᠪᠺᠠ",
+            value3: "ᠵᠣᠡᠢᠴᠣᠵ",
+            value4: "ᠪᠺᠬᠠᠪᠰᠼᠪ",
             baseuse: `<rum-input v-model="val"/>`,
             codeh1: `<template>
     <rum-input v-model="value" style="height:150px">
@@ -151,11 +161,12 @@ export default {
     export default {
         data() {
             return {
+                num: 1,
                 value: "ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ",
-                value1: "",
-                value2: "",
-                value3: "",
-                value4: "",
+                value1: "ᠪᠰᠬᠼ ᠠᠰᠪᠼ",
+                value2: "ᠠᠰᠪᠺᠠ",
+                value3: "ᠵᠣᠡᠢᠴᠣᠵ",
+                value4: "ᠪᠺᠬᠠᠪᠰᠼᠪ",
             }
         }
     }

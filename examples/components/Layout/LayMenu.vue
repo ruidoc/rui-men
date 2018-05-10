@@ -114,6 +114,12 @@ export default {
                     name: 'rum-steps',
                     title: '步骤条'
                 },
+                {
+                    type: 3,
+                    link: 'rum-validator',
+                    name: 'rum-validator',
+                    title: '验证器'
+                },
             ]
         }
     },

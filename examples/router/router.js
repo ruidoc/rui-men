@@ -64,6 +64,10 @@ const homeRouter = [
 		path: 'rum-steps',
 		component: re=> require(['&/Examps/RumSteps.vue'],re)
 	},
+	{
+		path: 'rum-validator',
+		component: re=> require(['&/Examps/RumValidator.vue'],re)
+	},
 ]
 
 export default {

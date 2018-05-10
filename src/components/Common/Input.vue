@@ -3,8 +3,10 @@
         <span class="title">
             <slot></slot>
         </span>
-        <input type="text" :autofocus="autofocus" v-if="type=='text'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
-        <textarea v-if="type=='textarea'" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+
+        <input :type="type" :autofocus="autofocus" :min="1" v-if="type!='textarea'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+
+        <textarea v-if="type=='textarea'" :style="{width}" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
         <div class="rum-inp-search" v-if="search" @click="onsearch">
             <rum-icon type="search"></rum-icon>
         </div>
@@ -19,7 +21,7 @@
             }
         },
         props: {
-            value: String,
+            value: [String,Number],
             autofocus: {
                 type: Boolean,
                 default: false
@@ -31,6 +33,10 @@
             type: {
                 type: String,
                 default: 'text'
+            },
+            width: {
+                type: String,
+                default: '55px'
             },
             disabled: {
                 type: Boolean,
@@ -44,7 +50,8 @@
                 type: Boolean,
                 default: false
             },
-            validate: String
+            validate: String,
+            error_msg: String
         },
         methods: {
             blur(valid) {
@@ -59,40 +66,28 @@
                     case 'required':
                         if(this.value.length==0) {
                             this.error = true
-                            this.$RumMessage('字段不为空','error')
-                            this.$emit('on-validated',false)
-                        } else {
-                            this.$emit('on-validated',true)
+                            this.$RumMessage(this.error_msg?this.error_msg:'字段不为空','error')
                         }
                         break;
                     case 'mobile':
                         patt = /^(13|15|18|14)[0-9]{9}$/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            this.$RumMessage('手机号格式错误','error')
-                            this.$emit('on-validated',false)
-                        } else {
-                            this.$emit('on-validated',true)
+                            this.$RumMessage(this.error_msg?this.error_msg:'手机号格式错误','error')
                         }
                         break;
                     case 'idcard':
                         patt = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            this.$RumMessage('身份证号错误','error')
-                            this.$emit('on-validated',false)
-                        } else {
-                            this.$emit('on-validated',true)
+                            this.$RumMessage(this.error_msg?this.error_msg:'身份证号错误','error')
                         }
                         break;
                     case 'email':
                         patt = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
                         if(!patt.test(this.value)) {
                             this.error = true
-                            this.$RumMessage('邮箱格式错误','error')
-                            this.$emit('on-validated',false)
-                        } else {
-                            this.$emit('on-validated',true)
+                            this.$RumMessage(this.error_msg?this.error_msg:'邮箱格式错误','error')
                         }
                         break;
                 }
@@ -122,6 +117,7 @@
     display: inline-block;
     position: relative;
     margin-right: 4px;
+    height: 150px;
     .title {
         padding: 1px 3px 0 0;
     }
