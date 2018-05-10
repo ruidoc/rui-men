@@ -250,6 +250,9 @@
   text-align: center;
   font-size: 18px;
   padding: 0 6px;
+  max-width: 400px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 #select .others .item[data-v-31550dc0] {
   height: 100%;
