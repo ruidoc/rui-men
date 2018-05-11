@@ -4,9 +4,9 @@
             <slot></slot>
         </span>
 
-        <input :type="type" :autofocus="autofocus" :min="1" v-if="type!='textarea'" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <input :type="type" :autofocus="autofocus" :min="1" v-if="type!='textarea'" v-model="vals" class="myinput" ref="input" :class="[{validate_err},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
 
-        <textarea v-if="type=='textarea'" :style="{width}" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{error},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <textarea v-if="type=='textarea'" :style="{width}" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{validate_err},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
         <div class="rum-inp-search" v-if="search" @click="onsearch">
             <rum-icon type="search"></rum-icon>
         </div>
@@ -17,7 +17,7 @@
     export default {
         data() {
             return {
-                error: false
+                validate_err: false
             }
         },
         props: {
@@ -56,7 +56,7 @@
         methods: {
             blur(valid) {
                 if(valid) {
-                    this.error = false
+                    this.validate_err = false
                     this.validated()
                 }
             },
@@ -65,28 +65,28 @@
                 switch(this.validate) {
                     case 'required':
                         if(this.value.length==0) {
-                            this.error = true
+                            this.validate_err = true
                             this.$RumMessage(this.errmsg?this.errmsg:'字段不为空','error')
                         }
                         break;
                     case 'mobile':
                         patt = /^(13|15|18|14)[0-9]{9}$/
                         if(!patt.test(this.value)) {
-                            this.error = true
+                            this.validate_err = true
                             this.$RumMessage(this.errmsg?this.errmsg:'手机号格式错误','error')
                         }
                         break;
                     case 'idcard':
                         patt = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
                         if(!patt.test(this.value)) {
-                            this.error = true
+                            this.validate_err = true
                             this.$RumMessage(this.errmsg?this.errmsg:'身份证号错误','error')
                         }
                         break;
                     case 'email':
                         patt = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
                         if(!patt.test(this.value)) {
-                            this.error = true
+                            this.validate_err = true
                             this.$RumMessage(this.errmsg?this.errmsg:'邮箱格式错误','error')
                         }
                         break;
@@ -138,7 +138,7 @@
         &.textarea {
             min-height: 70px;
         }
-        &.error {
+        &.validate_err {
             border-color: #ed3f14;
         }
         &:focus {

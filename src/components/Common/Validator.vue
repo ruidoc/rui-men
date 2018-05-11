@@ -20,10 +20,12 @@ export default {
                     item.validated()
                 }
             })
-            let leng = this.$children.filter(item=>item.error).length
+            let leng = this.$children.filter(item=>item.validate_err).length
             console.log('leng',leng);
             if(leng==0) {
                 this.$emit('on-success')
+            } else {
+                this.$emit('on-error')
             }
         }
     },

@@ -3,7 +3,7 @@
         <span class="title">
             <slot></slot>
         </span>
-        <div :class="['refer',{error},{disabled}]" @click="focus(disabled)" ref="refer">
+        <div :class="['refer',{validate_err},{disabled}]" @click="focus(disabled)" ref="refer">
             <span v-if="typeof(selected)=='object'">{{selected.label}}</span>
             <span v-else-if="value==''" style="color:#aaa">{{placeholder}}</span>
             <span v-else-if="typeof(selected)=='string'">{{selected}}</span>
@@ -37,7 +37,7 @@
                     left: 0
                 },
                 isShow: false,
-                error: false,
+                validate_err: false,
                 cpval: '',
                 optiones: []
             }
@@ -104,10 +104,10 @@
             },
             validated() {
                 if(this.values.length?this.values.length==0:this.values==0) {
-                    this.error = true
+                    this.validate_err = true
                     this.$RumMessage(this.errmsg?this.errmsg:'该选项必选','error')
                 } else {
-                    this.error = false
+                    this.validate_err = false
                 }
             },
             show() {
@@ -207,7 +207,7 @@
         &:focus {
             border-color: @primary-color;
         }
-        &.error {
+        &.validate_err {
             border-color: #ed3f14;
         }
         .icon {

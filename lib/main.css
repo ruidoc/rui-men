@@ -231,7 +231,7 @@
 #select .refer[data-v-31550dc0]:focus {
   border-color: #2d8cf0;
 }
-#select .refer.error[data-v-31550dc0] {
+#select .refer.validate_err[data-v-31550dc0] {
   border-color: #ed3f14;
 }
 #select .refer .icon[data-v-31550dc0] {
@@ -458,7 +458,7 @@
 #inputwp .myinput.textarea[data-v-496bdbb6] {
   min-height: 70px;
 }
-#inputwp .myinput.error[data-v-496bdbb6] {
+#inputwp .myinput.validate_err[data-v-496bdbb6] {
   border-color: #ed3f14;
 }
 #inputwp .myinput[data-v-496bdbb6]:focus {
@@ -1082,6 +1082,8 @@ table[data-v-06bb193e] {
 #steps_dv .step_item.will .step_line[data-v-34e46093]::after {
   background: #ddd;
 }
+
+
 
 
 
