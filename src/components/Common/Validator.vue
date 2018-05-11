@@ -21,7 +21,8 @@ export default {
                 }
             })
             let leng = this.$children.filter(item=>item.error).length
-            if(!leng) {
+            console.log('leng',leng);
+            if(leng==0) {
                 this.$emit('on-success')
             }
         }
