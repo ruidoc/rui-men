@@ -13,7 +13,7 @@
             <div class="example">
                 <p><rum-radio v-model="val" value="1">ᠪᠹᠵᠤᠺᠰᠬᠰᠬᠠ</rum-radio></p>
                 <p><rum-radio v-model="val" value="2">ᠰᠪᠼᠰᠼ</rum-radio></p>
-                <p><rum-radio v-model="val" value="3">ᠱᠤᠵᠭᠤᠼ</rum-radio></p>
+                <p><rum-radio v-model="val" value="3">ᠰᠪᠼᠰᠼ</rum-radio></p>
                 <p>{{val}}</p>
             </div>
             <div slot="desc">
