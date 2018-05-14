@@ -1,6 +1,6 @@
 {
   "name": "rui-men",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "maybe the first mongolian language UI framework base on vue.js",
   "author": "ruidoc",
   "main": "lib/main.js",
