@@ -10,7 +10,7 @@ export default {
     props: {
         bt_text: {
             type: String,
-            default: '提交'
+            default: 'ᠲᠤᠰᠢᠶᠠᠬᠤ'
         }
     },
     methods: {

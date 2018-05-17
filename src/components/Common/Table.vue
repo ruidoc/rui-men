@@ -104,7 +104,6 @@
         border: 1px solid #dddee1;
         .head {
             padding: 11px 7px;
-            font-weight: bold;
             background: #ecf3fd;
             display: flex;
             justify-content: flex-start;

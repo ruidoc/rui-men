@@ -380,7 +380,6 @@
 }
 #tables .table .head[data-v-6d271dba] {
   padding: 11px 7px;
-  font-weight: bold;
   background: #ecf3fd;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -491,6 +490,7 @@
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
+  text-orientation: sideways-right;
   padding: 10px 7px;
   background: #fff;
   -webkit-box-shadow: 0 2px 8px #ddd;

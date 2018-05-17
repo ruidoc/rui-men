@@ -42,6 +42,7 @@ export default {
 .message {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
+    text-orientation: sideways-right;
     padding: 10px 7px;
     background: #fff;
     box-shadow: 0 2px 8px #ddd;

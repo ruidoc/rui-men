@@ -202,7 +202,7 @@
         }
         &:empty::before {  
             color: #aaa;  
-            content:attr(placeholder);
+            content: attr(placeholder);
         }
         &:focus {
             border-color: @primary-color;
