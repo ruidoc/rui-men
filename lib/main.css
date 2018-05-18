@@ -490,7 +490,6 @@
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
-  text-orientation: sideways-right;
   padding: 10px 7px;
   background: #fff;
   -webkit-box-shadow: 0 2px 8px #ddd;
@@ -501,6 +500,7 @@
   position: relative;
 }
 .message .text[data-v-89ea4f1a] {
+  -webkit-text-orientation: sideways-right;
   font-size: 18px;
   padding-top: 3px;
 }
