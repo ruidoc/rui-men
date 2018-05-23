@@ -20,11 +20,11 @@ export default {
                     link: 'starting',
                     title: '快速上手'
                 },
-                {
-                    type: 1,
-                    link: 'testing',
-                    title: '测试组件'
-                },
+                // {
+                //     type: 1,
+                //     link: 'testing',
+                //     title: '测试组件'
+                // },
                 {
                     type: 2,
                     link: '',

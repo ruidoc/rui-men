@@ -1,6 +1,6 @@
 <template>
     <div id="inputwp">
-        <span class="title">
+        <span class="title" v-if="$slots.default">
             <slot></slot>
         </span>
 

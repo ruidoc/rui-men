@@ -1,6 +1,6 @@
 <template>
     <div id="select">
-        <span class="title">
+        <span class="title" v-if="$slots.default">
             <slot></slot>
         </span>
         <div :class="['refer',{validate_err},{disabled}]" @click="focus(disabled)" ref="refer">
@@ -10,7 +10,7 @@
             <rum-icon type="arrow-right-b" color="#bbb" size="15" class="icon"></rum-icon>
         </div>
         <div class="others" :style="position" v-show="isShow" ref="popper">
-
+            <rum-input v-model="searstr" style="height:90%" v-if="search"></rum-input>
             <div v-if="!multiple" 
                 :class="['item',{act:item.value==value},{disabled:item.disabled}]" 
                 v-for="(item,index) in options?options:optiones" :key="index" @click.stop="itemClick(item,multiple,item.disabled)">
@@ -39,7 +39,9 @@
                 isShow: false,
                 validate_err: false,
                 cpval: '',
-                optiones: []
+                optiones: [],
+                optiones_copy: [],
+                searstr: ''
             }
         },
         props: {
@@ -61,6 +63,10 @@
             },
             validate: String,
             errmsg: String,
+            search: {
+                type: Boolean,
+                default: false
+            },
             disabled: {
                 type: Boolean,
                 default: false
@@ -153,6 +159,15 @@
             },
             values(val) {
                 this.$emit('on-change',val)
+            },
+            searstr(val) {
+                if(val.length!=0) {
+                    this.optiones = this.optiones_copy.filter(item=> {
+                        return new RegExp(val).test(item.label)
+                    })
+                } else {
+                    this.optiones = this.optiones_copy
+                }
             }
         },
         mounted() {
@@ -163,6 +178,7 @@
                     label: item.text
                 }))
             }
+            this.optiones_copy = JSON.parse(JSON.stringify(this.optiones))
         }
     }
 </script>

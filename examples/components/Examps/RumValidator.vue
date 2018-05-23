@@ -10,15 +10,16 @@
         <br>
         <Par type="h2">代码演示</Par>
         <Card title="注意">
-            <div>
-                <rum-validator @on-success="$RumMessage('ok','success')">
+            <div style="height:180px">
+                <rum-validator @on-success="$RumMessage('ok','success')" ref="form">
                     <rum-input validate="required" v-model="value1"></rum-input>
                     <rum-input validate="mobile" v-model="value2"></rum-input>
                     <rum-select v-model="opps" :options="[
                         {value: 1, label: 'ᠽᠳᠪᠼ᠋ᡂᠼᠡ'},
                         {value: 2, label: 'ᠠᠰᠼᠤᠼ'}
-                    ]" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" validate="required">
+                    ]" placeholder="ᠬᠰᠹᠰᠳᠹᠹ" validate="required">
                     </rum-select>
+                    <rum-button type="primary" slot="submit" @on-click="tock('form')">ᠳᠵᠺᠤᠪᠵᠳᠹᠤ</rum-button>
                 </rum-validator>
             </div>
             <div slot="desc">
@@ -35,6 +36,15 @@
                 <div class="td">按钮文字</div>
                 <div class="td">String</div>
                 <div class="td">提交</div>
+            </div>
+        </Table>
+
+        <br>
+        <Par type="h2">Slots</Par>
+        <Table :titles="['名称|5','说明']">
+            <div class="tr">
+                <div class="td">submit</div>
+                <div class="td">提交按钮</div>
             </div>
         </Table>
 
@@ -67,6 +77,7 @@ export default {
             {value: 2, label: 'ᠠᠰᠼᠤᠼ'}
         ]" placeholder="sᠬᠰᠹᠰᠳᠹᠹ" validate="required">
         </rum-select>
+        <rum-button type="primary" slot="submit" @on-click="tock('form')">ᠳᠵᠺᠤᠪᠵᠳᠹᠤ</rum-button>
     </rum-validator>
 </template>
 
@@ -78,9 +89,19 @@ export default {
             value1: 'value1',
             value2: 'value1'
         }
+    },
+    methods: {
+        tock(dom) {
+            this.$refs[dom].valide()
+        }
     }
 }
 <\/script>`
+        }
+    },
+    methods: {
+        tock(dom) {
+            this.$refs[dom].valide()
         }
     }
 }
