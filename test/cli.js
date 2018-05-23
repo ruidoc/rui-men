@@ -13,7 +13,7 @@ setTimeout(()=> {
     spinner.stop()
     process.stdout.write(chalk.bold.green('中奖了！')+'\n')
     // process.stdout.write(process.cwd())
-},1000)
+},10000)
 
 process.on('beforeExit',code=> {
     console.log('outbefore: '+code)
