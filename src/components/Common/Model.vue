@@ -1,7 +1,7 @@
 <template>
     <transition name="fades">
-    <div id="rum_model" v-show="isShow" @click.self="isShow=false">
-        <div :class="['handel',{confirm}]">
+    <div class="rum-ui-model-wrap" v-show="isShow" @click.self="isShow=false">
+        <div :class="['rum-ui-model',{confirm}]">
             <div class="title" v-if="title.length>0 && !confirm">
                 <rum-icon type="close-round" size="14" class="icon" @click.native="isShow=false"></rum-icon>
                 <span>{{title}}</span>
@@ -73,7 +73,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-#rum_model {
+.rum-ui-model-wrap {
     position: fixed;
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
@@ -84,12 +84,12 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    .handel {
+    .rum-ui-model {
         background: #fff;
         border-radius: 4px;
         display: inline-block;
         position: relative;
-        top: -10%;
+        top: -1%;
         min-height: 400px;
         .title {
             border-right: 1px solid #e9eaec;

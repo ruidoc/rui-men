@@ -1,5 +1,5 @@
 <template>
-    <div id="rum-checkbox" @click="checked" :class="{disabled}">
+    <div @click="checked" :class="{'rum-ui-checkbox':1,disabled}">
         <span :class="['box',{check: checks.includes(value)}]">
             <rum-icon type="checkmark" size="10"></rum-icon>
         </span>
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#rum-checkbox {
+.rum-ui-checkbox {
     display: flex;
     align-items: center;
     font-family: 'OrhonChaganTig';

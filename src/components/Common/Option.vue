@@ -1,5 +1,5 @@
 <template>
-    <div id="rum-option">
+    <div class="rum-select-option">
         <slot></slot>
     </div>
 </template>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style>
-#rum-option {
+.rum-select-option {
     display: none;
 }
 </style>

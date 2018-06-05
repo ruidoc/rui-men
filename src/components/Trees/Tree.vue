@@ -1,5 +1,5 @@
 <template>
-    <div id="trees" :class="{sub}">
+    <div :class="{'rum-ui-trees':1,sub}">
         <rum-node v-for="(item,index) in data" :key="index" :item="item" @on-item-click="click" @async-load="async"></rum-node>
     </div>
 </template>
@@ -9,7 +9,7 @@
 import RumNode from './Node.vue'
 
 export default {
-    name: 'trees',
+    name: 'rum-trees',
     props: {
         data: Array,
         sub: {
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#trees {
+.rum-ui-trees {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
     position: relative;

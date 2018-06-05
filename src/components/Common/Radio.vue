@@ -1,15 +1,15 @@
 <template>
-    <div id="radio_dv" @click="updateVal">
-        <label class="rui-radio" :class="{'checked':model==value,'disabled':disabled}">
+    <div class="rum-ui-radio-wrap" @click="updateVal">
+        <label :class="{'rum-ui-radio':1,'checked':model==value,'disabled':disabled}">
             <input type="radio" ref="radio" :value="value"  :disabled="disabled">
         </label>
-        <span class="size"><slot></slot></span>
+        <span class="rum-radio-text"><slot></slot></span>
     </div>
 </template>
 
 <script>
 export default {
-    name: "rui-radio",
+    name: "rum-radio",
     model: {
         prop: "model",
         event: "change"
@@ -46,19 +46,14 @@ export default {
 
 <style lang="less" scoped>
 @import "../../styles/rui-base.less";
-#radio_dv {
+.rum-ui-radio-wrap {
     display: flex;
     align-items: center;
     writing-mode: vertical-lr;
     cursor: pointer;
     margin-right: 4px;
 }
-.size {
-    font-size: 16px;
-    padding: 4px 0 6px 0;
-    font-family: 'OrhonChaganTig';
-}
-.rui-radio {
+.rum-ui-radio {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -99,5 +94,10 @@ export default {
         margin: 0;
         cursor: pointer;
     }
+}
+.rum-radio-text {
+    font-size: 16px;
+    padding: 4px 0 6px 0;
+    font-family: 'OrhonChaganTig';
 }
 </style>

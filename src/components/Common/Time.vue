@@ -1,5 +1,5 @@
 <template>
-    <div id="rumtime" :style="style">
+    <div class="rum-ui-time" :style="style">
         <date-picker v-model="timestr" :limit="limit" :type="type" ref="time"></date-picker>
     </div>
 </template>
@@ -59,7 +59,7 @@
 </script>
 
 <style>
-    #rumtime {
+    .rum-ui-time {
         display: inline-block;
         overflow: hidden;
     }

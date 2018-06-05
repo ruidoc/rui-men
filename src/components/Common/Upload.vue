@@ -1,5 +1,5 @@
 <template>
-    <div class="upload">
+    <div class="rum-ui-upload">
         <rum-button icon="ios-cloud-upload">
             ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠢᠶᠠᠨ ᠰᠣᠩᠭᠣᠬᠣ
             <input @change="fileChange" type="file" multiple class="input"/>
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    .input {
+    .rum-ui-upload {
         opacity: 0;
         width: 100%;
         height: 100%;

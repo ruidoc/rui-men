@@ -1,6 +1,6 @@
 <template>
-    <div id="steps_dv" :style="{width:width+'px'}">
-        <div :class="['step_item',{active:current==index+1},{will:current<index+1}]" v-for="(item,index) in data" :key="index" ref="stpiem">
+    <div class="rum-ui-step-wrap" :style="{width:width+'px'}">
+        <div :class="['rum-ui-step',{active:current==index+1},{will:current<index+1}]" v-for="(item,index) in data" :key="index" ref="stpiem">
             <div class="step_line" v-if="index!=0" :style="{height:height+'px'}"></div>
             <div class="step_ctrl">
                 <rum-icon type="checkmark" v-if="current>index+1"></rum-icon>
@@ -44,11 +44,11 @@ export default {
 
 <style lang="less" scoped>
 @import "../../styles/rui-base.less";
-#steps_dv {
+.rum-ui-step-wrap {
     writing-mode: vertical-lr;
     display: flex;
     padding-bottom: 50px;
-    .step_item {
+    .rum-ui-step {
         display: flex;
         .step_ctrl {
             width: 26px;

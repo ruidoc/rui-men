@@ -1,5 +1,5 @@
 <template>
-    <div id="rum_validator">
+    <div class="rum-ui-validator">
         <slot></slot>
         <div>
             <rum-button type="primary" @on-click="valide">{{bt_text}}</rum-button>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style>
-#rum_validator {
+.rum-ui-validator {
     writing-mode: vertical-lr;
 }
 </style>

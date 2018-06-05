@@ -1,5 +1,5 @@
 <template>
-    <div id="button" :class="[size,type]" @click="onClick">
+    <div :class="['rum-ui-button',size,type]" @click="onClick">
         <rum-icon v-if="icon" :type="icon"></rum-icon>
         <slot></slot>
     </div>
@@ -39,7 +39,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-#button {
+.rum-ui-button {
     display: inline-block;
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;

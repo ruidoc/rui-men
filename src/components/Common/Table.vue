@@ -1,6 +1,6 @@
 <template>
-    <div id="tables">
-        <div class="handel" v-if="!hideHandel">
+    <div class="rum-ui-table-wrap">
+        <div class="rum-table-handel" v-if="!hideHandel">
             <rum-button @on-click="onadd" v-if="add">
                 <rum-icon class="icon" type="plus"></rum-icon>
                 <span>ᠰᠢᠨ᠎ᠡ ᠪᠡᠷ ᠨᠡᠮᠡᠬᠦ</span>
@@ -14,7 +14,7 @@
                 <rum-icon class="icon" type="loop" size="22"></rum-icon>
             </span>
         </div>
-        <div class="table">
+        <div class="rum-table">
             <div class="head">
                 <div v-for="(item,ind) in columns" :key="ind" 
                 :style="{'height':item.height?item.height+'px':'auto','flex':item.height?false:1}" 
@@ -86,11 +86,11 @@
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-#tables {
+.rum-ui-table-wrap {
     writing-mode: vertical-lr;
     font-size: @font-size;
     font-family: 'OrhonChaganTig';
-    .handel {
+    .rum-table-handel {
         padding: 0 8px;
         position: relative;
         .reload {
@@ -100,7 +100,7 @@
             cursor: pointer;
         }
     }
-    .table {
+    .rum-table {
         border: 1px solid #dddee1;
         .head {
             padding: 11px 7px;

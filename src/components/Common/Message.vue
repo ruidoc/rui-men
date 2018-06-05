@@ -1,11 +1,11 @@
 <template>
     <transition name="enters">
-    <div class="message" v-if="isShow">
+    <div class="rum-ui-message" v-if="isShow">
         <rum-icon v-if="type=='info'" type="information-circled" color="#2d8cf0" size="18"></rum-icon>
         <rum-icon v-if="type=='warn'" type="alert-circled" color="#ff9900" size="18"></rum-icon>
         <rum-icon v-if="type=='error'" type="close-circled" color="#ed3f14" size="18"></rum-icon>
         <rum-icon v-if="type=='success'" type="checkmark-circled" color="#19be6b" size="18"></rum-icon>
-        <span class="text">{{message}}</span>
+        <span class="rum-message-text">{{message}}</span>
     </div>
     </transition>
 </template>
@@ -38,8 +38,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
-.message {
+.rum-ui-message {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
     padding: 10px 7px;
@@ -49,7 +48,7 @@ export default {
     color: #888;
     border-radius: 2px;
     position: relative;
-    .text {
+    .rum-message-text {
         -webkit-text-orientation: sideways-right;
         font-size: 18px;
         padding-top: 3px;

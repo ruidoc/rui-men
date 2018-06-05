@@ -1,13 +1,13 @@
 <template>
-    <div id="inputwp">
+    <div class="rum-ui-input-wrap">
         <span class="title" v-if="$slots.default">
             <slot></slot>
         </span>
 
-        <input :type="type" :autofocus="autofocus" :min="1" v-if="type!='textarea'" v-model="vals" class="myinput" ref="input" :class="[{validate_err},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <input :type="type" :autofocus="autofocus" :min="1" v-if="type!='textarea'" v-model="vals" ref="input" :class="['rum-ui-input',{validate_err},{disabled},{readonly},{search}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
 
-        <textarea v-if="type=='textarea'" :style="{width}" :autofocus="autofocus" v-model="vals" class="myinput" ref="input" :class="[{validate_err},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
-        <div class="rum-inp-search" v-if="search" @click="onsearch">
+        <textarea v-if="type=='textarea'" :style="{width}" :autofocus="autofocus" v-model="vals" ref="input" :class="['rum-ui-input',{validate_err},{disabled},{readonly}]" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" @blur="blur(validate)"/>
+        <div class="rum-input-search" v-if="search" @click="onsearch">
             <rum-icon type="search"></rum-icon>
         </div>
     </div>
@@ -111,7 +111,7 @@
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-#inputwp {
+.rum-ui-input-wrap {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
     display: inline-block;
@@ -120,7 +120,7 @@
     .title {
         padding: 0 3px 0 0;
     }
-    .myinput {
+    .rum-ui-input {
         font-family: 'OrhonChaganTig';
         display: table-cell;
         font-size: @font-size;
@@ -155,7 +155,7 @@
             cursor: not-allowed;
         }
     }
-    .rum-inp-search {
+    .rum-input-search {
         position: absolute;
         width: 34px; height: 25px;
         right: 0; bottom: 0;
@@ -165,6 +165,5 @@
         color: #ccc;
     }
 }
-    
 </style>
 

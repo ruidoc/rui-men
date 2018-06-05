@@ -1,5 +1,5 @@
 <template>
-    <div :class="['tabitem',{active}]">
+    <div :class="['rum-tabs-tabitem',{active}]">
         <span class="title" @click="change">{{label}}</span>
         <div :class="['bodys',{cover}]" v-show="active" ref="bodys">
             <slot></slot>
@@ -35,7 +35,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-.tabitem {
+.rum-tabs-tabitem {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
     display: inline-block;

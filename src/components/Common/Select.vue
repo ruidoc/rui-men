@@ -1,5 +1,5 @@
 <template>
-    <div id="select">
+    <div class="rum-ui-select-wrap">
         <span class="title" v-if="$slots.default">
             <slot></slot>
         </span>
@@ -185,7 +185,7 @@
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-#select {
+.rum-ui-select-wrap {
     position: relative;
     cursor: pointer;
     font-family: 'OrhonChaganTig';

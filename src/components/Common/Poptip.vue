@@ -1,5 +1,5 @@
 <template>
-    <div class="poptip">
+    <div class="rum-ui-poptip">
         <div class="refer" tabindex="0" @focus="show" @blur="isShow=false" ref="refer">
             <slot></slot>
         </div>
@@ -89,7 +89,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-.poptip {
+.rum-ui-poptip {
     position: relative;
     cursor: pointer;
     font-family: 'OrhonChaganTig';

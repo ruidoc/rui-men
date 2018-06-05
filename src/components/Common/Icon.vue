@@ -1,5 +1,5 @@
 <template>
-    <i :class="['icon','ion-'+type]" :style="{color:color?color:false,fontSize:size?size+'px':false}"></i>
+    <i :class="['rum-ui-icon','ion-'+type]" :style="{color:color?color:false,fontSize:size?size+'px':false}"></i>
 </template>
 
 <script>

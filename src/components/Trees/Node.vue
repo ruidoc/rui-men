@@ -1,5 +1,5 @@
 <template>
-    <div :class="['tree_item',{auto}]">
+    <div :class="['rum-trees-item',{auto}]">
         <div class="rows">
             <span :class="['icon_dv',{open},{loding}]">
                 <rum-icon v-if="item.children && !loding" type="arrow-down-b" color="#80848f" size="17" class="icon"  @click.native="toRotate"></rum-icon>
@@ -14,7 +14,7 @@
 <script>
 
 export default {
-    name: 'trees',
+    name: 'rum-trees-item',
     data() {
         return {
             loding: false,

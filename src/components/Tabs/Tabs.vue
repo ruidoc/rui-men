@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs" :style="{width}">
+    <div class="rum-ui-tabs" :style="{width}">
         <slot></slot>
     </div>
 </template>
@@ -42,7 +42,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../../styles/rui-base.less';
-.tabs {
+.rum-ui-tabs {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
     padding: 0 7px;
