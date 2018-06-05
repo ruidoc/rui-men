@@ -1,11 +1,11 @@
 <template>
     <div :class="['rum-trees-item',{auto}]">
         <div class="rows">
-            <span :class="['icon_dv',{open},{loding}]">
+            <span :class="['rum-trees-icons',{open},{loding}]">
                 <rum-icon v-if="item.children && !loding" type="arrow-down-b" color="#80848f" size="17" class="icon"  @click.native="toRotate"></rum-icon>
                 <rum-icon v-if="loding" type="load-d" color="#80848f" size="17" class="icon"></rum-icon>
             </span>
-            <span :class="['can_click_title',{active:item.selected}]" @click="itemClick(item,$event)">{{item.title}}</span>
+            <span :class="['rum-trees-title',{active:item.selected}]" @click="itemClick(item,$event)">{{item.title}}</span>
         </div>
         <rum-trees v-if="item.children && item.children.length>0" :data="item.children" :sub="true" @on-item-click="click" @async-load="async"></rum-trees>
     </div>
@@ -61,7 +61,7 @@ export default {
         transform: rotate(360deg);
     }
 }
-.tree_item {
+.rum-trees-item {
     overflow: hidden;
     transition: all .2s;
     width: 24px;
@@ -77,11 +77,13 @@ export default {
         align-items: stretch;
     }
 }
-.icon_dv {
+.rum-trees-icons {
     padding: 0 1px;
     cursor: pointer;
     transition: all .2s;
     transform-origin: 49% 50%;
+    // width: 17px;
+    // height: 22px;
     &.open {
         transform: rotate(-90deg);
     }
@@ -89,7 +91,7 @@ export default {
         animation: rote .2s ease infinite;
     }
 }
-.can_click_title {
+.rum-trees-title {
     cursor: pointer;
     padding: 5px 1px;
     border-radius: 2px;
