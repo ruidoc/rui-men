@@ -630,18 +630,30 @@
           align-items: stretch;
 }
 .rum-trees-icons[data-v-47ad938c] {
-  padding: 0 1px;
   cursor: pointer;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform-origin: 49% 50%;
-          transform-origin: 49% 50%;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .rum-trees-icons.open[data-v-47ad938c] {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-.rum-trees-icons.loding[data-v-47ad938c] {
+.rum-trees-icons i[data-v-47ad938c] {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform-origin: 49% 50%;
+          transform-origin: 49% 50%;
+}
+.rum-trees-icons.loding i[data-v-47ad938c] {
   -webkit-animation: rote-data-v-47ad938c .2s ease infinite;
           animation: rote-data-v-47ad938c .2s ease infinite;
 }

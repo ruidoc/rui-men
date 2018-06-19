@@ -118,6 +118,10 @@ export default {
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            value: 2,
+                            title: 'ᠳᠬᠬᠵᠰᠳ'
                         }
                     ]
                 },

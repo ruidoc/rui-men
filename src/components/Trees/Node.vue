@@ -78,16 +78,20 @@ export default {
     }
 }
 .rum-trees-icons {
-    padding: 0 1px;
     cursor: pointer;
-    transition: all .2s;
-    transform-origin: 49% 50%;
-    // width: 17px;
-    // height: 22px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &.open {
         transform: rotate(-90deg);
     }
-    &.loding {
+    & i {
+        transition: all .2s;
+        transform-origin: 49% 50%;
+    }
+    &.loding i {
         animation: rote .2s ease infinite;
     }
 }
