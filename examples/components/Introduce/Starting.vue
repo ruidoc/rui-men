@@ -16,7 +16,7 @@
         <Par type="h2">2. 引入</Par>
         <Par>一般在 <f>src/main.js</f> 中引入</Par>
         <pre v-highlightjs><code>import rum from 'rui-men'
-import 'rui-men/dist/css/vender.css'
+import 'rui-men/lib/main.css'
 Vue.use(rum)</code></pre>
         <Par>现在可以使用 rui-men 的组件了。</Par>
 

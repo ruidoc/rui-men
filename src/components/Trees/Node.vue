@@ -38,7 +38,7 @@ export default {
             }
         },
         itemClick(val,e) {
-            let cl = document.getElementsByClassName('can_click_title active')
+            let cl = document.getElementsByClassName('rum-trees-title active')
             if(cl.length>0) {
                 cl[0].classList.remove('active')
             }
