@@ -92,7 +92,8 @@ export default {
     },
     methods: {
         tock(dom) {
-            this.$refs[dom].valide()
+            let i = this.$refs[dom].valide(true)
+            this.$RumMessage(i)
         }
     }
 }
@@ -101,7 +102,8 @@ export default {
     },
     methods: {
         tock(dom) {
-            this.$refs[dom].valide()
+            let i = this.$refs[dom].valide(true)
+            this.$RumMessage(i)
         }
     }
 }

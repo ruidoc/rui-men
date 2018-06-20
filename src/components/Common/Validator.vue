@@ -17,7 +17,7 @@ export default {
         }
     },
     methods: {
-        valide() {
+        valide(ret=false) {
             this.$children.forEach(item=> {
                 if(item.validate) {
                     item.validated()
@@ -25,6 +25,13 @@ export default {
             })
             let leng = this.$children.filter(item=>item.validate_err).length
             console.log('leng',leng);
+            if(ret) {
+                if(leng==0) {
+                    return true
+                } else {
+                    return false
+                }
+            }
             if(leng==0) {
                 this.$emit('on-success')
             } else {
