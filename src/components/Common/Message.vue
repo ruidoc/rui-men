@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .rum-ui-message {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;

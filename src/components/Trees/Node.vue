@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @-webkit-keyframes rote {
     100% {
         transform: rotate(360deg);

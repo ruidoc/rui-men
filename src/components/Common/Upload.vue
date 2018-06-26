@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .rum-ui-upload {
     .rum-upload-input {
         opacity: 0;

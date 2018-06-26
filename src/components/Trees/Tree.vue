@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .rum-ui-trees {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
