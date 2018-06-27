@@ -83,7 +83,7 @@ Rui.install = (Vue, options)=> {
             $message.style.position = 'fixed'
             $message.style.top = '80px'
             $message.style.right = '30px'
-            $message.style.zIndex = '9999'
+            $message.style.zIndex = '10100'
             $message.style.writingMode = 'vertical-rl'
             document.body.appendChild($message)
         }
@@ -102,5 +102,4 @@ Rui.install = (Vue, options)=> {
         $message.appendChild(instance.$el)
     }
 }
-
 module.exports = Rui

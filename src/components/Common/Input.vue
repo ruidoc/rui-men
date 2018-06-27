@@ -70,7 +70,7 @@
                         }
                         break;
                     case 'mobile':
-                        patt = /^(13|15|18|14)[0-9]{9}$/
+                        patt = /^(13|15|18|14|17)[0-9]{9}$/
                         if(!patt.test(this.value)) {
                             this.validate_err = true
                             this.$RumMessage(this.errmsg?this.errmsg:'手机号格式错误','error')
