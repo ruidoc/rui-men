@@ -175,6 +175,11 @@
   border: 1px solid #2d8cf0;
   background: #2d8cf0;
 }
+.rum-ui-button.disabled {
+  background: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  cursor: not-allowed;
+}
 .rum-ui-button .icon {
   position: relative;
   left: 1px;

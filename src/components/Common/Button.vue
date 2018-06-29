@@ -28,7 +28,9 @@ export default {
     },
     methods: {
         onClick() {
-            this.$emit('on-click')
+            if(this.type!='disabled') {
+                this.$emit('on-click')
+            }
         }
     },
     computed: {
@@ -85,6 +87,11 @@ export default {
         color: #fff;
         border: 1px solid @primary-color;
         background: @primary-color;
+    }
+    &.disabled {
+        background: #f0f0f0;
+        border: 1px solid #f0f0f0;
+        cursor: not-allowed;
     }
     .icon {
         position: relative;
