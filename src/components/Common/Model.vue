@@ -111,7 +111,7 @@ export default {
         position: relative;
         top: -1%;
         min-height: 400px;
-        .title {
+        & > .title {
             border-right: 1px solid #e9eaec;
             padding: 13px 10px;
             font-weight: 400;
@@ -130,24 +130,24 @@ export default {
                 }
             }
         }
-        .conf-title {
+        & > .conf-title {
             padding: 13px 0 13px 20px;
             font-size: 20px;
         }
-        .cofbutton {
+        & > .cofbutton {
             text-align: end;
             padding: 0 16px 15px 0;
         }
-        .content {
+        & > .content {
             padding: 13px 12px;
         }
-        .buttom {
+        & >.buttom {
             padding: 13px 10px;
             border-left: 1px solid #e9eaec;
             text-align: end;
         }
         &.confirm {
-            .content {
+            & > .content {
                 padding: 30px 12px 15px 12px;
             }
         }
