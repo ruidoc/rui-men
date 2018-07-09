@@ -4,18 +4,37 @@
   src: url(fonts/OrhonChaganTig.eot);
   src: url(fonts/OrhonChaganTig.eot?#iefix) format('embedded-opentype'), url(fonts/OrhonChaganTig.ttf) format('truetype');
 }
-.rum-ui-model-wrap {
-  position: fixed;
+.rum-ui-model-root {
   font-family: 'OrhonChaganTig';
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
+}
+.rum-ui-model-mask {
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 10000;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.rum-ui-model-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,7 +48,6 @@
 .rum-ui-model-wrap .rum-ui-model {
   background: #fff;
   border-radius: 4px;
-  display: inline-block;
   position: relative;
   top: -1%;
   min-height: 400px;

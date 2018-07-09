@@ -18,13 +18,11 @@ import RumCheckBox from './components/Common/CheckBox'
 import RumSteps from './components/Common/Steps'
 import RumValidator from './components/Common/Validator'
 
-const Rui = new Object();
-
 let $message;
-
 // import './styles/rui-base.css'
 
-Rui.install = (Vue, options)=> {
+const install = (Vue, options)=> {
+    if (install.installed) return;
     Vue.mixin({
         components: {
             RumPoptip,
@@ -73,8 +71,8 @@ Rui.install = (Vue, options)=> {
         })
         let vmodel = new model()
         vmodel.$mount()
-        document.body.appendChild(vmodel.$el)
         vmodel.show = true
+        document.body.appendChild(vmodel.$el)
     }
     Vue.prototype.$RumMessage = (msg,type)=> {
         
@@ -83,7 +81,7 @@ Rui.install = (Vue, options)=> {
             $message.style.position = 'fixed'
             $message.style.top = '80px'
             $message.style.right = '30px'
-            $message.style.zIndex = '10100'
+            $message.style.zIndex = '1500'
             $message.style.writingMode = 'vertical-rl'
             document.body.appendChild($message)
         }
@@ -102,4 +100,4 @@ Rui.install = (Vue, options)=> {
         $message.appendChild(instance.$el)
     }
 }
-module.exports = Rui
+export default { install }

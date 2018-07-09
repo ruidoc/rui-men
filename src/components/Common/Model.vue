@@ -1,36 +1,43 @@
 <template>
-    <transition name="fades">
-    <div class="rum-ui-model-wrap" v-show="isShow" @click.self="isShow=false">
-        <div :class="['rum-ui-model',{confirm}]">
-            <div class="title" v-if="title.length>0 && !confirm">
-                <rum-icon type="close-round" size="14" class="icon" @click.native="isShow=false"></rum-icon>
-                <span>{{title}}</span>
+    <div v-transfer-dom :data-transfer="true" class="rum-ui-model-root">
+        <transition name="fades">
+            <div class="rum-ui-model-mask" v-if="isShow"></div>
+        </transition>
+        <transition name="fades">
+            <div class="rum-ui-model-wrap" v-if="isShow" @click.self="close()">
+                <div :class="['rum-ui-model',{confirm}]">
+                    <div class="title" v-if="title.length>0 && !confirm">
+                        <rum-icon type="close-round" size="14" class="icon" @click.native="close"></rum-icon>
+                        <span>{{title}}</span>
+                    </div>
+                    <div v-if="confirm" class="conf-title">
+                        <rum-icon type="information-circled" size="25" class="icon" color="#2d8cf0" @click.native="closee"></rum-icon>
+                        <span>{{title}}</span>
+                    </div>
+                    <div class="content"><slot></slot></div>
+                    <div class="buttom" v-if="!hideBottom && !confirm">
+                        <rum-button type="primary" @on-click="ok">ᠲᠡᠭᠡᠶ᠎ᠡ</rum-button>
+                        &nbsp;
+                        <rum-button @on-click="close">ᠦᠭᠡᠢ</rum-button>
+                    </div>
+                    <div class="cofbutton" v-if="confirm">
+                        <rum-button type="primary" @on-click="took">ᠲᠡᠭᠡᠶ᠎ᠡ</rum-button>
+                    </div>
+                </div>
             </div>
-            <div v-if="confirm" class="conf-title">
-                <rum-icon type="information-circled" size="25" class="icon" color="#2d8cf0" @click.native="isShow=false"></rum-icon>
-                <span>{{title}}</span>
-            </div>
-            <div class="content"><slot></slot></div>
-            <div class="buttom" v-if="!hideBottom && !confirm">
-                <rum-button type="primary" @on-click="ok">ᠲᠡᠭᠡᠶ᠎ᠡ</rum-button>
-                &nbsp;
-                <rum-button @on-click="isShow=false">ᠦᠭᠡᠢ</rum-button>
-            </div>
-            <div class="cofbutton" v-if="confirm">
-                <rum-button type="primary" @on-click="took">ᠲᠡᠭᠡᠶ᠎ᠡ</rum-button>
-            </div>
-        </div>
+        </transition>
     </div>
-    </transition>
 </template>
 
 <script>
+import TransferDom from '../../directives/transfer-dom';
 export default {
     data() {
         return {
 
         }
     },
+    directives: { TransferDom },
     props: {
         value: {
             type: Boolean,
@@ -56,6 +63,9 @@ export default {
         took() {
             this.isShow = false
             this.$emit('ok')
+        },
+        close() {
+            this.isShow = false
         }
     },
     computed: {
@@ -73,21 +83,31 @@ export default {
 
 <style lang="less">
 @import '../../styles/rui-base.less';
-.rum-ui-model-wrap {
-    position: fixed;
+.rum-ui-model-root {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
+}
+.rum-ui-model-mask {
+    position: fixed;
     left: 0; top: 0;
     right: 0; bottom: 0;
     background: rgba(0, 0, 0, .6);
-    z-index: 10000;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rum-ui-model-wrap {
+    position: fixed;
+    left: 0; top: 0;
+    right: 0; bottom: 0;
+    z-index: 1100;
     display: flex;
     justify-content: center;
     align-items: center;
     .rum-ui-model {
         background: #fff;
         border-radius: 4px;
-        display: inline-block;
         position: relative;
         top: -1%;
         min-height: 400px;
@@ -133,6 +153,7 @@ export default {
         }
     }
 }
+
 .fades-enter-active, .fades-leave-active {
     transition: opacity .3s;
 }
