@@ -2,7 +2,7 @@
     <transition name="enters">
     <div class="rum-ui-message" v-if="isShow">
         <rum-icon v-if="type=='info'" type="information-circled" color="#2d8cf0" size="18"></rum-icon>
-        <rum-icon v-if="type=='warn'" type="alert-circled" color="#ff9900" size="18"></rum-icon>
+        <rum-icon v-if="type=='warning'" type="alert-circled" color="#ff9900" size="18"></rum-icon>
         <rum-icon v-if="type=='error'" type="close-circled" color="#ed3f14" size="18"></rum-icon>
         <rum-icon v-if="type=='success'" type="checkmark-circled" color="#19be6b" size="18"></rum-icon>
         <span class="rum-message-text">{{message}}</span>
