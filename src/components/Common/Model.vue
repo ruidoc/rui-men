@@ -1,5 +1,5 @@
 <template>
-    <div v-transfer-dom :data-transfer="true" class="rum-ui-model-root">
+    <div v-transfer-dom :data-transfer="transfer" class="rum-ui-model-root">
         <transition name="fades">
             <div class="rum-ui-model-mask" v-if="isShow"></div>
         </transition>
@@ -46,6 +46,10 @@ export default {
         title: {
             type: String,
             default: ''
+        },
+        transfer: {
+            type: Boolean,
+            default: false
         },
         hideBottom: {
             type: Boolean,
