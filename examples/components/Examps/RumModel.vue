@@ -46,6 +46,12 @@
                 <div class="td">false</div>
             </div>
             <div class="tr">
+                <div class="td">transfer</div>
+                <div class="td">是否放置到body下，解决z-inde问题</div>
+                <div class="td">Boolean</div>
+                <div class="td">false</div>
+            </div>
+            <div class="tr">
                 <div class="td">confirm</div>
                 <div class="td">以 <f>confirm</f> 形式显示，此时 hideBottom 失效</div>
                 <div class="td">Boolean</div>
