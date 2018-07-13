@@ -84,4 +84,4 @@ const Rum = {
     install,
     ...components
 }
-export default Rum
+module.exports.default = module.exports = Rum
