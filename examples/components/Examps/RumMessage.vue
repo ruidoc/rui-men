@@ -12,7 +12,7 @@
         <Card title="说明">
             <div>
                 <rum-button type="primary" @on-click="show('info')">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
-                <rum-button type="warning" @on-click="show('warn')">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
+                <rum-button type="warning" @on-click="show('warning')">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
                 <rum-button type="error" @on-click="show('error')">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
                 <rum-button type="success" @on-click="show('success')">ᠪᠵᠵᠼᠰᠳᠼᠠᠳᠤᠭ</rum-button> &nbsp;
             </div>

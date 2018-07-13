@@ -1,11 +1,11 @@
 <template>
-    <div v-transfer-dom :data-transfer="transfer" class="rum-ui-model-root">
+    <div v-transfer-dom :data-transfer="transfer" class="rum-ui-modal-root">
         <transition name="fades">
-            <div class="rum-ui-model-mask" v-if="isShow"></div>
+            <div class="rum-ui-modal-mask" v-if="isShow"></div>
         </transition>
         <transition name="fades">
-            <div class="rum-ui-model-wrap" v-if="isShow" @click.self="close()">
-                <div :class="['rum-ui-model',{confirm}]">
+            <div class="rum-ui-modal-wrap" v-if="isShow" @click.self="close()">
+                <div :class="['rum-ui-modal',{confirm}]">
                     <div class="title" v-if="title.length>0 && !confirm">
                         <rum-icon type="close-round" size="14" class="icon" @click.native="close"></rum-icon>
                         <span>{{title}}</span>
@@ -86,12 +86,11 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../styles/rui-base.less';
-.rum-ui-model-root {
+.rum-ui-modal-root {
     font-family: 'OrhonChaganTig';
     writing-mode: vertical-lr;
 }
-.rum-ui-model-mask {
+.rum-ui-modal-mask {
     position: fixed;
     left: 0; top: 0;
     right: 0; bottom: 0;
@@ -101,7 +100,7 @@ export default {
     justify-content: center;
     align-items: center;
 }
-.rum-ui-model-wrap {
+.rum-ui-modal-wrap {
     position: fixed;
     left: 0; top: 0;
     right: 0; bottom: 0;
@@ -109,7 +108,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    .rum-ui-model {
+    .rum-ui-modal {
         background: #fff;
         border-radius: 4px;
         position: relative;
@@ -119,7 +118,7 @@ export default {
             border-right: 1px solid #e9eaec;
             padding: 13px 10px;
             font-weight: 400;
-            font-size: @font-size-large;
+            font-size: 18px;
             background: #e9eaec;
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;

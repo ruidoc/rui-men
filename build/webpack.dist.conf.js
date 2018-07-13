@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const lessParse = require('./less-parse.js')
+
 function resolve(dir) {
 	return path.join(__dirname, '..', dir)
 }
@@ -33,7 +34,12 @@ module.exports = {
 			},
 			{
 				test: /\.less$/,
-        		use: ['style-loader','css-loader','less-loader'],
+        		use: ['style-loader','css-loader','less-loader',{
+                    loader: 'sass-resources-loader',
+                    options: { resources: [
+                        resolve('src/style/rui-base.less'),
+                    ]}
+                }],
 				include: [resolve('src')]
 			},
 			{

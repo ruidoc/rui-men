@@ -1,5 +1,6 @@
 
 import RumModel from './components/Common/Model'
+import RumModal from './components/Modal'
 import RumPoptip from './components/Common/Poptip'
 import RumButton from './components/Common/Button'
 import RumSelect from './components/Common/Select'
@@ -8,7 +9,7 @@ import RumRadio from './components/Common/Radio'
 import RumTable from './components/Common/Table'
 import RumIcon from './components/Common/Icon'
 import RumInput from './components/Common/Input'
-import RumMessage from './components/Common/Message'
+import RumMessage from './components/Message'
 import RumTabs from './components/Tabs/Tabs'
 import RumTabItem from './components/Tabs/TabItem'
 import RumTrees from './components/Trees/Tree'
@@ -21,30 +22,33 @@ import RumValidator from './components/Common/Validator'
 let $message;
 // import './styles/rui-base.css'
 
+const components = {
+    RumPoptip,
+    RumButton,
+    RumSelect,
+    RumOption,
+    RumRadio,
+    RumTable,
+    RumModel,
+    RumModal,
+    RumInput,
+    RumMessage,
+    RumIcon,
+    RumTabs,
+    RumTabItem,
+    RumTrees,
+    RumTime,
+    RumUpload,
+    RumCheckBox,
+    RumSteps,
+    RumValidator
+}
+
 const install = (Vue, options)=> {
     if (install.installed) return;
-    Vue.mixin({
-        components: {
-            RumPoptip,
-            RumButton,
-            RumSelect,
-            RumOption,
-            RumRadio,
-            RumTable,
-            RumModel,
-            RumInput,
-            RumIcon,
-            RumMessage,
-            RumTabs,
-            RumTabItem,
-            RumTrees,
-            RumTime,
-            RumUpload,
-            RumCheckBox,
-            RumSteps,
-            RumValidator
-        }
-    })
+    Vue.mixin({ components })
+    Vue.prototype.$RumModal = RumModal
+    Vue.prototype.$RumMessage = RumMessage.show
     Vue.prototype.$RumModel = (config)=> {
         let model = Vue.extend({
             data() {
@@ -74,30 +78,10 @@ const install = (Vue, options)=> {
         vmodel.show = true
         document.body.appendChild(vmodel.$el)
     }
-    Vue.prototype.$RumMessage = (msg,type)=> {
-        
-        if(!$message) {
-            $message = document.createElement('div') 
-            $message.style.position = 'fixed'
-            $message.style.top = '80px'
-            $message.style.right = '30px'
-            $message.style.zIndex = '1500'
-            $message.style.writingMode = 'vertical-rl'
-            document.body.appendChild($message)
-        }
-
-        if(!type) {
-            type = 'info'
-        }
-        
-        let Model = Vue.extend(RumMessage)
-        
-        let instance = new Model()
-        instance.message = msg
-        instance.type = type
-        instance.$mount();
-
-        $message.appendChild(instance.$el)
-    }
 }
-export default { install }
+
+const Rum = {
+    install,
+    ...components
+}
+export default Rum
