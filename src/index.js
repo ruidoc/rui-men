@@ -19,7 +19,6 @@ import RumCheckBox from './components/Common/CheckBox'
 import RumSteps from './components/Common/Steps'
 import RumValidator from './components/Common/Validator'
 
-let $message;
 // import './styles/rui-base.css'
 
 const components = {
@@ -84,4 +83,5 @@ const Rum = {
     install,
     ...components
 }
+
 module.exports.default = module.exports = Rum
