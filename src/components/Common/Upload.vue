@@ -1,6 +1,7 @@
 <template>
     <div class="rum-ui-upload">
-        <rum-button icon="ios-cloud-upload">
+        <rum-button>
+            <rum-icon type="ios-cloud-upload" class="upicon"></rum-icon>
             ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠢᠶᠠᠨ ᠰᠣᠩᠭᠣᠬᠣ
             <input @change="fileChange" type="file" multiple class="rum-upload-input"/>
         </rum-button>
@@ -64,6 +65,11 @@ export default {
 
 <style lang="less">
 .rum-ui-upload {
+    .upicon {
+        position: relative;
+        left: 1px;
+        font-size: 17px;
+    }
     .rum-upload-input {
         opacity: 0;
         width: 100%;
